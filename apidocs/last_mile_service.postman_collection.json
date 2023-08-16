@@ -1,0 +1,903 @@
+{
+  "info": {
+    "_postman_id": "948493b2-d136-470f-981f-7caaf8db66f2",
+    "name": "Last Mile",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "10266034"
+  },
+  "item": [
+    {
+      "name": "Fetch Batch Details",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVNUDEwMDAwMSIsImZpcnN0TmFtZSI6IkRldiIsImVtYWlsSWQiOiJkZXZAc3RhdHdpZy5jb20iLCJyb2xlIjoiYWRtaW4iLCJ3YXJlaG91c2VJZCI6IldBUjEwMDAwMSIsIm9yZ2FuaXNhdGlvbklkIjoiT1JHMTAwMDAxIiwicGhvbmVOdW1iZXIiOm51bGwsIm9yZyI6Im9yZzFNU1AiLCJ1c2VyTmFtZSI6ImRldkBzdGF0d2lnLmNvbSIsInByZWZlcnJlZExhbmd1YWdlIjoiRU4iLCJpc0N1c3RvbSI6ZmFsc2UsInR5cGUiOiJDRU5UUkFMX0FVVEhPUklUWSIsInBlcm1pc3Npb25zIjp7Im92ZXJ2aWV3Ijp7Im92ZXJ2aWV3Ijp0cnVlfSwic2VhcmNoIjp7InNlYXJjaEJ5T3JkZXJJZCI6dHJ1ZSwic2VhcmNoQnlTaGlwbWVudElkIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSI6dHJ1ZSwic2VhcmNoQnlUcmFuc2l0Tm8iOnRydWUsInNlYXJjaEJ5UHJvZHVjdE5hbWUiOnRydWUsInNlYXJjaEJ5UHJvZHVjdElkIjp0cnVlfSwiaW52ZW50b3J5Ijp7InZpZXdJbnZlbnRvcnkiOnRydWUsImFkZEludmVudG9yeSI6dHJ1ZSwiaW1wb3J0SW52ZW50b3J5Ijp0cnVlLCJpbnZlbnRvcnlBbmFseXRpY3MiOnRydWUsInZpZXdQcm9kdWN0TGlzdCI6dHJ1ZSwidmlld1Byb2R1Y3RJbmZvIjp0cnVlLCJhZGROZXdQcm9kdWN0Ijp0cnVlLCJpbnZlbnRvcnlGaWx0ZXJzIjp0cnVlLCJpbnZlbnRvcnlFeHBvcnRSZXBvcnQiOnRydWV9LCJzaGlwbWVudCI6eyJjcmVhdGVTaGlwbWVudCI6dHJ1ZSwic2hpcG1lbnRBbmFseXRpY3MiOnRydWUsInVwZGF0ZVNoaXBtZW50Ijp0cnVlLCJyZWNlaXZlU2hpcG1lbnQiOnRydWUsInJlY2VpdmVTaGlwbWVudFNjYW4iOnRydWUsImluYm91bmRTaGlwbWVudHMiOnRydWUsIm91dGJvdW5kU2hpcG1lbnRzIjp0cnVlLCJ2aWV3U2hpcG1lbnQiOnRydWUsInNoaXBtZW50RmlsdGVycyI6dHJ1ZSwic2hpcG1lbnRFeHBvcnRSZXBvcnQiOnRydWV9LCJvcmRlciI6eyJjcmVhdGVPcmRlciI6dHJ1ZSwiaW1wb3J0T3JkZXIiOnRydWUsIm9yZGVyQW5hbHl0aWNzIjp0cnVlLCJyZWNlaXZlT3JkZXIiOnRydWUsImFjY2VwdFJlamVjdE9yZGVyIjp0cnVlLCJ2aWV3SW5ib3VuZE9yZGVycyI6dHJ1ZSwidmlld091dGJvdW5kT3JkZXJzIjp0cnVlLCJvcmRlckZpbHRlcnMiOnRydWUsIm9yZGVyRXhwb3J0UmVwb3J0Ijp0cnVlLCJ2aWV3UE8iOnRydWV9LCJuZXR3b3JrIjp7Im5ldHdvcmsiOnRydWV9LCJ0cmFjayI6eyJ0cmFja0FuZFRyYWNlIjp0cnVlfSwiYWRtaW4iOnsiZ2V0VXNlclJlcXVlc3QiOnRydWUsImFjY2VwdFVzZXIiOnRydWUsImFkZFVzZXIiOnRydWUsInJlbW92ZVVzZXIiOnRydWUsImRlYWN0aXZhdGVVc2VyIjp0cnVlLCJhZGRSb2xlIjp0cnVlLCJkZWxldGVSb2xlIjp0cnVlLCJhZmZsaWF0ZVVzZXIiOnRydWUsInVuYWZmbGlhdGVVc2VyIjp0cnVlLCJ2aWV3QWZmbGlhdGlvbiI6dHJ1ZSwiYWNjZXB0QWZmaWxpYXRpb24iOnRydWUsInJlbW92ZUFmZmlsaWF0aW9uIjp0cnVlfSwiX2lkIjoiNjM4ZGEyZjkyYjJhY2U5M2I5OGQwZjdmIiwicGVybWlzc2lvbnMiOlsib3ZlcnZpZXciLCJzZWFyY2hCeU9yZGVySWQiLCJzZWFyY2hCeVNoaXBtZW50SWQiLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSIsInNlYXJjaEJ5VHJhbnNpdE5vIiwic2VhcmNoQnlQcm9kdWN0TmFtZSIsInNlYXJjaEJ5UHJvZHVjdElkIiwidmlld0ludmVudG9yeSIsImFkZEludmVudG9yeSIsImltcG9ydEludmVudG9yeSIsImludmVudG9yeUFuYWx5dGljcyIsInZpZXdQcm9kdWN0TGlzdCIsInZpZXdQcm9kdWN0SW5mbyIsImFkZE5ld1Byb2R1Y3QiLCJpbnZlbnRvcnlGaWx0ZXJzIiwiaW52ZW50b3J5RXhwb3J0UmVwb3J0IiwiY3JlYXRlU2hpcG1lbnQiLCJzaGlwbWVudEFuYWx5dGljcyIsInVwZGF0ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50U2NhbiIsImluYm91bmRTaGlwbWVudHMiLCJvdXRib3VuZFNoaXBtZW50cyIsInZpZXdTaGlwbWVudCIsInNoaXBtZW50RmlsdGVycyIsInNoaXBtZW50RXhwb3J0UmVwb3J0IiwiY3JlYXRlT3JkZXIiLCJpbXBvcnRPcmRlciIsIm9yZGVyQW5hbHl0aWNzIiwicmVjZWl2ZU9yZGVyIiwiYWNjZXB0UmVqZWN0T3JkZXIiLCJ2aWV3SW5ib3VuZE9yZGVycyIsInZpZXdPdXRib3VuZE9yZGVycyIsIm9yZGVyRmlsdGVycyIsIm9yZGVyRXhwb3J0UmVwb3J0Iiwidmlld1BPIiwibmV0d29yayIsInRyYWNrQW5kVHJhY2UiLCJnZXRVc2VyUmVxdWVzdCIsImFjY2VwdFVzZXIiLCJhZGRVc2VyIiwicmVtb3ZlVXNlciIsImRlYWN0aXZhdGVVc2VyIiwiYWRkUm9sZSIsImRlbGV0ZVJvbGUiLCJhZmZsaWF0ZVVzZXIiLCJ1bmFmZmxpYXRlVXNlciIsInZpZXdBZmZsaWF0aW9uIiwiYWNjZXB0QWZmaWxpYXRpb24iLCJyZW1vdmVBZmZpbGlhdGlvbiJdLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDIwLTA4LTMwVDE4OjU0OjI5Ljg4N1oiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTA3VDA2OjQ2OjU1LjcxNVoiLCJfX3YiOjB9LCJpYXQiOjE2NzEwOTQ0NTMsImV4cCI6MTY3MTEzNzY1M30.AFtJT7m9UzvMysimWfY8O7mthNmvMdyTHVbOCWY7vTs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"batchNumber\": \"B2003\",\n    \"warehouseId\": \"WAR100001\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://test.vaccineledger.com/lastmilemanagement/api/vaccination/fetchBatchById",
+          "protocol": "https",
+          "host": ["test", "vaccineledger", "com"],
+          "path": ["lastmilemanagement", "api", "vaccination", "fetchBatchById"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Vaccinate Individual",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVNUDEwMTA5NiIsImZpcnN0TmFtZSI6IlNpZDIiLCJlbWFpbElkIjoic2lkZGhhbnQ0QGdtYWlsLmluIiwicm9sZSI6InBvd2VyVXNlciIsIndhcmVob3VzZUlkIjoiV0FSMTAxMDYzIiwib3JnYW5pc2F0aW9uSWQiOiJPUkcxMDA0MjkiLCJwaG9uZU51bWJlciI6Im51bGwiLCJvcmciOiJvcmcxTVNQIiwidXNlck5hbWUiOiJzaWRkaGFudDRAZ21haWwuaW4iLCJwcmVmZXJyZWRMYW5ndWFnZSI6IkVOIiwiaXNDdXN0b20iOmZhbHNlLCJwZXJtaXNzaW9ucyI6eyJvdmVydmlldyI6eyJvdmVydmlldyI6dHJ1ZX0sInNlYXJjaCI6eyJzZWFyY2hCeU9yZGVySWQiOnRydWUsInNlYXJjaEJ5U2hpcG1lbnRJZCI6dHJ1ZSwic2VhcmNoQnlQcm9kdWN0Q2F0ZWdvcnkiOnRydWUsInNlYXJjaEJ5VHJhbnNpdE5vIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3ROYW1lIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3RJZCI6dHJ1ZX0sImludmVudG9yeSI6eyJ2aWV3SW52ZW50b3J5Ijp0cnVlLCJhZGRJbnZlbnRvcnkiOnRydWUsImltcG9ydEludmVudG9yeSI6dHJ1ZSwiaW52ZW50b3J5QW5hbHl0aWNzIjp0cnVlLCJ2aWV3UHJvZHVjdExpc3QiOnRydWUsInZpZXdQcm9kdWN0SW5mbyI6dHJ1ZSwiYWRkTmV3UHJvZHVjdCI6dHJ1ZSwiaW52ZW50b3J5RmlsdGVycyI6dHJ1ZSwiaW52ZW50b3J5RXhwb3J0UmVwb3J0Ijp0cnVlfSwic2hpcG1lbnQiOnsiY3JlYXRlU2hpcG1lbnQiOnRydWUsInNoaXBtZW50QW5hbHl0aWNzIjp0cnVlLCJ1cGRhdGVTaGlwbWVudCI6dHJ1ZSwicmVjZWl2ZVNoaXBtZW50Ijp0cnVlLCJyZWNlaXZlU2hpcG1lbnRTY2FuIjp0cnVlLCJpbmJvdW5kU2hpcG1lbnRzIjp0cnVlLCJvdXRib3VuZFNoaXBtZW50cyI6dHJ1ZSwidmlld1NoaXBtZW50Ijp0cnVlLCJzaGlwbWVudEZpbHRlcnMiOnRydWUsInNoaXBtZW50RXhwb3J0UmVwb3J0Ijp0cnVlfSwib3JkZXIiOnsiY3JlYXRlT3JkZXIiOnRydWUsImltcG9ydE9yZGVyIjp0cnVlLCJvcmRlckFuYWx5dGljcyI6dHJ1ZSwicmVjZWl2ZU9yZGVyIjp0cnVlLCJhY2NlcHRSZWplY3RPcmRlciI6dHJ1ZSwidmlld0luYm91bmRPcmRlcnMiOnRydWUsInZpZXdPdXRib3VuZE9yZGVycyI6dHJ1ZSwib3JkZXJGaWx0ZXJzIjp0cnVlLCJvcmRlckV4cG9ydFJlcG9ydCI6dHJ1ZSwidmlld1BPIjp0cnVlfSwibmV0d29yayI6eyJuZXR3b3JrIjp0cnVlfSwidHJhY2siOnsidHJhY2tBbmRUcmFjZSI6dHJ1ZX0sImFkbWluIjp7ImdldFVzZXJSZXF1ZXN0Ijp0cnVlLCJhY2NlcHRVc2VyIjp0cnVlLCJhZGRVc2VyIjp0cnVlLCJyZW1vdmVVc2VyIjp0cnVlLCJkZWFjdGl2YXRlVXNlciI6dHJ1ZSwiYWRkUm9sZSI6dHJ1ZSwiZGVsZXRlUm9sZSI6dHJ1ZSwiYWZmbGlhdGVVc2VyIjp0cnVlLCJ1bmFmZmxpYXRlVXNlciI6dHJ1ZSwidmlld0FmZmxpYXRpb24iOnRydWUsImFjY2VwdEFmZmlsaWF0aW9uIjp0cnVlLCJyZW1vdmVBZmZpbGlhdGlvbiI6dHJ1ZX0sIl9pZCI6IjVmNGJmMjdmMGNjNmZiMTdmZWMxODUxZCIsInBlcm1pc3Npb25zIjpbIm92ZXJ2aWV3Iiwic2VhcmNoQnlPcmRlcklkIiwic2VhcmNoQnlTaGlwbWVudElkIiwic2VhcmNoQnlQcm9kdWN0Q2F0ZWdvcnkiLCJzZWFyY2hCeVRyYW5zaXRObyIsInNlYXJjaEJ5UHJvZHVjdE5hbWUiLCJzZWFyY2hCeVByb2R1Y3RJZCIsInZpZXdJbnZlbnRvcnkiLCJhZGRJbnZlbnRvcnkiLCJpbXBvcnRJbnZlbnRvcnkiLCJpbnZlbnRvcnlBbmFseXRpY3MiLCJ2aWV3UHJvZHVjdExpc3QiLCJ2aWV3UHJvZHVjdEluZm8iLCJhZGROZXdQcm9kdWN0IiwiaW52ZW50b3J5RmlsdGVycyIsImludmVudG9yeUV4cG9ydFJlcG9ydCIsImNyZWF0ZVNoaXBtZW50Iiwic2hpcG1lbnRBbmFseXRpY3MiLCJ1cGRhdGVTaGlwbWVudCIsInJlY2VpdmVTaGlwbWVudCIsInJlY2VpdmVTaGlwbWVudFNjYW4iLCJpbmJvdW5kU2hpcG1lbnRzIiwib3V0Ym91bmRTaGlwbWVudHMiLCJ2aWV3U2hpcG1lbnQiLCJzaGlwbWVudEZpbHRlcnMiLCJzaGlwbWVudEV4cG9ydFJlcG9ydCIsImNyZWF0ZU9yZGVyIiwiaW1wb3J0T3JkZXIiLCJvcmRlckFuYWx5dGljcyIsInJlY2VpdmVPcmRlciIsImFjY2VwdFJlamVjdE9yZGVyIiwidmlld0luYm91bmRPcmRlcnMiLCJ2aWV3T3V0Ym91bmRPcmRlcnMiLCJvcmRlckZpbHRlcnMiLCJvcmRlckV4cG9ydFJlcG9ydCIsInZpZXdQTyIsIm5ldHdvcmsiLCJ0cmFja0FuZFRyYWNlIiwiZ2V0VXNlclJlcXVlc3QiLCJhY2NlcHRVc2VyIiwiYWRkVXNlciIsInJlbW92ZVVzZXIiLCJkZWFjdGl2YXRlVXNlciIsImFkZFJvbGUiLCJkZWxldGVSb2xlIiwiYWZmbGlhdGVVc2VyIiwidW5hZmZsaWF0ZVVzZXIiLCJ2aWV3QWZmbGlhdGlvbiIsImFjY2VwdEFmZmlsaWF0aW9uIiwicmVtb3ZlQWZmaWxpYXRpb24iLCIiXSwicm9sZSI6InBvd2VyVXNlciIsImNyZWF0ZWRBdCI6IjIwMjAtMDgtMzBUMTg6Mzk6NTkuMzkwWiIsInVwZGF0ZWRBdCI6IjIwMjEtMDktMzBUMTE6NTA6MDguMTQ2WiIsIl9fdiI6MH0sImlhdCI6MTY2NzU0MDQzMSwiZXhwIjoxNjY3NTgzNjMxfQ.kXrAs-gdl-Er7jnLnD4KcjTcJvNG9aVeqyNQy1jUhXU",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"batchNumber\": \"BT412\",\n    \"warehouseId\": \"WAR101063\",\n    \"productId\": \"COM3\",\n    \"age\": 35,\n    \"ageMonths\": 0,\n    \"gender\": \"MALE\",\n    \"vaccineVialId\": \"VIAL1000002\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://test.vaccineledger.com/lastmilemanagement/api/vaccination/vaccinateIndividual",
+          "protocol": "https",
+          "host": ["test", "vaccineledger", "com"],
+          "path": [
+            "lastmilemanagement",
+            "api",
+            "vaccination",
+            "vaccinateIndividual"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Vaccination Details By Vial",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVNUDEwMDAwMSIsImZpcnN0TmFtZSI6IkRldiIsImVtYWlsSWQiOiJkZXZAc3RhdHdpZy5jb20iLCJyb2xlIjoiYWRtaW4iLCJ3YXJlaG91c2VJZCI6IldBUjEwMDAwMSIsIm9yZ2FuaXNhdGlvbklkIjoiT1JHMTAwMDAxIiwicGhvbmVOdW1iZXIiOm51bGwsIm9yZyI6Im9yZzFNU1AiLCJ1c2VyTmFtZSI6ImRldkBzdGF0d2lnLmNvbSIsInByZWZlcnJlZExhbmd1YWdlIjoiRU4iLCJpc0N1c3RvbSI6ZmFsc2UsInR5cGUiOiJDRU5UUkFMX0FVVEhPUklUWSIsInBlcm1pc3Npb25zIjp7Im92ZXJ2aWV3Ijp7Im92ZXJ2aWV3Ijp0cnVlfSwic2VhcmNoIjp7InNlYXJjaEJ5T3JkZXJJZCI6dHJ1ZSwic2VhcmNoQnlTaGlwbWVudElkIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSI6dHJ1ZSwic2VhcmNoQnlUcmFuc2l0Tm8iOnRydWUsInNlYXJjaEJ5UHJvZHVjdE5hbWUiOnRydWUsInNlYXJjaEJ5UHJvZHVjdElkIjp0cnVlfSwiaW52ZW50b3J5Ijp7InZpZXdJbnZlbnRvcnkiOnRydWUsImFkZEludmVudG9yeSI6dHJ1ZSwiaW1wb3J0SW52ZW50b3J5Ijp0cnVlLCJpbnZlbnRvcnlBbmFseXRpY3MiOnRydWUsInZpZXdQcm9kdWN0TGlzdCI6dHJ1ZSwidmlld1Byb2R1Y3RJbmZvIjp0cnVlLCJhZGROZXdQcm9kdWN0Ijp0cnVlLCJpbnZlbnRvcnlGaWx0ZXJzIjp0cnVlLCJpbnZlbnRvcnlFeHBvcnRSZXBvcnQiOnRydWV9LCJzaGlwbWVudCI6eyJjcmVhdGVTaGlwbWVudCI6dHJ1ZSwic2hpcG1lbnRBbmFseXRpY3MiOnRydWUsInVwZGF0ZVNoaXBtZW50Ijp0cnVlLCJyZWNlaXZlU2hpcG1lbnQiOnRydWUsInJlY2VpdmVTaGlwbWVudFNjYW4iOnRydWUsImluYm91bmRTaGlwbWVudHMiOnRydWUsIm91dGJvdW5kU2hpcG1lbnRzIjp0cnVlLCJ2aWV3U2hpcG1lbnQiOnRydWUsInNoaXBtZW50RmlsdGVycyI6dHJ1ZSwic2hpcG1lbnRFeHBvcnRSZXBvcnQiOnRydWV9LCJvcmRlciI6eyJjcmVhdGVPcmRlciI6dHJ1ZSwiaW1wb3J0T3JkZXIiOnRydWUsIm9yZGVyQW5hbHl0aWNzIjp0cnVlLCJyZWNlaXZlT3JkZXIiOnRydWUsImFjY2VwdFJlamVjdE9yZGVyIjp0cnVlLCJ2aWV3SW5ib3VuZE9yZGVycyI6dHJ1ZSwidmlld091dGJvdW5kT3JkZXJzIjp0cnVlLCJvcmRlckZpbHRlcnMiOnRydWUsIm9yZGVyRXhwb3J0UmVwb3J0Ijp0cnVlLCJ2aWV3UE8iOnRydWV9LCJuZXR3b3JrIjp7Im5ldHdvcmsiOnRydWV9LCJ0cmFjayI6eyJ0cmFja0FuZFRyYWNlIjp0cnVlfSwiYWRtaW4iOnsiZ2V0VXNlclJlcXVlc3QiOnRydWUsImFjY2VwdFVzZXIiOnRydWUsImFkZFVzZXIiOnRydWUsInJlbW92ZVVzZXIiOnRydWUsImRlYWN0aXZhdGVVc2VyIjp0cnVlLCJhZGRSb2xlIjp0cnVlLCJkZWxldGVSb2xlIjp0cnVlLCJhZmZsaWF0ZVVzZXIiOnRydWUsInVuYWZmbGlhdGVVc2VyIjp0cnVlLCJ2aWV3QWZmbGlhdGlvbiI6dHJ1ZSwiYWNjZXB0QWZmaWxpYXRpb24iOnRydWUsInJlbW92ZUFmZmlsaWF0aW9uIjp0cnVlfSwiX2lkIjoiNjM4ZGEyZjkyYjJhY2U5M2I5OGQwZjdmIiwicGVybWlzc2lvbnMiOlsib3ZlcnZpZXciLCJzZWFyY2hCeU9yZGVySWQiLCJzZWFyY2hCeVNoaXBtZW50SWQiLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSIsInNlYXJjaEJ5VHJhbnNpdE5vIiwic2VhcmNoQnlQcm9kdWN0TmFtZSIsInNlYXJjaEJ5UHJvZHVjdElkIiwidmlld0ludmVudG9yeSIsImFkZEludmVudG9yeSIsImltcG9ydEludmVudG9yeSIsImludmVudG9yeUFuYWx5dGljcyIsInZpZXdQcm9kdWN0TGlzdCIsInZpZXdQcm9kdWN0SW5mbyIsImFkZE5ld1Byb2R1Y3QiLCJpbnZlbnRvcnlGaWx0ZXJzIiwiaW52ZW50b3J5RXhwb3J0UmVwb3J0IiwiY3JlYXRlU2hpcG1lbnQiLCJzaGlwbWVudEFuYWx5dGljcyIsInVwZGF0ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50U2NhbiIsImluYm91bmRTaGlwbWVudHMiLCJvdXRib3VuZFNoaXBtZW50cyIsInZpZXdTaGlwbWVudCIsInNoaXBtZW50RmlsdGVycyIsInNoaXBtZW50RXhwb3J0UmVwb3J0IiwiY3JlYXRlT3JkZXIiLCJpbXBvcnRPcmRlciIsIm9yZGVyQW5hbHl0aWNzIiwicmVjZWl2ZU9yZGVyIiwiYWNjZXB0UmVqZWN0T3JkZXIiLCJ2aWV3SW5ib3VuZE9yZGVycyIsInZpZXdPdXRib3VuZE9yZGVycyIsIm9yZGVyRmlsdGVycyIsIm9yZGVyRXhwb3J0UmVwb3J0Iiwidmlld1BPIiwibmV0d29yayIsInRyYWNrQW5kVHJhY2UiLCJnZXRVc2VyUmVxdWVzdCIsImFjY2VwdFVzZXIiLCJhZGRVc2VyIiwicmVtb3ZlVXNlciIsImRlYWN0aXZhdGVVc2VyIiwiYWRkUm9sZSIsImRlbGV0ZVJvbGUiLCJhZmZsaWF0ZVVzZXIiLCJ1bmFmZmxpYXRlVXNlciIsInZpZXdBZmZsaWF0aW9uIiwiYWNjZXB0QWZmaWxpYXRpb24iLCJyZW1vdmVBZmZpbGlhdGlvbiJdLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDIwLTA4LTMwVDE4OjU0OjI5Ljg4N1oiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTA3VDA2OjQ2OjU1LjcxNVoiLCJfX3YiOjB9LCJpYXQiOjE2NzEwOTQ0NTMsImV4cCI6MTY3MTEzNzY1M30.AFtJT7m9UzvMysimWfY8O7mthNmvMdyTHVbOCWY7vTs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://test.vaccineledger.com/lastmilemanagement/api/vaccination/getVaccinationDetailsByVial?vaccineVialId=VIAL100076",
+          "protocol": "https",
+          "host": ["test", "vaccineledger", "com"],
+          "path": [
+            "lastmilemanagement",
+            "api",
+            "vaccination",
+            "getVaccinationDetailsByVial"
+          ],
+          "query": [
+            {
+              "key": "vaccineVialId",
+              "value": "VIAL100076"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get all vaccination details",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVNUDEwMDAwMSIsImZpcnN0TmFtZSI6IkRldiIsImVtYWlsSWQiOiJkZXZAc3RhdHdpZy5jb20iLCJyb2xlIjoiYWRtaW4iLCJ3YXJlaG91c2VJZCI6IldBUjEwMDAwMSIsIm9yZ2FuaXNhdGlvbklkIjoiT1JHMTAwMDAxIiwicGhvbmVOdW1iZXIiOm51bGwsIm9yZyI6Im9yZzFNU1AiLCJ1c2VyTmFtZSI6ImRldkBzdGF0d2lnLmNvbSIsInByZWZlcnJlZExhbmd1YWdlIjoiRU4iLCJpc0N1c3RvbSI6ZmFsc2UsInR5cGUiOiJDRU5UUkFMX0FVVEhPUklUWSIsInBlcm1pc3Npb25zIjp7Im92ZXJ2aWV3Ijp7Im92ZXJ2aWV3Ijp0cnVlfSwic2VhcmNoIjp7InNlYXJjaEJ5T3JkZXJJZCI6dHJ1ZSwic2VhcmNoQnlTaGlwbWVudElkIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSI6dHJ1ZSwic2VhcmNoQnlUcmFuc2l0Tm8iOnRydWUsInNlYXJjaEJ5UHJvZHVjdE5hbWUiOnRydWUsInNlYXJjaEJ5UHJvZHVjdElkIjp0cnVlfSwiaW52ZW50b3J5Ijp7InZpZXdJbnZlbnRvcnkiOnRydWUsImFkZEludmVudG9yeSI6dHJ1ZSwiaW1wb3J0SW52ZW50b3J5Ijp0cnVlLCJpbnZlbnRvcnlBbmFseXRpY3MiOnRydWUsInZpZXdQcm9kdWN0TGlzdCI6dHJ1ZSwidmlld1Byb2R1Y3RJbmZvIjp0cnVlLCJhZGROZXdQcm9kdWN0Ijp0cnVlLCJpbnZlbnRvcnlGaWx0ZXJzIjp0cnVlLCJpbnZlbnRvcnlFeHBvcnRSZXBvcnQiOnRydWV9LCJzaGlwbWVudCI6eyJjcmVhdGVTaGlwbWVudCI6dHJ1ZSwic2hpcG1lbnRBbmFseXRpY3MiOnRydWUsInVwZGF0ZVNoaXBtZW50Ijp0cnVlLCJyZWNlaXZlU2hpcG1lbnQiOnRydWUsInJlY2VpdmVTaGlwbWVudFNjYW4iOnRydWUsImluYm91bmRTaGlwbWVudHMiOnRydWUsIm91dGJvdW5kU2hpcG1lbnRzIjp0cnVlLCJ2aWV3U2hpcG1lbnQiOnRydWUsInNoaXBtZW50RmlsdGVycyI6dHJ1ZSwic2hpcG1lbnRFeHBvcnRSZXBvcnQiOnRydWV9LCJvcmRlciI6eyJjcmVhdGVPcmRlciI6dHJ1ZSwiaW1wb3J0T3JkZXIiOnRydWUsIm9yZGVyQW5hbHl0aWNzIjp0cnVlLCJyZWNlaXZlT3JkZXIiOnRydWUsImFjY2VwdFJlamVjdE9yZGVyIjp0cnVlLCJ2aWV3SW5ib3VuZE9yZGVycyI6dHJ1ZSwidmlld091dGJvdW5kT3JkZXJzIjp0cnVlLCJvcmRlckZpbHRlcnMiOnRydWUsIm9yZGVyRXhwb3J0UmVwb3J0Ijp0cnVlLCJ2aWV3UE8iOnRydWV9LCJuZXR3b3JrIjp7Im5ldHdvcmsiOnRydWV9LCJ0cmFjayI6eyJ0cmFja0FuZFRyYWNlIjp0cnVlfSwiYWRtaW4iOnsiZ2V0VXNlclJlcXVlc3QiOnRydWUsImFjY2VwdFVzZXIiOnRydWUsImFkZFVzZXIiOnRydWUsInJlbW92ZVVzZXIiOnRydWUsImRlYWN0aXZhdGVVc2VyIjp0cnVlLCJhZGRSb2xlIjp0cnVlLCJkZWxldGVSb2xlIjp0cnVlLCJhZmZsaWF0ZVVzZXIiOnRydWUsInVuYWZmbGlhdGVVc2VyIjp0cnVlLCJ2aWV3QWZmbGlhdGlvbiI6dHJ1ZSwiYWNjZXB0QWZmaWxpYXRpb24iOnRydWUsInJlbW92ZUFmZmlsaWF0aW9uIjp0cnVlfSwiX2lkIjoiNjM4ZGEyZjkyYjJhY2U5M2I5OGQwZjdmIiwicGVybWlzc2lvbnMiOlsib3ZlcnZpZXciLCJzZWFyY2hCeU9yZGVySWQiLCJzZWFyY2hCeVNoaXBtZW50SWQiLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSIsInNlYXJjaEJ5VHJhbnNpdE5vIiwic2VhcmNoQnlQcm9kdWN0TmFtZSIsInNlYXJjaEJ5UHJvZHVjdElkIiwidmlld0ludmVudG9yeSIsImFkZEludmVudG9yeSIsImltcG9ydEludmVudG9yeSIsImludmVudG9yeUFuYWx5dGljcyIsInZpZXdQcm9kdWN0TGlzdCIsInZpZXdQcm9kdWN0SW5mbyIsImFkZE5ld1Byb2R1Y3QiLCJpbnZlbnRvcnlGaWx0ZXJzIiwiaW52ZW50b3J5RXhwb3J0UmVwb3J0IiwiY3JlYXRlU2hpcG1lbnQiLCJzaGlwbWVudEFuYWx5dGljcyIsInVwZGF0ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50U2NhbiIsImluYm91bmRTaGlwbWVudHMiLCJvdXRib3VuZFNoaXBtZW50cyIsInZpZXdTaGlwbWVudCIsInNoaXBtZW50RmlsdGVycyIsInNoaXBtZW50RXhwb3J0UmVwb3J0IiwiY3JlYXRlT3JkZXIiLCJpbXBvcnRPcmRlciIsIm9yZGVyQW5hbHl0aWNzIiwicmVjZWl2ZU9yZGVyIiwiYWNjZXB0UmVqZWN0T3JkZXIiLCJ2aWV3SW5ib3VuZE9yZGVycyIsInZpZXdPdXRib3VuZE9yZGVycyIsIm9yZGVyRmlsdGVycyIsIm9yZGVyRXhwb3J0UmVwb3J0Iiwidmlld1BPIiwibmV0d29yayIsInRyYWNrQW5kVHJhY2UiLCJnZXRVc2VyUmVxdWVzdCIsImFjY2VwdFVzZXIiLCJhZGRVc2VyIiwicmVtb3ZlVXNlciIsImRlYWN0aXZhdGVVc2VyIiwiYWRkUm9sZSIsImRlbGV0ZVJvbGUiLCJhZmZsaWF0ZVVzZXIiLCJ1bmFmZmxpYXRlVXNlciIsInZpZXdBZmZsaWF0aW9uIiwiYWNjZXB0QWZmaWxpYXRpb24iLCJyZW1vdmVBZmZpbGlhdGlvbiJdLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDIwLTA4LTMwVDE4OjU0OjI5Ljg4N1oiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTA3VDA2OjQ2OjU1LjcxNVoiLCJfX3YiOjB9LCJpYXQiOjE2NzEwOTQ0NTMsImV4cCI6MTY3MTEzNzY1M30.AFtJT7m9UzvMysimWfY8O7mthNmvMdyTHVbOCWY7vTs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"gender\": \"MALE\",\n    \"minAge\": 20,\n    \"maxAge\": 24\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://test.vaccineledger.com/lastmilemanagement/api/vaccination/getAllVaccinationDetails",
+          "protocol": "https",
+          "host": ["test", "vaccineledger", "com"],
+          "path": [
+            "lastmilemanagement",
+            "api",
+            "vaccination",
+            "getAllVaccinationDetails"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get analytics",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVNUDEwMDAwMSIsImZpcnN0TmFtZSI6IkRldiIsImVtYWlsSWQiOiJkZXZAc3RhdHdpZy5jb20iLCJyb2xlIjoiYWRtaW4iLCJ3YXJlaG91c2VJZCI6IldBUjEwMDAwMSIsIm9yZ2FuaXNhdGlvbklkIjoiT1JHMTAwMDAxIiwicGhvbmVOdW1iZXIiOm51bGwsIm9yZyI6Im9yZzFNU1AiLCJ1c2VyTmFtZSI6ImRldkBzdGF0d2lnLmNvbSIsInByZWZlcnJlZExhbmd1YWdlIjoiRU4iLCJpc0N1c3RvbSI6ZmFsc2UsInR5cGUiOiJDRU5UUkFMX0FVVEhPUklUWSIsInBlcm1pc3Npb25zIjp7Im92ZXJ2aWV3Ijp7Im92ZXJ2aWV3Ijp0cnVlfSwic2VhcmNoIjp7InNlYXJjaEJ5T3JkZXJJZCI6dHJ1ZSwic2VhcmNoQnlTaGlwbWVudElkIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSI6dHJ1ZSwic2VhcmNoQnlUcmFuc2l0Tm8iOnRydWUsInNlYXJjaEJ5UHJvZHVjdE5hbWUiOnRydWUsInNlYXJjaEJ5UHJvZHVjdElkIjp0cnVlfSwiaW52ZW50b3J5Ijp7InZpZXdJbnZlbnRvcnkiOnRydWUsImFkZEludmVudG9yeSI6dHJ1ZSwiaW1wb3J0SW52ZW50b3J5Ijp0cnVlLCJpbnZlbnRvcnlBbmFseXRpY3MiOnRydWUsInZpZXdQcm9kdWN0TGlzdCI6dHJ1ZSwidmlld1Byb2R1Y3RJbmZvIjp0cnVlLCJhZGROZXdQcm9kdWN0Ijp0cnVlLCJpbnZlbnRvcnlGaWx0ZXJzIjp0cnVlLCJpbnZlbnRvcnlFeHBvcnRSZXBvcnQiOnRydWV9LCJzaGlwbWVudCI6eyJjcmVhdGVTaGlwbWVudCI6dHJ1ZSwic2hpcG1lbnRBbmFseXRpY3MiOnRydWUsInVwZGF0ZVNoaXBtZW50Ijp0cnVlLCJyZWNlaXZlU2hpcG1lbnQiOnRydWUsInJlY2VpdmVTaGlwbWVudFNjYW4iOnRydWUsImluYm91bmRTaGlwbWVudHMiOnRydWUsIm91dGJvdW5kU2hpcG1lbnRzIjp0cnVlLCJ2aWV3U2hpcG1lbnQiOnRydWUsInNoaXBtZW50RmlsdGVycyI6dHJ1ZSwic2hpcG1lbnRFeHBvcnRSZXBvcnQiOnRydWV9LCJvcmRlciI6eyJjcmVhdGVPcmRlciI6dHJ1ZSwiaW1wb3J0T3JkZXIiOnRydWUsIm9yZGVyQW5hbHl0aWNzIjp0cnVlLCJyZWNlaXZlT3JkZXIiOnRydWUsImFjY2VwdFJlamVjdE9yZGVyIjp0cnVlLCJ2aWV3SW5ib3VuZE9yZGVycyI6dHJ1ZSwidmlld091dGJvdW5kT3JkZXJzIjp0cnVlLCJvcmRlckZpbHRlcnMiOnRydWUsIm9yZGVyRXhwb3J0UmVwb3J0Ijp0cnVlLCJ2aWV3UE8iOnRydWV9LCJuZXR3b3JrIjp7Im5ldHdvcmsiOnRydWV9LCJ0cmFjayI6eyJ0cmFja0FuZFRyYWNlIjp0cnVlfSwiYWRtaW4iOnsiZ2V0VXNlclJlcXVlc3QiOnRydWUsImFjY2VwdFVzZXIiOnRydWUsImFkZFVzZXIiOnRydWUsInJlbW92ZVVzZXIiOnRydWUsImRlYWN0aXZhdGVVc2VyIjp0cnVlLCJhZGRSb2xlIjp0cnVlLCJkZWxldGVSb2xlIjp0cnVlLCJhZmZsaWF0ZVVzZXIiOnRydWUsInVuYWZmbGlhdGVVc2VyIjp0cnVlLCJ2aWV3QWZmbGlhdGlvbiI6dHJ1ZSwiYWNjZXB0QWZmaWxpYXRpb24iOnRydWUsInJlbW92ZUFmZmlsaWF0aW9uIjp0cnVlfSwiX2lkIjoiNjM4ZGEyZjkyYjJhY2U5M2I5OGQwZjdmIiwicGVybWlzc2lvbnMiOlsib3ZlcnZpZXciLCJzZWFyY2hCeU9yZGVySWQiLCJzZWFyY2hCeVNoaXBtZW50SWQiLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSIsInNlYXJjaEJ5VHJhbnNpdE5vIiwic2VhcmNoQnlQcm9kdWN0TmFtZSIsInNlYXJjaEJ5UHJvZHVjdElkIiwidmlld0ludmVudG9yeSIsImFkZEludmVudG9yeSIsImltcG9ydEludmVudG9yeSIsImludmVudG9yeUFuYWx5dGljcyIsInZpZXdQcm9kdWN0TGlzdCIsInZpZXdQcm9kdWN0SW5mbyIsImFkZE5ld1Byb2R1Y3QiLCJpbnZlbnRvcnlGaWx0ZXJzIiwiaW52ZW50b3J5RXhwb3J0UmVwb3J0IiwiY3JlYXRlU2hpcG1lbnQiLCJzaGlwbWVudEFuYWx5dGljcyIsInVwZGF0ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50U2NhbiIsImluYm91bmRTaGlwbWVudHMiLCJvdXRib3VuZFNoaXBtZW50cyIsInZpZXdTaGlwbWVudCIsInNoaXBtZW50RmlsdGVycyIsInNoaXBtZW50RXhwb3J0UmVwb3J0IiwiY3JlYXRlT3JkZXIiLCJpbXBvcnRPcmRlciIsIm9yZGVyQW5hbHl0aWNzIiwicmVjZWl2ZU9yZGVyIiwiYWNjZXB0UmVqZWN0T3JkZXIiLCJ2aWV3SW5ib3VuZE9yZGVycyIsInZpZXdPdXRib3VuZE9yZGVycyIsIm9yZGVyRmlsdGVycyIsIm9yZGVyRXhwb3J0UmVwb3J0Iiwidmlld1BPIiwibmV0d29yayIsInRyYWNrQW5kVHJhY2UiLCJnZXRVc2VyUmVxdWVzdCIsImFjY2VwdFVzZXIiLCJhZGRVc2VyIiwicmVtb3ZlVXNlciIsImRlYWN0aXZhdGVVc2VyIiwiYWRkUm9sZSIsImRlbGV0ZVJvbGUiLCJhZmZsaWF0ZVVzZXIiLCJ1bmFmZmxpYXRlVXNlciIsInZpZXdBZmZsaWF0aW9uIiwiYWNjZXB0QWZmaWxpYXRpb24iLCJyZW1vdmVBZmZpbGlhdGlvbiJdLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDIwLTA4LTMwVDE4OjU0OjI5Ljg4N1oiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTA3VDA2OjQ2OjU1LjcxNVoiLCJfX3YiOjB9LCJpYXQiOjE2NzEwOTQ0NTMsImV4cCI6MTY3MTEzNzY1M30.AFtJT7m9UzvMysimWfY8O7mthNmvMdyTHVbOCWY7vTs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://test.vaccineledger.com/lastmilemanagement/api/vaccination/getAnalytics",
+          "protocol": "https",
+          "host": ["test", "vaccineledger", "com"],
+          "path": ["lastmilemanagement", "api", "vaccination", "getAnalytics"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Vaccinate Multiple",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVNUDEwMDAwMSIsImZpcnN0TmFtZSI6IkRldiIsImVtYWlsSWQiOiJkZXZAc3RhdHdpZy5jb20iLCJyb2xlIjoiYWRtaW4iLCJ3YXJlaG91c2VJZCI6IldBUjEwMDAwMSIsIm9yZ2FuaXNhdGlvbklkIjoiT1JHMTAwMDAxIiwicGhvbmVOdW1iZXIiOm51bGwsIm9yZyI6Im9yZzFNU1AiLCJ1c2VyTmFtZSI6ImRldkBzdGF0d2lnLmNvbSIsInByZWZlcnJlZExhbmd1YWdlIjoiRU4iLCJpc0N1c3RvbSI6ZmFsc2UsInR5cGUiOiJDRU5UUkFMX0FVVEhPUklUWSIsInBlcm1pc3Npb25zIjp7Im92ZXJ2aWV3Ijp7Im92ZXJ2aWV3Ijp0cnVlfSwic2VhcmNoIjp7InNlYXJjaEJ5T3JkZXJJZCI6dHJ1ZSwic2VhcmNoQnlTaGlwbWVudElkIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSI6dHJ1ZSwic2VhcmNoQnlUcmFuc2l0Tm8iOnRydWUsInNlYXJjaEJ5UHJvZHVjdE5hbWUiOnRydWUsInNlYXJjaEJ5UHJvZHVjdElkIjp0cnVlfSwiaW52ZW50b3J5Ijp7InZpZXdJbnZlbnRvcnkiOnRydWUsImFkZEludmVudG9yeSI6dHJ1ZSwiaW1wb3J0SW52ZW50b3J5Ijp0cnVlLCJpbnZlbnRvcnlBbmFseXRpY3MiOnRydWUsInZpZXdQcm9kdWN0TGlzdCI6dHJ1ZSwidmlld1Byb2R1Y3RJbmZvIjp0cnVlLCJhZGROZXdQcm9kdWN0Ijp0cnVlLCJpbnZlbnRvcnlGaWx0ZXJzIjp0cnVlLCJpbnZlbnRvcnlFeHBvcnRSZXBvcnQiOnRydWV9LCJzaGlwbWVudCI6eyJjcmVhdGVTaGlwbWVudCI6dHJ1ZSwic2hpcG1lbnRBbmFseXRpY3MiOnRydWUsInVwZGF0ZVNoaXBtZW50Ijp0cnVlLCJyZWNlaXZlU2hpcG1lbnQiOnRydWUsInJlY2VpdmVTaGlwbWVudFNjYW4iOnRydWUsImluYm91bmRTaGlwbWVudHMiOnRydWUsIm91dGJvdW5kU2hpcG1lbnRzIjp0cnVlLCJ2aWV3U2hpcG1lbnQiOnRydWUsInNoaXBtZW50RmlsdGVycyI6dHJ1ZSwic2hpcG1lbnRFeHBvcnRSZXBvcnQiOnRydWV9LCJvcmRlciI6eyJjcmVhdGVPcmRlciI6dHJ1ZSwiaW1wb3J0T3JkZXIiOnRydWUsIm9yZGVyQW5hbHl0aWNzIjp0cnVlLCJyZWNlaXZlT3JkZXIiOnRydWUsImFjY2VwdFJlamVjdE9yZGVyIjp0cnVlLCJ2aWV3SW5ib3VuZE9yZGVycyI6dHJ1ZSwidmlld091dGJvdW5kT3JkZXJzIjp0cnVlLCJvcmRlckZpbHRlcnMiOnRydWUsIm9yZGVyRXhwb3J0UmVwb3J0Ijp0cnVlLCJ2aWV3UE8iOnRydWV9LCJuZXR3b3JrIjp7Im5ldHdvcmsiOnRydWV9LCJ0cmFjayI6eyJ0cmFja0FuZFRyYWNlIjp0cnVlfSwiYWRtaW4iOnsiZ2V0VXNlclJlcXVlc3QiOnRydWUsImFjY2VwdFVzZXIiOnRydWUsImFkZFVzZXIiOnRydWUsInJlbW92ZVVzZXIiOnRydWUsImRlYWN0aXZhdGVVc2VyIjp0cnVlLCJhZGRSb2xlIjp0cnVlLCJkZWxldGVSb2xlIjp0cnVlLCJhZmZsaWF0ZVVzZXIiOnRydWUsInVuYWZmbGlhdGVVc2VyIjp0cnVlLCJ2aWV3QWZmbGlhdGlvbiI6dHJ1ZSwiYWNjZXB0QWZmaWxpYXRpb24iOnRydWUsInJlbW92ZUFmZmlsaWF0aW9uIjp0cnVlfSwiX2lkIjoiNjM4ZGEyZjkyYjJhY2U5M2I5OGQwZjdmIiwicGVybWlzc2lvbnMiOlsib3ZlcnZpZXciLCJzZWFyY2hCeU9yZGVySWQiLCJzZWFyY2hCeVNoaXBtZW50SWQiLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSIsInNlYXJjaEJ5VHJhbnNpdE5vIiwic2VhcmNoQnlQcm9kdWN0TmFtZSIsInNlYXJjaEJ5UHJvZHVjdElkIiwidmlld0ludmVudG9yeSIsImFkZEludmVudG9yeSIsImltcG9ydEludmVudG9yeSIsImludmVudG9yeUFuYWx5dGljcyIsInZpZXdQcm9kdWN0TGlzdCIsInZpZXdQcm9kdWN0SW5mbyIsImFkZE5ld1Byb2R1Y3QiLCJpbnZlbnRvcnlGaWx0ZXJzIiwiaW52ZW50b3J5RXhwb3J0UmVwb3J0IiwiY3JlYXRlU2hpcG1lbnQiLCJzaGlwbWVudEFuYWx5dGljcyIsInVwZGF0ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50U2NhbiIsImluYm91bmRTaGlwbWVudHMiLCJvdXRib3VuZFNoaXBtZW50cyIsInZpZXdTaGlwbWVudCIsInNoaXBtZW50RmlsdGVycyIsInNoaXBtZW50RXhwb3J0UmVwb3J0IiwiY3JlYXRlT3JkZXIiLCJpbXBvcnRPcmRlciIsIm9yZGVyQW5hbHl0aWNzIiwicmVjZWl2ZU9yZGVyIiwiYWNjZXB0UmVqZWN0T3JkZXIiLCJ2aWV3SW5ib3VuZE9yZGVycyIsInZpZXdPdXRib3VuZE9yZGVycyIsIm9yZGVyRmlsdGVycyIsIm9yZGVyRXhwb3J0UmVwb3J0Iiwidmlld1BPIiwibmV0d29yayIsInRyYWNrQW5kVHJhY2UiLCJnZXRVc2VyUmVxdWVzdCIsImFjY2VwdFVzZXIiLCJhZGRVc2VyIiwicmVtb3ZlVXNlciIsImRlYWN0aXZhdGVVc2VyIiwiYWRkUm9sZSIsImRlbGV0ZVJvbGUiLCJhZmZsaWF0ZVVzZXIiLCJ1bmFmZmxpYXRlVXNlciIsInZpZXdBZmZsaWF0aW9uIiwiYWNjZXB0QWZmaWxpYXRpb24iLCJyZW1vdmVBZmZpbGlhdGlvbiJdLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDIwLTA4LTMwVDE4OjU0OjI5Ljg4N1oiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTA3VDA2OjQ2OjU1LjcxNVoiLCJfX3YiOjB9LCJpYXQiOjE2NzEwOTQ0NTMsImV4cCI6MTY3MTEzNzY1M30.AFtJT7m9UzvMysimWfY8O7mthNmvMdyTHVbOCWY7vTs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"warehouseId\": \"WAR100001\",\n    \"productId\": \"PO100025\",\n    \"batchNumber\": \"B2003\",\n    \"doses\": [\n        {\n            \"age\": 44,\n            \"ageMonths\": 0,\n            \"gender\": \"MALE\"\n        },\n        {\n            \"age\": 0,\n            \"ageMonths\": 6,\n            \"gender\": \"OTHERS\"\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://test.vaccineledger.com/lastmilemanagement/api/vaccination/vaccinateMultiple",
+          "protocol": "https",
+          "host": ["test", "vaccineledger", "com"],
+          "path": [
+            "lastmilemanagement",
+            "api",
+            "vaccination",
+            "vaccinateMultiple"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Vaccinate Multiple Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVNUDEwMDAwMSIsImZpcnN0TmFtZSI6IkRldiIsImVtYWlsSWQiOiJkZXZAc3RhdHdpZy5jb20iLCJyb2xlIjoiYWRtaW4iLCJ3YXJlaG91c2VJZCI6IldBUjEwMDAwMSIsIm9yZ2FuaXNhdGlvbklkIjoiT1JHMTAwMDAxIiwicGhvbmVOdW1iZXIiOm51bGwsIm9yZyI6Im9yZzFNU1AiLCJ1c2VyTmFtZSI6ImRldkBzdGF0d2lnLmNvbSIsInByZWZlcnJlZExhbmd1YWdlIjoiRU4iLCJpc0N1c3RvbSI6ZmFsc2UsInR5cGUiOiJDRU5UUkFMX0FVVEhPUklUWSIsInBlcm1pc3Npb25zIjp7Im92ZXJ2aWV3Ijp7Im92ZXJ2aWV3Ijp0cnVlfSwic2VhcmNoIjp7InNlYXJjaEJ5T3JkZXJJZCI6dHJ1ZSwic2VhcmNoQnlTaGlwbWVudElkIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSI6dHJ1ZSwic2VhcmNoQnlUcmFuc2l0Tm8iOnRydWUsInNlYXJjaEJ5UHJvZHVjdE5hbWUiOnRydWUsInNlYXJjaEJ5UHJvZHVjdElkIjp0cnVlfSwiaW52ZW50b3J5Ijp7InZpZXdJbnZlbnRvcnkiOnRydWUsImFkZEludmVudG9yeSI6dHJ1ZSwiaW1wb3J0SW52ZW50b3J5Ijp0cnVlLCJpbnZlbnRvcnlBbmFseXRpY3MiOnRydWUsInZpZXdQcm9kdWN0TGlzdCI6dHJ1ZSwidmlld1Byb2R1Y3RJbmZvIjp0cnVlLCJhZGROZXdQcm9kdWN0Ijp0cnVlLCJpbnZlbnRvcnlGaWx0ZXJzIjp0cnVlLCJpbnZlbnRvcnlFeHBvcnRSZXBvcnQiOnRydWV9LCJzaGlwbWVudCI6eyJjcmVhdGVTaGlwbWVudCI6dHJ1ZSwic2hpcG1lbnRBbmFseXRpY3MiOnRydWUsInVwZGF0ZVNoaXBtZW50Ijp0cnVlLCJyZWNlaXZlU2hpcG1lbnQiOnRydWUsInJlY2VpdmVTaGlwbWVudFNjYW4iOnRydWUsImluYm91bmRTaGlwbWVudHMiOnRydWUsIm91dGJvdW5kU2hpcG1lbnRzIjp0cnVlLCJ2aWV3U2hpcG1lbnQiOnRydWUsInNoaXBtZW50RmlsdGVycyI6dHJ1ZSwic2hpcG1lbnRFeHBvcnRSZXBvcnQiOnRydWV9LCJvcmRlciI6eyJjcmVhdGVPcmRlciI6dHJ1ZSwiaW1wb3J0T3JkZXIiOnRydWUsIm9yZGVyQW5hbHl0aWNzIjp0cnVlLCJyZWNlaXZlT3JkZXIiOnRydWUsImFjY2VwdFJlamVjdE9yZGVyIjp0cnVlLCJ2aWV3SW5ib3VuZE9yZGVycyI6dHJ1ZSwidmlld091dGJvdW5kT3JkZXJzIjp0cnVlLCJvcmRlckZpbHRlcnMiOnRydWUsIm9yZGVyRXhwb3J0UmVwb3J0Ijp0cnVlLCJ2aWV3UE8iOnRydWV9LCJuZXR3b3JrIjp7Im5ldHdvcmsiOnRydWV9LCJ0cmFjayI6eyJ0cmFja0FuZFRyYWNlIjp0cnVlfSwiYWRtaW4iOnsiZ2V0VXNlclJlcXVlc3QiOnRydWUsImFjY2VwdFVzZXIiOnRydWUsImFkZFVzZXIiOnRydWUsInJlbW92ZVVzZXIiOnRydWUsImRlYWN0aXZhdGVVc2VyIjp0cnVlLCJhZGRSb2xlIjp0cnVlLCJkZWxldGVSb2xlIjp0cnVlLCJhZmZsaWF0ZVVzZXIiOnRydWUsInVuYWZmbGlhdGVVc2VyIjp0cnVlLCJ2aWV3QWZmbGlhdGlvbiI6dHJ1ZSwiYWNjZXB0QWZmaWxpYXRpb24iOnRydWUsInJlbW92ZUFmZmlsaWF0aW9uIjp0cnVlfSwiX2lkIjoiNjM4ZGEyZjkyYjJhY2U5M2I5OGQwZjdmIiwicGVybWlzc2lvbnMiOlsib3ZlcnZpZXciLCJzZWFyY2hCeU9yZGVySWQiLCJzZWFyY2hCeVNoaXBtZW50SWQiLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSIsInNlYXJjaEJ5VHJhbnNpdE5vIiwic2VhcmNoQnlQcm9kdWN0TmFtZSIsInNlYXJjaEJ5UHJvZHVjdElkIiwidmlld0ludmVudG9yeSIsImFkZEludmVudG9yeSIsImltcG9ydEludmVudG9yeSIsImludmVudG9yeUFuYWx5dGljcyIsInZpZXdQcm9kdWN0TGlzdCIsInZpZXdQcm9kdWN0SW5mbyIsImFkZE5ld1Byb2R1Y3QiLCJpbnZlbnRvcnlGaWx0ZXJzIiwiaW52ZW50b3J5RXhwb3J0UmVwb3J0IiwiY3JlYXRlU2hpcG1lbnQiLCJzaGlwbWVudEFuYWx5dGljcyIsInVwZGF0ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50U2NhbiIsImluYm91bmRTaGlwbWVudHMiLCJvdXRib3VuZFNoaXBtZW50cyIsInZpZXdTaGlwbWVudCIsInNoaXBtZW50RmlsdGVycyIsInNoaXBtZW50RXhwb3J0UmVwb3J0IiwiY3JlYXRlT3JkZXIiLCJpbXBvcnRPcmRlciIsIm9yZGVyQW5hbHl0aWNzIiwicmVjZWl2ZU9yZGVyIiwiYWNjZXB0UmVqZWN0T3JkZXIiLCJ2aWV3SW5ib3VuZE9yZGVycyIsInZpZXdPdXRib3VuZE9yZGVycyIsIm9yZGVyRmlsdGVycyIsIm9yZGVyRXhwb3J0UmVwb3J0Iiwidmlld1BPIiwibmV0d29yayIsInRyYWNrQW5kVHJhY2UiLCJnZXRVc2VyUmVxdWVzdCIsImFjY2VwdFVzZXIiLCJhZGRVc2VyIiwicmVtb3ZlVXNlciIsImRlYWN0aXZhdGVVc2VyIiwiYWRkUm9sZSIsImRlbGV0ZVJvbGUiLCJhZmZsaWF0ZVVzZXIiLCJ1bmFmZmxpYXRlVXNlciIsInZpZXdBZmZsaWF0aW9uIiwiYWNjZXB0QWZmaWxpYXRpb24iLCJyZW1vdmVBZmZpbGlhdGlvbiJdLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDIwLTA4LTMwVDE4OjU0OjI5Ljg4N1oiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTA3VDA2OjQ2OjU1LjcxNVoiLCJfX3YiOjB9LCJpYXQiOjE2NzEwOTQ0NTMsImV4cCI6MTY3MTEzNzY1M30.AFtJT7m9UzvMysimWfY8O7mthNmvMdyTHVbOCWY7vTs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"warehouseId\": \"WAR100001\",\n    \"productId\": \"PO100025\",\n    \"batchNumber\": \"B2003\",\n    \"vaccineVialId\":\"VIAL100096\",\n    \"doses\": [\n        {\n            \"id\":\"DOSE100253\",\n            \"age\": 42,\n            \"ageMonths\": 0,\n            \"gender\": \"MALE\"\n        },\n        {\n            \"age\": 0,\n            \"ageMonths\": 0,\n            \"gender\": \"FEMALE\"\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://test.vaccineledger.com/lastmilemanagement/api/vaccination/vaccinateMultiple",
+          "protocol": "https",
+          "host": ["test", "vaccineledger", "com"],
+          "path": [
+            "lastmilemanagement",
+            "api",
+            "vaccination",
+            "vaccinateMultiple"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Fetch Batch Details",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVNUDEwMDAwMSIsImZpcnN0TmFtZSI6IkRldiIsImVtYWlsSWQiOiJkZXZAc3RhdHdpZy5jb20iLCJyb2xlIjoiYWRtaW4iLCJ3YXJlaG91c2VJZCI6IldBUjEwMDAwMSIsIm9yZ2FuaXNhdGlvbklkIjoiT1JHMTAwMDAxIiwicGhvbmVOdW1iZXIiOm51bGwsIm9yZyI6Im9yZzFNU1AiLCJ1c2VyTmFtZSI6ImRldkBzdGF0d2lnLmNvbSIsInByZWZlcnJlZExhbmd1YWdlIjoiRU4iLCJpc0N1c3RvbSI6ZmFsc2UsInR5cGUiOiJDRU5UUkFMX0FVVEhPUklUWSIsInBlcm1pc3Npb25zIjp7Im92ZXJ2aWV3Ijp7Im92ZXJ2aWV3Ijp0cnVlfSwic2VhcmNoIjp7InNlYXJjaEJ5T3JkZXJJZCI6dHJ1ZSwic2VhcmNoQnlTaGlwbWVudElkIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSI6dHJ1ZSwic2VhcmNoQnlUcmFuc2l0Tm8iOnRydWUsInNlYXJjaEJ5UHJvZHVjdE5hbWUiOnRydWUsInNlYXJjaEJ5UHJvZHVjdElkIjp0cnVlfSwiaW52ZW50b3J5Ijp7InZpZXdJbnZlbnRvcnkiOnRydWUsImFkZEludmVudG9yeSI6dHJ1ZSwiaW1wb3J0SW52ZW50b3J5Ijp0cnVlLCJpbnZlbnRvcnlBbmFseXRpY3MiOnRydWUsInZpZXdQcm9kdWN0TGlzdCI6dHJ1ZSwidmlld1Byb2R1Y3RJbmZvIjp0cnVlLCJhZGROZXdQcm9kdWN0Ijp0cnVlLCJpbnZlbnRvcnlGaWx0ZXJzIjp0cnVlLCJpbnZlbnRvcnlFeHBvcnRSZXBvcnQiOnRydWV9LCJzaGlwbWVudCI6eyJjcmVhdGVTaGlwbWVudCI6dHJ1ZSwic2hpcG1lbnRBbmFseXRpY3MiOnRydWUsInVwZGF0ZVNoaXBtZW50Ijp0cnVlLCJyZWNlaXZlU2hpcG1lbnQiOnRydWUsInJlY2VpdmVTaGlwbWVudFNjYW4iOnRydWUsImluYm91bmRTaGlwbWVudHMiOnRydWUsIm91dGJvdW5kU2hpcG1lbnRzIjp0cnVlLCJ2aWV3U2hpcG1lbnQiOnRydWUsInNoaXBtZW50RmlsdGVycyI6dHJ1ZSwic2hpcG1lbnRFeHBvcnRSZXBvcnQiOnRydWV9LCJvcmRlciI6eyJjcmVhdGVPcmRlciI6dHJ1ZSwiaW1wb3J0T3JkZXIiOnRydWUsIm9yZGVyQW5hbHl0aWNzIjp0cnVlLCJyZWNlaXZlT3JkZXIiOnRydWUsImFjY2VwdFJlamVjdE9yZGVyIjp0cnVlLCJ2aWV3SW5ib3VuZE9yZGVycyI6dHJ1ZSwidmlld091dGJvdW5kT3JkZXJzIjp0cnVlLCJvcmRlckZpbHRlcnMiOnRydWUsIm9yZGVyRXhwb3J0UmVwb3J0Ijp0cnVlLCJ2aWV3UE8iOnRydWV9LCJuZXR3b3JrIjp7Im5ldHdvcmsiOnRydWV9LCJ0cmFjayI6eyJ0cmFja0FuZFRyYWNlIjp0cnVlfSwiYWRtaW4iOnsiZ2V0VXNlclJlcXVlc3QiOnRydWUsImFjY2VwdFVzZXIiOnRydWUsImFkZFVzZXIiOnRydWUsInJlbW92ZVVzZXIiOnRydWUsImRlYWN0aXZhdGVVc2VyIjp0cnVlLCJhZGRSb2xlIjp0cnVlLCJkZWxldGVSb2xlIjp0cnVlLCJhZmZsaWF0ZVVzZXIiOnRydWUsInVuYWZmbGlhdGVVc2VyIjp0cnVlLCJ2aWV3QWZmbGlhdGlvbiI6dHJ1ZSwiYWNjZXB0QWZmaWxpYXRpb24iOnRydWUsInJlbW92ZUFmZmlsaWF0aW9uIjp0cnVlfSwiX2lkIjoiNjM4ZGEyZjkyYjJhY2U5M2I5OGQwZjdmIiwicGVybWlzc2lvbnMiOlsib3ZlcnZpZXciLCJzZWFyY2hCeU9yZGVySWQiLCJzZWFyY2hCeVNoaXBtZW50SWQiLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSIsInNlYXJjaEJ5VHJhbnNpdE5vIiwic2VhcmNoQnlQcm9kdWN0TmFtZSIsInNlYXJjaEJ5UHJvZHVjdElkIiwidmlld0ludmVudG9yeSIsImFkZEludmVudG9yeSIsImltcG9ydEludmVudG9yeSIsImludmVudG9yeUFuYWx5dGljcyIsInZpZXdQcm9kdWN0TGlzdCIsInZpZXdQcm9kdWN0SW5mbyIsImFkZE5ld1Byb2R1Y3QiLCJpbnZlbnRvcnlGaWx0ZXJzIiwiaW52ZW50b3J5RXhwb3J0UmVwb3J0IiwiY3JlYXRlU2hpcG1lbnQiLCJzaGlwbWVudEFuYWx5dGljcyIsInVwZGF0ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50U2NhbiIsImluYm91bmRTaGlwbWVudHMiLCJvdXRib3VuZFNoaXBtZW50cyIsInZpZXdTaGlwbWVudCIsInNoaXBtZW50RmlsdGVycyIsInNoaXBtZW50RXhwb3J0UmVwb3J0IiwiY3JlYXRlT3JkZXIiLCJpbXBvcnRPcmRlciIsIm9yZGVyQW5hbHl0aWNzIiwicmVjZWl2ZU9yZGVyIiwiYWNjZXB0UmVqZWN0T3JkZXIiLCJ2aWV3SW5ib3VuZE9yZGVycyIsInZpZXdPdXRib3VuZE9yZGVycyIsIm9yZGVyRmlsdGVycyIsIm9yZGVyRXhwb3J0UmVwb3J0Iiwidmlld1BPIiwibmV0d29yayIsInRyYWNrQW5kVHJhY2UiLCJnZXRVc2VyUmVxdWVzdCIsImFjY2VwdFVzZXIiLCJhZGRVc2VyIiwicmVtb3ZlVXNlciIsImRlYWN0aXZhdGVVc2VyIiwiYWRkUm9sZSIsImRlbGV0ZVJvbGUiLCJhZmZsaWF0ZVVzZXIiLCJ1bmFmZmxpYXRlVXNlciIsInZpZXdBZmZsaWF0aW9uIiwiYWNjZXB0QWZmaWxpYXRpb24iLCJyZW1vdmVBZmZpbGlhdGlvbiJdLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDIwLTA4LTMwVDE4OjU0OjI5Ljg4N1oiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTA3VDA2OjQ2OjU1LjcxNVoiLCJfX3YiOjB9LCJpYXQiOjE2NzEwOTQ0NTMsImV4cCI6MTY3MTEzNzY1M30.AFtJT7m9UzvMysimWfY8O7mthNmvMdyTHVbOCWY7vTs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"batchNumber\": \"B2003\",\n    \"warehouseId\": \"WAR100001\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://test.vaccineledger.com/lastmilemanagement/api/vaccination/fetchBatchById",
+          "protocol": "https",
+          "host": ["test", "vaccineledger", "com"],
+          "path": ["lastmilemanagement", "api", "vaccination", "fetchBatchById"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Vaccinate Individual",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVNUDEwMTA5NiIsImZpcnN0TmFtZSI6IlNpZDIiLCJlbWFpbElkIjoic2lkZGhhbnQ0QGdtYWlsLmluIiwicm9sZSI6InBvd2VyVXNlciIsIndhcmVob3VzZUlkIjoiV0FSMTAxMDYzIiwib3JnYW5pc2F0aW9uSWQiOiJPUkcxMDA0MjkiLCJwaG9uZU51bWJlciI6Im51bGwiLCJvcmciOiJvcmcxTVNQIiwidXNlck5hbWUiOiJzaWRkaGFudDRAZ21haWwuaW4iLCJwcmVmZXJyZWRMYW5ndWFnZSI6IkVOIiwiaXNDdXN0b20iOmZhbHNlLCJwZXJtaXNzaW9ucyI6eyJvdmVydmlldyI6eyJvdmVydmlldyI6dHJ1ZX0sInNlYXJjaCI6eyJzZWFyY2hCeU9yZGVySWQiOnRydWUsInNlYXJjaEJ5U2hpcG1lbnRJZCI6dHJ1ZSwic2VhcmNoQnlQcm9kdWN0Q2F0ZWdvcnkiOnRydWUsInNlYXJjaEJ5VHJhbnNpdE5vIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3ROYW1lIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3RJZCI6dHJ1ZX0sImludmVudG9yeSI6eyJ2aWV3SW52ZW50b3J5Ijp0cnVlLCJhZGRJbnZlbnRvcnkiOnRydWUsImltcG9ydEludmVudG9yeSI6dHJ1ZSwiaW52ZW50b3J5QW5hbHl0aWNzIjp0cnVlLCJ2aWV3UHJvZHVjdExpc3QiOnRydWUsInZpZXdQcm9kdWN0SW5mbyI6dHJ1ZSwiYWRkTmV3UHJvZHVjdCI6dHJ1ZSwiaW52ZW50b3J5RmlsdGVycyI6dHJ1ZSwiaW52ZW50b3J5RXhwb3J0UmVwb3J0Ijp0cnVlfSwic2hpcG1lbnQiOnsiY3JlYXRlU2hpcG1lbnQiOnRydWUsInNoaXBtZW50QW5hbHl0aWNzIjp0cnVlLCJ1cGRhdGVTaGlwbWVudCI6dHJ1ZSwicmVjZWl2ZVNoaXBtZW50Ijp0cnVlLCJyZWNlaXZlU2hpcG1lbnRTY2FuIjp0cnVlLCJpbmJvdW5kU2hpcG1lbnRzIjp0cnVlLCJvdXRib3VuZFNoaXBtZW50cyI6dHJ1ZSwidmlld1NoaXBtZW50Ijp0cnVlLCJzaGlwbWVudEZpbHRlcnMiOnRydWUsInNoaXBtZW50RXhwb3J0UmVwb3J0Ijp0cnVlfSwib3JkZXIiOnsiY3JlYXRlT3JkZXIiOnRydWUsImltcG9ydE9yZGVyIjp0cnVlLCJvcmRlckFuYWx5dGljcyI6dHJ1ZSwicmVjZWl2ZU9yZGVyIjp0cnVlLCJhY2NlcHRSZWplY3RPcmRlciI6dHJ1ZSwidmlld0luYm91bmRPcmRlcnMiOnRydWUsInZpZXdPdXRib3VuZE9yZGVycyI6dHJ1ZSwib3JkZXJGaWx0ZXJzIjp0cnVlLCJvcmRlckV4cG9ydFJlcG9ydCI6dHJ1ZSwidmlld1BPIjp0cnVlfSwibmV0d29yayI6eyJuZXR3b3JrIjp0cnVlfSwidHJhY2siOnsidHJhY2tBbmRUcmFjZSI6dHJ1ZX0sImFkbWluIjp7ImdldFVzZXJSZXF1ZXN0Ijp0cnVlLCJhY2NlcHRVc2VyIjp0cnVlLCJhZGRVc2VyIjp0cnVlLCJyZW1vdmVVc2VyIjp0cnVlLCJkZWFjdGl2YXRlVXNlciI6dHJ1ZSwiYWRkUm9sZSI6dHJ1ZSwiZGVsZXRlUm9sZSI6dHJ1ZSwiYWZmbGlhdGVVc2VyIjp0cnVlLCJ1bmFmZmxpYXRlVXNlciI6dHJ1ZSwidmlld0FmZmxpYXRpb24iOnRydWUsImFjY2VwdEFmZmlsaWF0aW9uIjp0cnVlLCJyZW1vdmVBZmZpbGlhdGlvbiI6dHJ1ZX0sIl9pZCI6IjVmNGJmMjdmMGNjNmZiMTdmZWMxODUxZCIsInBlcm1pc3Npb25zIjpbIm92ZXJ2aWV3Iiwic2VhcmNoQnlPcmRlcklkIiwic2VhcmNoQnlTaGlwbWVudElkIiwic2VhcmNoQnlQcm9kdWN0Q2F0ZWdvcnkiLCJzZWFyY2hCeVRyYW5zaXRObyIsInNlYXJjaEJ5UHJvZHVjdE5hbWUiLCJzZWFyY2hCeVByb2R1Y3RJZCIsInZpZXdJbnZlbnRvcnkiLCJhZGRJbnZlbnRvcnkiLCJpbXBvcnRJbnZlbnRvcnkiLCJpbnZlbnRvcnlBbmFseXRpY3MiLCJ2aWV3UHJvZHVjdExpc3QiLCJ2aWV3UHJvZHVjdEluZm8iLCJhZGROZXdQcm9kdWN0IiwiaW52ZW50b3J5RmlsdGVycyIsImludmVudG9yeUV4cG9ydFJlcG9ydCIsImNyZWF0ZVNoaXBtZW50Iiwic2hpcG1lbnRBbmFseXRpY3MiLCJ1cGRhdGVTaGlwbWVudCIsInJlY2VpdmVTaGlwbWVudCIsInJlY2VpdmVTaGlwbWVudFNjYW4iLCJpbmJvdW5kU2hpcG1lbnRzIiwib3V0Ym91bmRTaGlwbWVudHMiLCJ2aWV3U2hpcG1lbnQiLCJzaGlwbWVudEZpbHRlcnMiLCJzaGlwbWVudEV4cG9ydFJlcG9ydCIsImNyZWF0ZU9yZGVyIiwiaW1wb3J0T3JkZXIiLCJvcmRlckFuYWx5dGljcyIsInJlY2VpdmVPcmRlciIsImFjY2VwdFJlamVjdE9yZGVyIiwidmlld0luYm91bmRPcmRlcnMiLCJ2aWV3T3V0Ym91bmRPcmRlcnMiLCJvcmRlckZpbHRlcnMiLCJvcmRlckV4cG9ydFJlcG9ydCIsInZpZXdQTyIsIm5ldHdvcmsiLCJ0cmFja0FuZFRyYWNlIiwiZ2V0VXNlclJlcXVlc3QiLCJhY2NlcHRVc2VyIiwiYWRkVXNlciIsInJlbW92ZVVzZXIiLCJkZWFjdGl2YXRlVXNlciIsImFkZFJvbGUiLCJkZWxldGVSb2xlIiwiYWZmbGlhdGVVc2VyIiwidW5hZmZsaWF0ZVVzZXIiLCJ2aWV3QWZmbGlhdGlvbiIsImFjY2VwdEFmZmlsaWF0aW9uIiwicmVtb3ZlQWZmaWxpYXRpb24iLCIiXSwicm9sZSI6InBvd2VyVXNlciIsImNyZWF0ZWRBdCI6IjIwMjAtMDgtMzBUMTg6Mzk6NTkuMzkwWiIsInVwZGF0ZWRBdCI6IjIwMjEtMDktMzBUMTE6NTA6MDguMTQ2WiIsIl9fdiI6MH0sImlhdCI6MTY2NzU0MDQzMSwiZXhwIjoxNjY3NTgzNjMxfQ.kXrAs-gdl-Er7jnLnD4KcjTcJvNG9aVeqyNQy1jUhXU",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"batchNumber\": \"BT412\",\n    \"warehouseId\": \"WAR101063\",\n    \"productId\": \"COM3\",\n    \"age\": 35,\n    \"ageMonths\": 0,\n    \"gender\": \"MALE\",\n    \"vaccineVialId\": \"VIAL1000002\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://test.vaccineledger.com/lastmilemanagement/api/vaccination/vaccinateIndividual",
+          "protocol": "https",
+          "host": ["test", "vaccineledger", "com"],
+          "path": [
+            "lastmilemanagement",
+            "api",
+            "vaccination",
+            "vaccinateIndividual"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Vaccination Details By Vial",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVNUDEwMDAwMSIsImZpcnN0TmFtZSI6IkRldiIsImVtYWlsSWQiOiJkZXZAc3RhdHdpZy5jb20iLCJyb2xlIjoiYWRtaW4iLCJ3YXJlaG91c2VJZCI6IldBUjEwMDAwMSIsIm9yZ2FuaXNhdGlvbklkIjoiT1JHMTAwMDAxIiwicGhvbmVOdW1iZXIiOm51bGwsIm9yZyI6Im9yZzFNU1AiLCJ1c2VyTmFtZSI6ImRldkBzdGF0d2lnLmNvbSIsInByZWZlcnJlZExhbmd1YWdlIjoiRU4iLCJpc0N1c3RvbSI6ZmFsc2UsInR5cGUiOiJDRU5UUkFMX0FVVEhPUklUWSIsInBlcm1pc3Npb25zIjp7Im92ZXJ2aWV3Ijp7Im92ZXJ2aWV3Ijp0cnVlfSwic2VhcmNoIjp7InNlYXJjaEJ5T3JkZXJJZCI6dHJ1ZSwic2VhcmNoQnlTaGlwbWVudElkIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSI6dHJ1ZSwic2VhcmNoQnlUcmFuc2l0Tm8iOnRydWUsInNlYXJjaEJ5UHJvZHVjdE5hbWUiOnRydWUsInNlYXJjaEJ5UHJvZHVjdElkIjp0cnVlfSwiaW52ZW50b3J5Ijp7InZpZXdJbnZlbnRvcnkiOnRydWUsImFkZEludmVudG9yeSI6dHJ1ZSwiaW1wb3J0SW52ZW50b3J5Ijp0cnVlLCJpbnZlbnRvcnlBbmFseXRpY3MiOnRydWUsInZpZXdQcm9kdWN0TGlzdCI6dHJ1ZSwidmlld1Byb2R1Y3RJbmZvIjp0cnVlLCJhZGROZXdQcm9kdWN0Ijp0cnVlLCJpbnZlbnRvcnlGaWx0ZXJzIjp0cnVlLCJpbnZlbnRvcnlFeHBvcnRSZXBvcnQiOnRydWV9LCJzaGlwbWVudCI6eyJjcmVhdGVTaGlwbWVudCI6dHJ1ZSwic2hpcG1lbnRBbmFseXRpY3MiOnRydWUsInVwZGF0ZVNoaXBtZW50Ijp0cnVlLCJyZWNlaXZlU2hpcG1lbnQiOnRydWUsInJlY2VpdmVTaGlwbWVudFNjYW4iOnRydWUsImluYm91bmRTaGlwbWVudHMiOnRydWUsIm91dGJvdW5kU2hpcG1lbnRzIjp0cnVlLCJ2aWV3U2hpcG1lbnQiOnRydWUsInNoaXBtZW50RmlsdGVycyI6dHJ1ZSwic2hpcG1lbnRFeHBvcnRSZXBvcnQiOnRydWV9LCJvcmRlciI6eyJjcmVhdGVPcmRlciI6dHJ1ZSwiaW1wb3J0T3JkZXIiOnRydWUsIm9yZGVyQW5hbHl0aWNzIjp0cnVlLCJyZWNlaXZlT3JkZXIiOnRydWUsImFjY2VwdFJlamVjdE9yZGVyIjp0cnVlLCJ2aWV3SW5ib3VuZE9yZGVycyI6dHJ1ZSwidmlld091dGJvdW5kT3JkZXJzIjp0cnVlLCJvcmRlckZpbHRlcnMiOnRydWUsIm9yZGVyRXhwb3J0UmVwb3J0Ijp0cnVlLCJ2aWV3UE8iOnRydWV9LCJuZXR3b3JrIjp7Im5ldHdvcmsiOnRydWV9LCJ0cmFjayI6eyJ0cmFja0FuZFRyYWNlIjp0cnVlfSwiYWRtaW4iOnsiZ2V0VXNlclJlcXVlc3QiOnRydWUsImFjY2VwdFVzZXIiOnRydWUsImFkZFVzZXIiOnRydWUsInJlbW92ZVVzZXIiOnRydWUsImRlYWN0aXZhdGVVc2VyIjp0cnVlLCJhZGRSb2xlIjp0cnVlLCJkZWxldGVSb2xlIjp0cnVlLCJhZmZsaWF0ZVVzZXIiOnRydWUsInVuYWZmbGlhdGVVc2VyIjp0cnVlLCJ2aWV3QWZmbGlhdGlvbiI6dHJ1ZSwiYWNjZXB0QWZmaWxpYXRpb24iOnRydWUsInJlbW92ZUFmZmlsaWF0aW9uIjp0cnVlfSwiX2lkIjoiNjM4ZGEyZjkyYjJhY2U5M2I5OGQwZjdmIiwicGVybWlzc2lvbnMiOlsib3ZlcnZpZXciLCJzZWFyY2hCeU9yZGVySWQiLCJzZWFyY2hCeVNoaXBtZW50SWQiLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSIsInNlYXJjaEJ5VHJhbnNpdE5vIiwic2VhcmNoQnlQcm9kdWN0TmFtZSIsInNlYXJjaEJ5UHJvZHVjdElkIiwidmlld0ludmVudG9yeSIsImFkZEludmVudG9yeSIsImltcG9ydEludmVudG9yeSIsImludmVudG9yeUFuYWx5dGljcyIsInZpZXdQcm9kdWN0TGlzdCIsInZpZXdQcm9kdWN0SW5mbyIsImFkZE5ld1Byb2R1Y3QiLCJpbnZlbnRvcnlGaWx0ZXJzIiwiaW52ZW50b3J5RXhwb3J0UmVwb3J0IiwiY3JlYXRlU2hpcG1lbnQiLCJzaGlwbWVudEFuYWx5dGljcyIsInVwZGF0ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50U2NhbiIsImluYm91bmRTaGlwbWVudHMiLCJvdXRib3VuZFNoaXBtZW50cyIsInZpZXdTaGlwbWVudCIsInNoaXBtZW50RmlsdGVycyIsInNoaXBtZW50RXhwb3J0UmVwb3J0IiwiY3JlYXRlT3JkZXIiLCJpbXBvcnRPcmRlciIsIm9yZGVyQW5hbHl0aWNzIiwicmVjZWl2ZU9yZGVyIiwiYWNjZXB0UmVqZWN0T3JkZXIiLCJ2aWV3SW5ib3VuZE9yZGVycyIsInZpZXdPdXRib3VuZE9yZGVycyIsIm9yZGVyRmlsdGVycyIsIm9yZGVyRXhwb3J0UmVwb3J0Iiwidmlld1BPIiwibmV0d29yayIsInRyYWNrQW5kVHJhY2UiLCJnZXRVc2VyUmVxdWVzdCIsImFjY2VwdFVzZXIiLCJhZGRVc2VyIiwicmVtb3ZlVXNlciIsImRlYWN0aXZhdGVVc2VyIiwiYWRkUm9sZSIsImRlbGV0ZVJvbGUiLCJhZmZsaWF0ZVVzZXIiLCJ1bmFmZmxpYXRlVXNlciIsInZpZXdBZmZsaWF0aW9uIiwiYWNjZXB0QWZmaWxpYXRpb24iLCJyZW1vdmVBZmZpbGlhdGlvbiJdLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDIwLTA4LTMwVDE4OjU0OjI5Ljg4N1oiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTA3VDA2OjQ2OjU1LjcxNVoiLCJfX3YiOjB9LCJpYXQiOjE2NzEwOTQ0NTMsImV4cCI6MTY3MTEzNzY1M30.AFtJT7m9UzvMysimWfY8O7mthNmvMdyTHVbOCWY7vTs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://test.vaccineledger.com/lastmilemanagement/api/vaccination/getVaccinationDetailsByVial?vaccineVialId=VIAL100076",
+          "protocol": "https",
+          "host": ["test", "vaccineledger", "com"],
+          "path": [
+            "lastmilemanagement",
+            "api",
+            "vaccination",
+            "getVaccinationDetailsByVial"
+          ],
+          "query": [
+            {
+              "key": "vaccineVialId",
+              "value": "VIAL100076"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get all vaccination details",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVNUDEwMDAwMSIsImZpcnN0TmFtZSI6IkRldiIsImVtYWlsSWQiOiJkZXZAc3RhdHdpZy5jb20iLCJyb2xlIjoiYWRtaW4iLCJ3YXJlaG91c2VJZCI6IldBUjEwMDAwMSIsIm9yZ2FuaXNhdGlvbklkIjoiT1JHMTAwMDAxIiwicGhvbmVOdW1iZXIiOm51bGwsIm9yZyI6Im9yZzFNU1AiLCJ1c2VyTmFtZSI6ImRldkBzdGF0d2lnLmNvbSIsInByZWZlcnJlZExhbmd1YWdlIjoiRU4iLCJpc0N1c3RvbSI6ZmFsc2UsInR5cGUiOiJDRU5UUkFMX0FVVEhPUklUWSIsInBlcm1pc3Npb25zIjp7Im92ZXJ2aWV3Ijp7Im92ZXJ2aWV3Ijp0cnVlfSwic2VhcmNoIjp7InNlYXJjaEJ5T3JkZXJJZCI6dHJ1ZSwic2VhcmNoQnlTaGlwbWVudElkIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSI6dHJ1ZSwic2VhcmNoQnlUcmFuc2l0Tm8iOnRydWUsInNlYXJjaEJ5UHJvZHVjdE5hbWUiOnRydWUsInNlYXJjaEJ5UHJvZHVjdElkIjp0cnVlfSwiaW52ZW50b3J5Ijp7InZpZXdJbnZlbnRvcnkiOnRydWUsImFkZEludmVudG9yeSI6dHJ1ZSwiaW1wb3J0SW52ZW50b3J5Ijp0cnVlLCJpbnZlbnRvcnlBbmFseXRpY3MiOnRydWUsInZpZXdQcm9kdWN0TGlzdCI6dHJ1ZSwidmlld1Byb2R1Y3RJbmZvIjp0cnVlLCJhZGROZXdQcm9kdWN0Ijp0cnVlLCJpbnZlbnRvcnlGaWx0ZXJzIjp0cnVlLCJpbnZlbnRvcnlFeHBvcnRSZXBvcnQiOnRydWV9LCJzaGlwbWVudCI6eyJjcmVhdGVTaGlwbWVudCI6dHJ1ZSwic2hpcG1lbnRBbmFseXRpY3MiOnRydWUsInVwZGF0ZVNoaXBtZW50Ijp0cnVlLCJyZWNlaXZlU2hpcG1lbnQiOnRydWUsInJlY2VpdmVTaGlwbWVudFNjYW4iOnRydWUsImluYm91bmRTaGlwbWVudHMiOnRydWUsIm91dGJvdW5kU2hpcG1lbnRzIjp0cnVlLCJ2aWV3U2hpcG1lbnQiOnRydWUsInNoaXBtZW50RmlsdGVycyI6dHJ1ZSwic2hpcG1lbnRFeHBvcnRSZXBvcnQiOnRydWV9LCJvcmRlciI6eyJjcmVhdGVPcmRlciI6dHJ1ZSwiaW1wb3J0T3JkZXIiOnRydWUsIm9yZGVyQW5hbHl0aWNzIjp0cnVlLCJyZWNlaXZlT3JkZXIiOnRydWUsImFjY2VwdFJlamVjdE9yZGVyIjp0cnVlLCJ2aWV3SW5ib3VuZE9yZGVycyI6dHJ1ZSwidmlld091dGJvdW5kT3JkZXJzIjp0cnVlLCJvcmRlckZpbHRlcnMiOnRydWUsIm9yZGVyRXhwb3J0UmVwb3J0Ijp0cnVlLCJ2aWV3UE8iOnRydWV9LCJuZXR3b3JrIjp7Im5ldHdvcmsiOnRydWV9LCJ0cmFjayI6eyJ0cmFja0FuZFRyYWNlIjp0cnVlfSwiYWRtaW4iOnsiZ2V0VXNlclJlcXVlc3QiOnRydWUsImFjY2VwdFVzZXIiOnRydWUsImFkZFVzZXIiOnRydWUsInJlbW92ZVVzZXIiOnRydWUsImRlYWN0aXZhdGVVc2VyIjp0cnVlLCJhZGRSb2xlIjp0cnVlLCJkZWxldGVSb2xlIjp0cnVlLCJhZmZsaWF0ZVVzZXIiOnRydWUsInVuYWZmbGlhdGVVc2VyIjp0cnVlLCJ2aWV3QWZmbGlhdGlvbiI6dHJ1ZSwiYWNjZXB0QWZmaWxpYXRpb24iOnRydWUsInJlbW92ZUFmZmlsaWF0aW9uIjp0cnVlfSwiX2lkIjoiNjM4ZGEyZjkyYjJhY2U5M2I5OGQwZjdmIiwicGVybWlzc2lvbnMiOlsib3ZlcnZpZXciLCJzZWFyY2hCeU9yZGVySWQiLCJzZWFyY2hCeVNoaXBtZW50SWQiLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSIsInNlYXJjaEJ5VHJhbnNpdE5vIiwic2VhcmNoQnlQcm9kdWN0TmFtZSIsInNlYXJjaEJ5UHJvZHVjdElkIiwidmlld0ludmVudG9yeSIsImFkZEludmVudG9yeSIsImltcG9ydEludmVudG9yeSIsImludmVudG9yeUFuYWx5dGljcyIsInZpZXdQcm9kdWN0TGlzdCIsInZpZXdQcm9kdWN0SW5mbyIsImFkZE5ld1Byb2R1Y3QiLCJpbnZlbnRvcnlGaWx0ZXJzIiwiaW52ZW50b3J5RXhwb3J0UmVwb3J0IiwiY3JlYXRlU2hpcG1lbnQiLCJzaGlwbWVudEFuYWx5dGljcyIsInVwZGF0ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50U2NhbiIsImluYm91bmRTaGlwbWVudHMiLCJvdXRib3VuZFNoaXBtZW50cyIsInZpZXdTaGlwbWVudCIsInNoaXBtZW50RmlsdGVycyIsInNoaXBtZW50RXhwb3J0UmVwb3J0IiwiY3JlYXRlT3JkZXIiLCJpbXBvcnRPcmRlciIsIm9yZGVyQW5hbHl0aWNzIiwicmVjZWl2ZU9yZGVyIiwiYWNjZXB0UmVqZWN0T3JkZXIiLCJ2aWV3SW5ib3VuZE9yZGVycyIsInZpZXdPdXRib3VuZE9yZGVycyIsIm9yZGVyRmlsdGVycyIsIm9yZGVyRXhwb3J0UmVwb3J0Iiwidmlld1BPIiwibmV0d29yayIsInRyYWNrQW5kVHJhY2UiLCJnZXRVc2VyUmVxdWVzdCIsImFjY2VwdFVzZXIiLCJhZGRVc2VyIiwicmVtb3ZlVXNlciIsImRlYWN0aXZhdGVVc2VyIiwiYWRkUm9sZSIsImRlbGV0ZVJvbGUiLCJhZmZsaWF0ZVVzZXIiLCJ1bmFmZmxpYXRlVXNlciIsInZpZXdBZmZsaWF0aW9uIiwiYWNjZXB0QWZmaWxpYXRpb24iLCJyZW1vdmVBZmZpbGlhdGlvbiJdLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDIwLTA4LTMwVDE4OjU0OjI5Ljg4N1oiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTA3VDA2OjQ2OjU1LjcxNVoiLCJfX3YiOjB9LCJpYXQiOjE2NzEwOTQ0NTMsImV4cCI6MTY3MTEzNzY1M30.AFtJT7m9UzvMysimWfY8O7mthNmvMdyTHVbOCWY7vTs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"gender\": \"MALE\",\n    \"minAge\": 20,\n    \"maxAge\": 24\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://test.vaccineledger.com/lastmilemanagement/api/vaccination/getAllVaccinationDetails",
+          "protocol": "https",
+          "host": ["test", "vaccineledger", "com"],
+          "path": [
+            "lastmilemanagement",
+            "api",
+            "vaccination",
+            "getAllVaccinationDetails"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get analytics",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVNUDEwMDAwMSIsImZpcnN0TmFtZSI6IkRldiIsImVtYWlsSWQiOiJkZXZAc3RhdHdpZy5jb20iLCJyb2xlIjoiYWRtaW4iLCJ3YXJlaG91c2VJZCI6IldBUjEwMDAwMSIsIm9yZ2FuaXNhdGlvbklkIjoiT1JHMTAwMDAxIiwicGhvbmVOdW1iZXIiOm51bGwsIm9yZyI6Im9yZzFNU1AiLCJ1c2VyTmFtZSI6ImRldkBzdGF0d2lnLmNvbSIsInByZWZlcnJlZExhbmd1YWdlIjoiRU4iLCJpc0N1c3RvbSI6ZmFsc2UsInR5cGUiOiJDRU5UUkFMX0FVVEhPUklUWSIsInBlcm1pc3Npb25zIjp7Im92ZXJ2aWV3Ijp7Im92ZXJ2aWV3Ijp0cnVlfSwic2VhcmNoIjp7InNlYXJjaEJ5T3JkZXJJZCI6dHJ1ZSwic2VhcmNoQnlTaGlwbWVudElkIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSI6dHJ1ZSwic2VhcmNoQnlUcmFuc2l0Tm8iOnRydWUsInNlYXJjaEJ5UHJvZHVjdE5hbWUiOnRydWUsInNlYXJjaEJ5UHJvZHVjdElkIjp0cnVlfSwiaW52ZW50b3J5Ijp7InZpZXdJbnZlbnRvcnkiOnRydWUsImFkZEludmVudG9yeSI6dHJ1ZSwiaW1wb3J0SW52ZW50b3J5Ijp0cnVlLCJpbnZlbnRvcnlBbmFseXRpY3MiOnRydWUsInZpZXdQcm9kdWN0TGlzdCI6dHJ1ZSwidmlld1Byb2R1Y3RJbmZvIjp0cnVlLCJhZGROZXdQcm9kdWN0Ijp0cnVlLCJpbnZlbnRvcnlGaWx0ZXJzIjp0cnVlLCJpbnZlbnRvcnlFeHBvcnRSZXBvcnQiOnRydWV9LCJzaGlwbWVudCI6eyJjcmVhdGVTaGlwbWVudCI6dHJ1ZSwic2hpcG1lbnRBbmFseXRpY3MiOnRydWUsInVwZGF0ZVNoaXBtZW50Ijp0cnVlLCJyZWNlaXZlU2hpcG1lbnQiOnRydWUsInJlY2VpdmVTaGlwbWVudFNjYW4iOnRydWUsImluYm91bmRTaGlwbWVudHMiOnRydWUsIm91dGJvdW5kU2hpcG1lbnRzIjp0cnVlLCJ2aWV3U2hpcG1lbnQiOnRydWUsInNoaXBtZW50RmlsdGVycyI6dHJ1ZSwic2hpcG1lbnRFeHBvcnRSZXBvcnQiOnRydWV9LCJvcmRlciI6eyJjcmVhdGVPcmRlciI6dHJ1ZSwiaW1wb3J0T3JkZXIiOnRydWUsIm9yZGVyQW5hbHl0aWNzIjp0cnVlLCJyZWNlaXZlT3JkZXIiOnRydWUsImFjY2VwdFJlamVjdE9yZGVyIjp0cnVlLCJ2aWV3SW5ib3VuZE9yZGVycyI6dHJ1ZSwidmlld091dGJvdW5kT3JkZXJzIjp0cnVlLCJvcmRlckZpbHRlcnMiOnRydWUsIm9yZGVyRXhwb3J0UmVwb3J0Ijp0cnVlLCJ2aWV3UE8iOnRydWV9LCJuZXR3b3JrIjp7Im5ldHdvcmsiOnRydWV9LCJ0cmFjayI6eyJ0cmFja0FuZFRyYWNlIjp0cnVlfSwiYWRtaW4iOnsiZ2V0VXNlclJlcXVlc3QiOnRydWUsImFjY2VwdFVzZXIiOnRydWUsImFkZFVzZXIiOnRydWUsInJlbW92ZVVzZXIiOnRydWUsImRlYWN0aXZhdGVVc2VyIjp0cnVlLCJhZGRSb2xlIjp0cnVlLCJkZWxldGVSb2xlIjp0cnVlLCJhZmZsaWF0ZVVzZXIiOnRydWUsInVuYWZmbGlhdGVVc2VyIjp0cnVlLCJ2aWV3QWZmbGlhdGlvbiI6dHJ1ZSwiYWNjZXB0QWZmaWxpYXRpb24iOnRydWUsInJlbW92ZUFmZmlsaWF0aW9uIjp0cnVlfSwiX2lkIjoiNjM4ZGEyZjkyYjJhY2U5M2I5OGQwZjdmIiwicGVybWlzc2lvbnMiOlsib3ZlcnZpZXciLCJzZWFyY2hCeU9yZGVySWQiLCJzZWFyY2hCeVNoaXBtZW50SWQiLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSIsInNlYXJjaEJ5VHJhbnNpdE5vIiwic2VhcmNoQnlQcm9kdWN0TmFtZSIsInNlYXJjaEJ5UHJvZHVjdElkIiwidmlld0ludmVudG9yeSIsImFkZEludmVudG9yeSIsImltcG9ydEludmVudG9yeSIsImludmVudG9yeUFuYWx5dGljcyIsInZpZXdQcm9kdWN0TGlzdCIsInZpZXdQcm9kdWN0SW5mbyIsImFkZE5ld1Byb2R1Y3QiLCJpbnZlbnRvcnlGaWx0ZXJzIiwiaW52ZW50b3J5RXhwb3J0UmVwb3J0IiwiY3JlYXRlU2hpcG1lbnQiLCJzaGlwbWVudEFuYWx5dGljcyIsInVwZGF0ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50U2NhbiIsImluYm91bmRTaGlwbWVudHMiLCJvdXRib3VuZFNoaXBtZW50cyIsInZpZXdTaGlwbWVudCIsInNoaXBtZW50RmlsdGVycyIsInNoaXBtZW50RXhwb3J0UmVwb3J0IiwiY3JlYXRlT3JkZXIiLCJpbXBvcnRPcmRlciIsIm9yZGVyQW5hbHl0aWNzIiwicmVjZWl2ZU9yZGVyIiwiYWNjZXB0UmVqZWN0T3JkZXIiLCJ2aWV3SW5ib3VuZE9yZGVycyIsInZpZXdPdXRib3VuZE9yZGVycyIsIm9yZGVyRmlsdGVycyIsIm9yZGVyRXhwb3J0UmVwb3J0Iiwidmlld1BPIiwibmV0d29yayIsInRyYWNrQW5kVHJhY2UiLCJnZXRVc2VyUmVxdWVzdCIsImFjY2VwdFVzZXIiLCJhZGRVc2VyIiwicmVtb3ZlVXNlciIsImRlYWN0aXZhdGVVc2VyIiwiYWRkUm9sZSIsImRlbGV0ZVJvbGUiLCJhZmZsaWF0ZVVzZXIiLCJ1bmFmZmxpYXRlVXNlciIsInZpZXdBZmZsaWF0aW9uIiwiYWNjZXB0QWZmaWxpYXRpb24iLCJyZW1vdmVBZmZpbGlhdGlvbiJdLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDIwLTA4LTMwVDE4OjU0OjI5Ljg4N1oiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTA3VDA2OjQ2OjU1LjcxNVoiLCJfX3YiOjB9LCJpYXQiOjE2NzEwOTQ0NTMsImV4cCI6MTY3MTEzNzY1M30.AFtJT7m9UzvMysimWfY8O7mthNmvMdyTHVbOCWY7vTs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://test.vaccineledger.com/lastmilemanagement/api/vaccination/getAnalytics",
+          "protocol": "https",
+          "host": ["test", "vaccineledger", "com"],
+          "path": ["lastmilemanagement", "api", "vaccination", "getAnalytics"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Vaccinate Multiple",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVNUDEwMDAwMSIsImZpcnN0TmFtZSI6IkRldiIsImVtYWlsSWQiOiJkZXZAc3RhdHdpZy5jb20iLCJyb2xlIjoiYWRtaW4iLCJ3YXJlaG91c2VJZCI6IldBUjEwMDAwMSIsIm9yZ2FuaXNhdGlvbklkIjoiT1JHMTAwMDAxIiwicGhvbmVOdW1iZXIiOm51bGwsIm9yZyI6Im9yZzFNU1AiLCJ1c2VyTmFtZSI6ImRldkBzdGF0d2lnLmNvbSIsInByZWZlcnJlZExhbmd1YWdlIjoiRU4iLCJpc0N1c3RvbSI6ZmFsc2UsInR5cGUiOiJDRU5UUkFMX0FVVEhPUklUWSIsInBlcm1pc3Npb25zIjp7Im92ZXJ2aWV3Ijp7Im92ZXJ2aWV3Ijp0cnVlfSwic2VhcmNoIjp7InNlYXJjaEJ5T3JkZXJJZCI6dHJ1ZSwic2VhcmNoQnlTaGlwbWVudElkIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSI6dHJ1ZSwic2VhcmNoQnlUcmFuc2l0Tm8iOnRydWUsInNlYXJjaEJ5UHJvZHVjdE5hbWUiOnRydWUsInNlYXJjaEJ5UHJvZHVjdElkIjp0cnVlfSwiaW52ZW50b3J5Ijp7InZpZXdJbnZlbnRvcnkiOnRydWUsImFkZEludmVudG9yeSI6dHJ1ZSwiaW1wb3J0SW52ZW50b3J5Ijp0cnVlLCJpbnZlbnRvcnlBbmFseXRpY3MiOnRydWUsInZpZXdQcm9kdWN0TGlzdCI6dHJ1ZSwidmlld1Byb2R1Y3RJbmZvIjp0cnVlLCJhZGROZXdQcm9kdWN0Ijp0cnVlLCJpbnZlbnRvcnlGaWx0ZXJzIjp0cnVlLCJpbnZlbnRvcnlFeHBvcnRSZXBvcnQiOnRydWV9LCJzaGlwbWVudCI6eyJjcmVhdGVTaGlwbWVudCI6dHJ1ZSwic2hpcG1lbnRBbmFseXRpY3MiOnRydWUsInVwZGF0ZVNoaXBtZW50Ijp0cnVlLCJyZWNlaXZlU2hpcG1lbnQiOnRydWUsInJlY2VpdmVTaGlwbWVudFNjYW4iOnRydWUsImluYm91bmRTaGlwbWVudHMiOnRydWUsIm91dGJvdW5kU2hpcG1lbnRzIjp0cnVlLCJ2aWV3U2hpcG1lbnQiOnRydWUsInNoaXBtZW50RmlsdGVycyI6dHJ1ZSwic2hpcG1lbnRFeHBvcnRSZXBvcnQiOnRydWV9LCJvcmRlciI6eyJjcmVhdGVPcmRlciI6dHJ1ZSwiaW1wb3J0T3JkZXIiOnRydWUsIm9yZGVyQW5hbHl0aWNzIjp0cnVlLCJyZWNlaXZlT3JkZXIiOnRydWUsImFjY2VwdFJlamVjdE9yZGVyIjp0cnVlLCJ2aWV3SW5ib3VuZE9yZGVycyI6dHJ1ZSwidmlld091dGJvdW5kT3JkZXJzIjp0cnVlLCJvcmRlckZpbHRlcnMiOnRydWUsIm9yZGVyRXhwb3J0UmVwb3J0Ijp0cnVlLCJ2aWV3UE8iOnRydWV9LCJuZXR3b3JrIjp7Im5ldHdvcmsiOnRydWV9LCJ0cmFjayI6eyJ0cmFja0FuZFRyYWNlIjp0cnVlfSwiYWRtaW4iOnsiZ2V0VXNlclJlcXVlc3QiOnRydWUsImFjY2VwdFVzZXIiOnRydWUsImFkZFVzZXIiOnRydWUsInJlbW92ZVVzZXIiOnRydWUsImRlYWN0aXZhdGVVc2VyIjp0cnVlLCJhZGRSb2xlIjp0cnVlLCJkZWxldGVSb2xlIjp0cnVlLCJhZmZsaWF0ZVVzZXIiOnRydWUsInVuYWZmbGlhdGVVc2VyIjp0cnVlLCJ2aWV3QWZmbGlhdGlvbiI6dHJ1ZSwiYWNjZXB0QWZmaWxpYXRpb24iOnRydWUsInJlbW92ZUFmZmlsaWF0aW9uIjp0cnVlfSwiX2lkIjoiNjM4ZGEyZjkyYjJhY2U5M2I5OGQwZjdmIiwicGVybWlzc2lvbnMiOlsib3ZlcnZpZXciLCJzZWFyY2hCeU9yZGVySWQiLCJzZWFyY2hCeVNoaXBtZW50SWQiLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSIsInNlYXJjaEJ5VHJhbnNpdE5vIiwic2VhcmNoQnlQcm9kdWN0TmFtZSIsInNlYXJjaEJ5UHJvZHVjdElkIiwidmlld0ludmVudG9yeSIsImFkZEludmVudG9yeSIsImltcG9ydEludmVudG9yeSIsImludmVudG9yeUFuYWx5dGljcyIsInZpZXdQcm9kdWN0TGlzdCIsInZpZXdQcm9kdWN0SW5mbyIsImFkZE5ld1Byb2R1Y3QiLCJpbnZlbnRvcnlGaWx0ZXJzIiwiaW52ZW50b3J5RXhwb3J0UmVwb3J0IiwiY3JlYXRlU2hpcG1lbnQiLCJzaGlwbWVudEFuYWx5dGljcyIsInVwZGF0ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50U2NhbiIsImluYm91bmRTaGlwbWVudHMiLCJvdXRib3VuZFNoaXBtZW50cyIsInZpZXdTaGlwbWVudCIsInNoaXBtZW50RmlsdGVycyIsInNoaXBtZW50RXhwb3J0UmVwb3J0IiwiY3JlYXRlT3JkZXIiLCJpbXBvcnRPcmRlciIsIm9yZGVyQW5hbHl0aWNzIiwicmVjZWl2ZU9yZGVyIiwiYWNjZXB0UmVqZWN0T3JkZXIiLCJ2aWV3SW5ib3VuZE9yZGVycyIsInZpZXdPdXRib3VuZE9yZGVycyIsIm9yZGVyRmlsdGVycyIsIm9yZGVyRXhwb3J0UmVwb3J0Iiwidmlld1BPIiwibmV0d29yayIsInRyYWNrQW5kVHJhY2UiLCJnZXRVc2VyUmVxdWVzdCIsImFjY2VwdFVzZXIiLCJhZGRVc2VyIiwicmVtb3ZlVXNlciIsImRlYWN0aXZhdGVVc2VyIiwiYWRkUm9sZSIsImRlbGV0ZVJvbGUiLCJhZmZsaWF0ZVVzZXIiLCJ1bmFmZmxpYXRlVXNlciIsInZpZXdBZmZsaWF0aW9uIiwiYWNjZXB0QWZmaWxpYXRpb24iLCJyZW1vdmVBZmZpbGlhdGlvbiJdLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDIwLTA4LTMwVDE4OjU0OjI5Ljg4N1oiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTA3VDA2OjQ2OjU1LjcxNVoiLCJfX3YiOjB9LCJpYXQiOjE2NzEwOTQ0NTMsImV4cCI6MTY3MTEzNzY1M30.AFtJT7m9UzvMysimWfY8O7mthNmvMdyTHVbOCWY7vTs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"warehouseId\": \"WAR100001\",\n    \"productId\": \"PO100025\",\n    \"batchNumber\": \"B2003\",\n    \"doses\": [\n        {\n            \"age\": 44,\n            \"ageMonths\": 0,\n            \"gender\": \"MALE\"\n        },\n        {\n            \"age\": 0,\n            \"ageMonths\": 6,\n            \"gender\": \"OTHERS\"\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://test.vaccineledger.com/lastmilemanagement/api/vaccination/vaccinateMultiple",
+          "protocol": "https",
+          "host": ["test", "vaccineledger", "com"],
+          "path": [
+            "lastmilemanagement",
+            "api",
+            "vaccination",
+            "vaccinateMultiple"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Sync Offline Vaccinations",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVNUDEwMDAwMSIsImZpcnN0TmFtZSI6IkRldiIsImVtYWlsSWQiOiJkZXZAc3RhdHdpZy5jb20iLCJyb2xlIjoiYWRtaW4iLCJ3YXJlaG91c2VJZCI6IldBUjEwMDAwMSIsIm9yZ2FuaXNhdGlvbklkIjoiT1JHMTAwMDAxIiwicGhvbmVOdW1iZXIiOm51bGwsIm9yZyI6Im9yZzFNU1AiLCJ1c2VyTmFtZSI6ImRldkBzdGF0d2lnLmNvbSIsInByZWZlcnJlZExhbmd1YWdlIjoiRU4iLCJpc0N1c3RvbSI6ZmFsc2UsInR5cGUiOiJDRU5UUkFMX0FVVEhPUklUWSIsInBlcm1pc3Npb25zIjp7Im92ZXJ2aWV3Ijp7Im92ZXJ2aWV3Ijp0cnVlfSwic2VhcmNoIjp7InNlYXJjaEJ5T3JkZXJJZCI6dHJ1ZSwic2VhcmNoQnlTaGlwbWVudElkIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSI6dHJ1ZSwic2VhcmNoQnlUcmFuc2l0Tm8iOnRydWUsInNlYXJjaEJ5UHJvZHVjdE5hbWUiOnRydWUsInNlYXJjaEJ5UHJvZHVjdElkIjp0cnVlfSwiaW52ZW50b3J5Ijp7InZpZXdJbnZlbnRvcnkiOnRydWUsImFkZEludmVudG9yeSI6dHJ1ZSwiaW1wb3J0SW52ZW50b3J5Ijp0cnVlLCJpbnZlbnRvcnlBbmFseXRpY3MiOnRydWUsInZpZXdQcm9kdWN0TGlzdCI6dHJ1ZSwidmlld1Byb2R1Y3RJbmZvIjp0cnVlLCJhZGROZXdQcm9kdWN0Ijp0cnVlLCJpbnZlbnRvcnlGaWx0ZXJzIjp0cnVlLCJpbnZlbnRvcnlFeHBvcnRSZXBvcnQiOnRydWV9LCJzaGlwbWVudCI6eyJjcmVhdGVTaGlwbWVudCI6dHJ1ZSwic2hpcG1lbnRBbmFseXRpY3MiOnRydWUsInVwZGF0ZVNoaXBtZW50Ijp0cnVlLCJyZWNlaXZlU2hpcG1lbnQiOnRydWUsInJlY2VpdmVTaGlwbWVudFNjYW4iOnRydWUsImluYm91bmRTaGlwbWVudHMiOnRydWUsIm91dGJvdW5kU2hpcG1lbnRzIjp0cnVlLCJ2aWV3U2hpcG1lbnQiOnRydWUsInNoaXBtZW50RmlsdGVycyI6dHJ1ZSwic2hpcG1lbnRFeHBvcnRSZXBvcnQiOnRydWV9LCJvcmRlciI6eyJjcmVhdGVPcmRlciI6dHJ1ZSwiaW1wb3J0T3JkZXIiOnRydWUsIm9yZGVyQW5hbHl0aWNzIjp0cnVlLCJyZWNlaXZlT3JkZXIiOnRydWUsImFjY2VwdFJlamVjdE9yZGVyIjp0cnVlLCJ2aWV3SW5ib3VuZE9yZGVycyI6dHJ1ZSwidmlld091dGJvdW5kT3JkZXJzIjp0cnVlLCJvcmRlckZpbHRlcnMiOnRydWUsIm9yZGVyRXhwb3J0UmVwb3J0Ijp0cnVlLCJ2aWV3UE8iOnRydWV9LCJuZXR3b3JrIjp7Im5ldHdvcmsiOnRydWV9LCJ0cmFjayI6eyJ0cmFja0FuZFRyYWNlIjp0cnVlfSwiYWRtaW4iOnsiZ2V0VXNlclJlcXVlc3QiOnRydWUsImFjY2VwdFVzZXIiOnRydWUsImFkZFVzZXIiOnRydWUsInJlbW92ZVVzZXIiOnRydWUsImRlYWN0aXZhdGVVc2VyIjp0cnVlLCJhZGRSb2xlIjp0cnVlLCJkZWxldGVSb2xlIjp0cnVlLCJhZmZsaWF0ZVVzZXIiOnRydWUsInVuYWZmbGlhdGVVc2VyIjp0cnVlLCJ2aWV3QWZmbGlhdGlvbiI6dHJ1ZSwiYWNjZXB0QWZmaWxpYXRpb24iOnRydWUsInJlbW92ZUFmZmlsaWF0aW9uIjp0cnVlfSwiX2lkIjoiNjM4ZGEyZjkyYjJhY2U5M2I5OGQwZjdmIiwicGVybWlzc2lvbnMiOlsib3ZlcnZpZXciLCJzZWFyY2hCeU9yZGVySWQiLCJzZWFyY2hCeVNoaXBtZW50SWQiLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSIsInNlYXJjaEJ5VHJhbnNpdE5vIiwic2VhcmNoQnlQcm9kdWN0TmFtZSIsInNlYXJjaEJ5UHJvZHVjdElkIiwidmlld0ludmVudG9yeSIsImFkZEludmVudG9yeSIsImltcG9ydEludmVudG9yeSIsImludmVudG9yeUFuYWx5dGljcyIsInZpZXdQcm9kdWN0TGlzdCIsInZpZXdQcm9kdWN0SW5mbyIsImFkZE5ld1Byb2R1Y3QiLCJpbnZlbnRvcnlGaWx0ZXJzIiwiaW52ZW50b3J5RXhwb3J0UmVwb3J0IiwiY3JlYXRlU2hpcG1lbnQiLCJzaGlwbWVudEFuYWx5dGljcyIsInVwZGF0ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50U2NhbiIsImluYm91bmRTaGlwbWVudHMiLCJvdXRib3VuZFNoaXBtZW50cyIsInZpZXdTaGlwbWVudCIsInNoaXBtZW50RmlsdGVycyIsInNoaXBtZW50RXhwb3J0UmVwb3J0IiwiY3JlYXRlT3JkZXIiLCJpbXBvcnRPcmRlciIsIm9yZGVyQW5hbHl0aWNzIiwicmVjZWl2ZU9yZGVyIiwiYWNjZXB0UmVqZWN0T3JkZXIiLCJ2aWV3SW5ib3VuZE9yZGVycyIsInZpZXdPdXRib3VuZE9yZGVycyIsIm9yZGVyRmlsdGVycyIsIm9yZGVyRXhwb3J0UmVwb3J0Iiwidmlld1BPIiwibmV0d29yayIsInRyYWNrQW5kVHJhY2UiLCJnZXRVc2VyUmVxdWVzdCIsImFjY2VwdFVzZXIiLCJhZGRVc2VyIiwicmVtb3ZlVXNlciIsImRlYWN0aXZhdGVVc2VyIiwiYWRkUm9sZSIsImRlbGV0ZVJvbGUiLCJhZmZsaWF0ZVVzZXIiLCJ1bmFmZmxpYXRlVXNlciIsInZpZXdBZmZsaWF0aW9uIiwiYWNjZXB0QWZmaWxpYXRpb24iLCJyZW1vdmVBZmZpbGlhdGlvbiJdLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDIwLTA4LTMwVDE4OjU0OjI5Ljg4N1oiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTA3VDA2OjQ2OjU1LjcxNVoiLCJfX3YiOjB9LCJpYXQiOjE2NzEwOTQ0NTMsImV4cCI6MTY3MTEzNzY1M30.AFtJT7m9UzvMysimWfY8O7mthNmvMdyTHVbOCWY7vTs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "[\n    {\n        \"vaccineVialId\": \"1685846614469\",\n        \"isComplete\": true,\n        \"doses\": [\n            {\n                \"warehouseId\": \"WAR100001\",\n                \"productId\": \"prod-405\",\n                \"batchNumber\": \"B10001\",\n                \"gender\": \"MALE\",\n                \"age\": 4,\n                \"ageMonths\": 0,\n                \"vaccineVialId\": \"1685846614468\",\n                \"doseId\": null\n            },\n            {\n                \"warehouseId\": \"WAR100001\",\n                \"productId\": \"prod-405\",\n                \"batchNumber\": \"B10001\",\n                \"gender\": \"MALE\",\n                \"age\": 34,\n                \"ageMonths\": 0,\n                \"vaccineVialId\": \"1685846620725\",\n                \"doseId\": null\n            },\n            {\n                \"warehouseId\": \"WAR100001\",\n                \"productId\": \"prod-405\",\n                \"batchNumber\": \"B10001\",\n                \"gender\": \"FEMALE\",\n                \"age\": 45,\n                \"ageMonths\": 0,\n                \"vaccineVialId\": \"1685846630721\",\n                \"doseId\": null\n            },\n            {\n                \"warehouseId\": \"WAR100001\",\n                \"productId\": \"prod-eey3kxkz46gypm\",\n                \"batchNumber\": \"B56\",\n                \"gender\": \"OTHERS\",\n                \"age\": 45,\n                \"ageMonths\": 0,\n                \"vaccineVialId\": \"1685846696510\",\n                \"doseId\": null\n            }\n        ]\n    },\n    {\n        \"vaccineVialId\": \"1685846683390\",\n        \"isComplete\": null,\n        \"doses\": [\n            {\n                \"warehouseId\": \"WAR100001\",\n                \"productId\": \"prod-eey3kxkz46gypm\",\n                \"batchNumber\": \"B56\",\n                \"gender\": \"FEMALE\",\n                \"age\": 45,\n                \"ageMonths\": 0,\n                \"vaccineVialId\": \"1685846683388\",\n                \"doseId\": null\n            }\n        ]\n    },\n    {\n        \"vaccineVialId\": \"1685846783300\",\n        \"isComplete\": null,\n        \"doses\": [\n            {\n                \"warehouseId\": \"WAR100001\",\n                \"productId\": \"prod-eey3kxkz46gypm\",\n                \"batchNumber\": \"B56\",\n                \"gender\": \"FEMALE\",\n                \"age\": 4,\n                \"ageMonths\": 0,\n                \"vaccineVialId\": \"1685846783298\",\n                \"doseId\": null\n            }\n        ]\n    }\n]",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://test.vaccineledger.com/lastmilemanagement/api/vaccination/syncOfflineVaccinations",
+          "protocol": "https",
+          "host": ["test", "vaccineledger", "com"],
+          "path": [
+            "lastmilemanagement",
+            "api",
+            "vaccination",
+            "syncOfflineVaccinations"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Vaccinate Multiple Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVNUDEwMDAwMSIsImZpcnN0TmFtZSI6IkRldiIsImVtYWlsSWQiOiJkZXZAc3RhdHdpZy5jb20iLCJyb2xlIjoiYWRtaW4iLCJ3YXJlaG91c2VJZCI6IldBUjEwMDAwMSIsIm9yZ2FuaXNhdGlvbklkIjoiT1JHMTAwMDAxIiwicGhvbmVOdW1iZXIiOm51bGwsIm9yZyI6Im9yZzFNU1AiLCJ1c2VyTmFtZSI6ImRldkBzdGF0d2lnLmNvbSIsInByZWZlcnJlZExhbmd1YWdlIjoiRU4iLCJpc0N1c3RvbSI6ZmFsc2UsInR5cGUiOiJDRU5UUkFMX0FVVEhPUklUWSIsInBlcm1pc3Npb25zIjp7Im92ZXJ2aWV3Ijp7Im92ZXJ2aWV3Ijp0cnVlfSwic2VhcmNoIjp7InNlYXJjaEJ5T3JkZXJJZCI6dHJ1ZSwic2VhcmNoQnlTaGlwbWVudElkIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSI6dHJ1ZSwic2VhcmNoQnlUcmFuc2l0Tm8iOnRydWUsInNlYXJjaEJ5UHJvZHVjdE5hbWUiOnRydWUsInNlYXJjaEJ5UHJvZHVjdElkIjp0cnVlfSwiaW52ZW50b3J5Ijp7InZpZXdJbnZlbnRvcnkiOnRydWUsImFkZEludmVudG9yeSI6dHJ1ZSwiaW1wb3J0SW52ZW50b3J5Ijp0cnVlLCJpbnZlbnRvcnlBbmFseXRpY3MiOnRydWUsInZpZXdQcm9kdWN0TGlzdCI6dHJ1ZSwidmlld1Byb2R1Y3RJbmZvIjp0cnVlLCJhZGROZXdQcm9kdWN0Ijp0cnVlLCJpbnZlbnRvcnlGaWx0ZXJzIjp0cnVlLCJpbnZlbnRvcnlFeHBvcnRSZXBvcnQiOnRydWV9LCJzaGlwbWVudCI6eyJjcmVhdGVTaGlwbWVudCI6dHJ1ZSwic2hpcG1lbnRBbmFseXRpY3MiOnRydWUsInVwZGF0ZVNoaXBtZW50Ijp0cnVlLCJyZWNlaXZlU2hpcG1lbnQiOnRydWUsInJlY2VpdmVTaGlwbWVudFNjYW4iOnRydWUsImluYm91bmRTaGlwbWVudHMiOnRydWUsIm91dGJvdW5kU2hpcG1lbnRzIjp0cnVlLCJ2aWV3U2hpcG1lbnQiOnRydWUsInNoaXBtZW50RmlsdGVycyI6dHJ1ZSwic2hpcG1lbnRFeHBvcnRSZXBvcnQiOnRydWV9LCJvcmRlciI6eyJjcmVhdGVPcmRlciI6dHJ1ZSwiaW1wb3J0T3JkZXIiOnRydWUsIm9yZGVyQW5hbHl0aWNzIjp0cnVlLCJyZWNlaXZlT3JkZXIiOnRydWUsImFjY2VwdFJlamVjdE9yZGVyIjp0cnVlLCJ2aWV3SW5ib3VuZE9yZGVycyI6dHJ1ZSwidmlld091dGJvdW5kT3JkZXJzIjp0cnVlLCJvcmRlckZpbHRlcnMiOnRydWUsIm9yZGVyRXhwb3J0UmVwb3J0Ijp0cnVlLCJ2aWV3UE8iOnRydWV9LCJuZXR3b3JrIjp7Im5ldHdvcmsiOnRydWV9LCJ0cmFjayI6eyJ0cmFja0FuZFRyYWNlIjp0cnVlfSwiYWRtaW4iOnsiZ2V0VXNlclJlcXVlc3QiOnRydWUsImFjY2VwdFVzZXIiOnRydWUsImFkZFVzZXIiOnRydWUsInJlbW92ZVVzZXIiOnRydWUsImRlYWN0aXZhdGVVc2VyIjp0cnVlLCJhZGRSb2xlIjp0cnVlLCJkZWxldGVSb2xlIjp0cnVlLCJhZmZsaWF0ZVVzZXIiOnRydWUsInVuYWZmbGlhdGVVc2VyIjp0cnVlLCJ2aWV3QWZmbGlhdGlvbiI6dHJ1ZSwiYWNjZXB0QWZmaWxpYXRpb24iOnRydWUsInJlbW92ZUFmZmlsaWF0aW9uIjp0cnVlfSwiX2lkIjoiNjM4ZGEyZjkyYjJhY2U5M2I5OGQwZjdmIiwicGVybWlzc2lvbnMiOlsib3ZlcnZpZXciLCJzZWFyY2hCeU9yZGVySWQiLCJzZWFyY2hCeVNoaXBtZW50SWQiLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSIsInNlYXJjaEJ5VHJhbnNpdE5vIiwic2VhcmNoQnlQcm9kdWN0TmFtZSIsInNlYXJjaEJ5UHJvZHVjdElkIiwidmlld0ludmVudG9yeSIsImFkZEludmVudG9yeSIsImltcG9ydEludmVudG9yeSIsImludmVudG9yeUFuYWx5dGljcyIsInZpZXdQcm9kdWN0TGlzdCIsInZpZXdQcm9kdWN0SW5mbyIsImFkZE5ld1Byb2R1Y3QiLCJpbnZlbnRvcnlGaWx0ZXJzIiwiaW52ZW50b3J5RXhwb3J0UmVwb3J0IiwiY3JlYXRlU2hpcG1lbnQiLCJzaGlwbWVudEFuYWx5dGljcyIsInVwZGF0ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50U2NhbiIsImluYm91bmRTaGlwbWVudHMiLCJvdXRib3VuZFNoaXBtZW50cyIsInZpZXdTaGlwbWVudCIsInNoaXBtZW50RmlsdGVycyIsInNoaXBtZW50RXhwb3J0UmVwb3J0IiwiY3JlYXRlT3JkZXIiLCJpbXBvcnRPcmRlciIsIm9yZGVyQW5hbHl0aWNzIiwicmVjZWl2ZU9yZGVyIiwiYWNjZXB0UmVqZWN0T3JkZXIiLCJ2aWV3SW5ib3VuZE9yZGVycyIsInZpZXdPdXRib3VuZE9yZGVycyIsIm9yZGVyRmlsdGVycyIsIm9yZGVyRXhwb3J0UmVwb3J0Iiwidmlld1BPIiwibmV0d29yayIsInRyYWNrQW5kVHJhY2UiLCJnZXRVc2VyUmVxdWVzdCIsImFjY2VwdFVzZXIiLCJhZGRVc2VyIiwicmVtb3ZlVXNlciIsImRlYWN0aXZhdGVVc2VyIiwiYWRkUm9sZSIsImRlbGV0ZVJvbGUiLCJhZmZsaWF0ZVVzZXIiLCJ1bmFmZmxpYXRlVXNlciIsInZpZXdBZmZsaWF0aW9uIiwiYWNjZXB0QWZmaWxpYXRpb24iLCJyZW1vdmVBZmZpbGlhdGlvbiJdLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDIwLTA4LTMwVDE4OjU0OjI5Ljg4N1oiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTA3VDA2OjQ2OjU1LjcxNVoiLCJfX3YiOjB9LCJpYXQiOjE2NzEwOTQ0NTMsImV4cCI6MTY3MTEzNzY1M30.AFtJT7m9UzvMysimWfY8O7mthNmvMdyTHVbOCWY7vTs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"warehouseId\": \"WAR100001\",\n    \"productId\": \"PO100025\",\n    \"batchNumber\": \"B2003\",\n    \"vaccineVialId\":\"VIAL100096\",\n    \"doses\": [\n        {\n            \"id\":\"DOSE100253\",\n            \"age\": 42,\n            \"ageMonths\": 0,\n            \"gender\": \"MALE\"\n        },\n        {\n            \"age\": 0,\n            \"ageMonths\": 0,\n            \"gender\": \"FEMALE\"\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://test.vaccineledger.com/lastmilemanagement/api/vaccination/vaccinateMultiple",
+          "protocol": "https",
+          "host": ["test", "vaccineledger", "com"],
+          "path": [
+            "lastmilemanagement",
+            "api",
+            "vaccination",
+            "vaccinateMultiple"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Vials utilised",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVNUDEwMDAwMSIsImZpcnN0TmFtZSI6IkRldiIsImVtYWlsSWQiOiJkZXZAc3RhdHdpZy5jb20iLCJyb2xlIjoiYWRtaW4iLCJ3YXJlaG91c2VJZCI6IldBUjEwMDAwMSIsIm9yZ2FuaXNhdGlvbklkIjoiT1JHMTAwMDAxIiwicGhvbmVOdW1iZXIiOm51bGwsIm9yZyI6Im9yZzFNU1AiLCJ1c2VyTmFtZSI6ImRldkBzdGF0d2lnLmNvbSIsInByZWZlcnJlZExhbmd1YWdlIjoiRU4iLCJpc0N1c3RvbSI6ZmFsc2UsInR5cGUiOiJDRU5UUkFMX0FVVEhPUklUWSIsInBlcm1pc3Npb25zIjp7Im92ZXJ2aWV3Ijp7Im92ZXJ2aWV3Ijp0cnVlfSwic2VhcmNoIjp7InNlYXJjaEJ5T3JkZXJJZCI6dHJ1ZSwic2VhcmNoQnlTaGlwbWVudElkIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSI6dHJ1ZSwic2VhcmNoQnlUcmFuc2l0Tm8iOnRydWUsInNlYXJjaEJ5UHJvZHVjdE5hbWUiOnRydWUsInNlYXJjaEJ5UHJvZHVjdElkIjp0cnVlfSwiaW52ZW50b3J5Ijp7InZpZXdJbnZlbnRvcnkiOnRydWUsImFkZEludmVudG9yeSI6dHJ1ZSwiaW1wb3J0SW52ZW50b3J5Ijp0cnVlLCJpbnZlbnRvcnlBbmFseXRpY3MiOnRydWUsInZpZXdQcm9kdWN0TGlzdCI6dHJ1ZSwidmlld1Byb2R1Y3RJbmZvIjp0cnVlLCJhZGROZXdQcm9kdWN0Ijp0cnVlLCJpbnZlbnRvcnlGaWx0ZXJzIjp0cnVlLCJpbnZlbnRvcnlFeHBvcnRSZXBvcnQiOnRydWV9LCJzaGlwbWVudCI6eyJjcmVhdGVTaGlwbWVudCI6dHJ1ZSwic2hpcG1lbnRBbmFseXRpY3MiOnRydWUsInVwZGF0ZVNoaXBtZW50Ijp0cnVlLCJyZWNlaXZlU2hpcG1lbnQiOnRydWUsInJlY2VpdmVTaGlwbWVudFNjYW4iOnRydWUsImluYm91bmRTaGlwbWVudHMiOnRydWUsIm91dGJvdW5kU2hpcG1lbnRzIjp0cnVlLCJ2aWV3U2hpcG1lbnQiOnRydWUsInNoaXBtZW50RmlsdGVycyI6dHJ1ZSwic2hpcG1lbnRFeHBvcnRSZXBvcnQiOnRydWV9LCJvcmRlciI6eyJjcmVhdGVPcmRlciI6dHJ1ZSwiaW1wb3J0T3JkZXIiOnRydWUsIm9yZGVyQW5hbHl0aWNzIjp0cnVlLCJyZWNlaXZlT3JkZXIiOnRydWUsImFjY2VwdFJlamVjdE9yZGVyIjp0cnVlLCJ2aWV3SW5ib3VuZE9yZGVycyI6dHJ1ZSwidmlld091dGJvdW5kT3JkZXJzIjp0cnVlLCJvcmRlckZpbHRlcnMiOnRydWUsIm9yZGVyRXhwb3J0UmVwb3J0Ijp0cnVlLCJ2aWV3UE8iOnRydWV9LCJuZXR3b3JrIjp7Im5ldHdvcmsiOnRydWV9LCJ0cmFjayI6eyJ0cmFja0FuZFRyYWNlIjp0cnVlfSwiYWRtaW4iOnsiZ2V0VXNlclJlcXVlc3QiOnRydWUsImFjY2VwdFVzZXIiOnRydWUsImFkZFVzZXIiOnRydWUsInJlbW92ZVVzZXIiOnRydWUsImRlYWN0aXZhdGVVc2VyIjp0cnVlLCJhZGRSb2xlIjp0cnVlLCJkZWxldGVSb2xlIjp0cnVlLCJhZmZsaWF0ZVVzZXIiOnRydWUsInVuYWZmbGlhdGVVc2VyIjp0cnVlLCJ2aWV3QWZmbGlhdGlvbiI6dHJ1ZSwiYWNjZXB0QWZmaWxpYXRpb24iOnRydWUsInJlbW92ZUFmZmlsaWF0aW9uIjp0cnVlfSwiX2lkIjoiNjM4ZGEyZjkyYjJhY2U5M2I5OGQwZjdmIiwicGVybWlzc2lvbnMiOlsib3ZlcnZpZXciLCJzZWFyY2hCeU9yZGVySWQiLCJzZWFyY2hCeVNoaXBtZW50SWQiLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSIsInNlYXJjaEJ5VHJhbnNpdE5vIiwic2VhcmNoQnlQcm9kdWN0TmFtZSIsInNlYXJjaEJ5UHJvZHVjdElkIiwidmlld0ludmVudG9yeSIsImFkZEludmVudG9yeSIsImltcG9ydEludmVudG9yeSIsImludmVudG9yeUFuYWx5dGljcyIsInZpZXdQcm9kdWN0TGlzdCIsInZpZXdQcm9kdWN0SW5mbyIsImFkZE5ld1Byb2R1Y3QiLCJpbnZlbnRvcnlGaWx0ZXJzIiwiaW52ZW50b3J5RXhwb3J0UmVwb3J0IiwiY3JlYXRlU2hpcG1lbnQiLCJzaGlwbWVudEFuYWx5dGljcyIsInVwZGF0ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50U2NhbiIsImluYm91bmRTaGlwbWVudHMiLCJvdXRib3VuZFNoaXBtZW50cyIsInZpZXdTaGlwbWVudCIsInNoaXBtZW50RmlsdGVycyIsInNoaXBtZW50RXhwb3J0UmVwb3J0IiwiY3JlYXRlT3JkZXIiLCJpbXBvcnRPcmRlciIsIm9yZGVyQW5hbHl0aWNzIiwicmVjZWl2ZU9yZGVyIiwiYWNjZXB0UmVqZWN0T3JkZXIiLCJ2aWV3SW5ib3VuZE9yZGVycyIsInZpZXdPdXRib3VuZE9yZGVycyIsIm9yZGVyRmlsdGVycyIsIm9yZGVyRXhwb3J0UmVwb3J0Iiwidmlld1BPIiwibmV0d29yayIsInRyYWNrQW5kVHJhY2UiLCJnZXRVc2VyUmVxdWVzdCIsImFjY2VwdFVzZXIiLCJhZGRVc2VyIiwicmVtb3ZlVXNlciIsImRlYWN0aXZhdGVVc2VyIiwiYWRkUm9sZSIsImRlbGV0ZVJvbGUiLCJhZmZsaWF0ZVVzZXIiLCJ1bmFmZmxpYXRlVXNlciIsInZpZXdBZmZsaWF0aW9uIiwiYWNjZXB0QWZmaWxpYXRpb24iLCJyZW1vdmVBZmZpbGlhdGlvbiJdLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDIwLTA4LTMwVDE4OjU0OjI5Ljg4N1oiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTA3VDA2OjQ2OjU1LjcxNVoiLCJfX3YiOjB9LCJpYXQiOjE2NzEwOTQ0NTMsImV4cCI6MTY3MTEzNzY1M30.AFtJT7m9UzvMysimWfY8O7mthNmvMdyTHVbOCWY7vTs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "https://test.vaccineledger.com/lastmilemanagement/api/vaccination/getVialsUtilised",
+          "protocol": "https",
+          "host": ["test", "vaccineledger", "com"],
+          "path": [
+            "lastmilemanagement",
+            "api",
+            "vaccination",
+            "getVialsUtilised"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get vaccinations list",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVNUDEwMDAwMSIsImZpcnN0TmFtZSI6IkRldiIsImVtYWlsSWQiOiJkZXZAc3RhdHdpZy5jb20iLCJyb2xlIjoiYWRtaW4iLCJ3YXJlaG91c2VJZCI6IldBUjEwMDAwMSIsIm9yZ2FuaXNhdGlvbklkIjoiT1JHMTAwMDAxIiwicGhvbmVOdW1iZXIiOm51bGwsIm9yZyI6Im9yZzFNU1AiLCJ1c2VyTmFtZSI6ImRldkBzdGF0d2lnLmNvbSIsInByZWZlcnJlZExhbmd1YWdlIjoiRU4iLCJpc0N1c3RvbSI6ZmFsc2UsInR5cGUiOiJDRU5UUkFMX0FVVEhPUklUWSIsInBlcm1pc3Npb25zIjp7Im92ZXJ2aWV3Ijp7Im92ZXJ2aWV3Ijp0cnVlfSwic2VhcmNoIjp7InNlYXJjaEJ5T3JkZXJJZCI6dHJ1ZSwic2VhcmNoQnlTaGlwbWVudElkIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSI6dHJ1ZSwic2VhcmNoQnlUcmFuc2l0Tm8iOnRydWUsInNlYXJjaEJ5UHJvZHVjdE5hbWUiOnRydWUsInNlYXJjaEJ5UHJvZHVjdElkIjp0cnVlfSwiaW52ZW50b3J5Ijp7InZpZXdJbnZlbnRvcnkiOnRydWUsImFkZEludmVudG9yeSI6dHJ1ZSwiaW1wb3J0SW52ZW50b3J5Ijp0cnVlLCJpbnZlbnRvcnlBbmFseXRpY3MiOnRydWUsInZpZXdQcm9kdWN0TGlzdCI6dHJ1ZSwidmlld1Byb2R1Y3RJbmZvIjp0cnVlLCJhZGROZXdQcm9kdWN0Ijp0cnVlLCJpbnZlbnRvcnlGaWx0ZXJzIjp0cnVlLCJpbnZlbnRvcnlFeHBvcnRSZXBvcnQiOnRydWV9LCJzaGlwbWVudCI6eyJjcmVhdGVTaGlwbWVudCI6dHJ1ZSwic2hpcG1lbnRBbmFseXRpY3MiOnRydWUsInVwZGF0ZVNoaXBtZW50Ijp0cnVlLCJyZWNlaXZlU2hpcG1lbnQiOnRydWUsInJlY2VpdmVTaGlwbWVudFNjYW4iOnRydWUsImluYm91bmRTaGlwbWVudHMiOnRydWUsIm91dGJvdW5kU2hpcG1lbnRzIjp0cnVlLCJ2aWV3U2hpcG1lbnQiOnRydWUsInNoaXBtZW50RmlsdGVycyI6dHJ1ZSwic2hpcG1lbnRFeHBvcnRSZXBvcnQiOnRydWV9LCJvcmRlciI6eyJjcmVhdGVPcmRlciI6dHJ1ZSwiaW1wb3J0T3JkZXIiOnRydWUsIm9yZGVyQW5hbHl0aWNzIjp0cnVlLCJyZWNlaXZlT3JkZXIiOnRydWUsImFjY2VwdFJlamVjdE9yZGVyIjp0cnVlLCJ2aWV3SW5ib3VuZE9yZGVycyI6dHJ1ZSwidmlld091dGJvdW5kT3JkZXJzIjp0cnVlLCJvcmRlckZpbHRlcnMiOnRydWUsIm9yZGVyRXhwb3J0UmVwb3J0Ijp0cnVlLCJ2aWV3UE8iOnRydWV9LCJuZXR3b3JrIjp7Im5ldHdvcmsiOnRydWV9LCJ0cmFjayI6eyJ0cmFja0FuZFRyYWNlIjp0cnVlfSwiYWRtaW4iOnsiZ2V0VXNlclJlcXVlc3QiOnRydWUsImFjY2VwdFVzZXIiOnRydWUsImFkZFVzZXIiOnRydWUsInJlbW92ZVVzZXIiOnRydWUsImRlYWN0aXZhdGVVc2VyIjp0cnVlLCJhZGRSb2xlIjp0cnVlLCJkZWxldGVSb2xlIjp0cnVlLCJhZmZsaWF0ZVVzZXIiOnRydWUsInVuYWZmbGlhdGVVc2VyIjp0cnVlLCJ2aWV3QWZmbGlhdGlvbiI6dHJ1ZSwiYWNjZXB0QWZmaWxpYXRpb24iOnRydWUsInJlbW92ZUFmZmlsaWF0aW9uIjp0cnVlfSwiX2lkIjoiNjM4ZGEyZjkyYjJhY2U5M2I5OGQwZjdmIiwicGVybWlzc2lvbnMiOlsib3ZlcnZpZXciLCJzZWFyY2hCeU9yZGVySWQiLCJzZWFyY2hCeVNoaXBtZW50SWQiLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSIsInNlYXJjaEJ5VHJhbnNpdE5vIiwic2VhcmNoQnlQcm9kdWN0TmFtZSIsInNlYXJjaEJ5UHJvZHVjdElkIiwidmlld0ludmVudG9yeSIsImFkZEludmVudG9yeSIsImltcG9ydEludmVudG9yeSIsImludmVudG9yeUFuYWx5dGljcyIsInZpZXdQcm9kdWN0TGlzdCIsInZpZXdQcm9kdWN0SW5mbyIsImFkZE5ld1Byb2R1Y3QiLCJpbnZlbnRvcnlGaWx0ZXJzIiwiaW52ZW50b3J5RXhwb3J0UmVwb3J0IiwiY3JlYXRlU2hpcG1lbnQiLCJzaGlwbWVudEFuYWx5dGljcyIsInVwZGF0ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50U2NhbiIsImluYm91bmRTaGlwbWVudHMiLCJvdXRib3VuZFNoaXBtZW50cyIsInZpZXdTaGlwbWVudCIsInNoaXBtZW50RmlsdGVycyIsInNoaXBtZW50RXhwb3J0UmVwb3J0IiwiY3JlYXRlT3JkZXIiLCJpbXBvcnRPcmRlciIsIm9yZGVyQW5hbHl0aWNzIiwicmVjZWl2ZU9yZGVyIiwiYWNjZXB0UmVqZWN0T3JkZXIiLCJ2aWV3SW5ib3VuZE9yZGVycyIsInZpZXdPdXRib3VuZE9yZGVycyIsIm9yZGVyRmlsdGVycyIsIm9yZGVyRXhwb3J0UmVwb3J0Iiwidmlld1BPIiwibmV0d29yayIsInRyYWNrQW5kVHJhY2UiLCJnZXRVc2VyUmVxdWVzdCIsImFjY2VwdFVzZXIiLCJhZGRVc2VyIiwicmVtb3ZlVXNlciIsImRlYWN0aXZhdGVVc2VyIiwiYWRkUm9sZSIsImRlbGV0ZVJvbGUiLCJhZmZsaWF0ZVVzZXIiLCJ1bmFmZmxpYXRlVXNlciIsInZpZXdBZmZsaWF0aW9uIiwiYWNjZXB0QWZmaWxpYXRpb24iLCJyZW1vdmVBZmZpbGlhdGlvbiJdLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDIwLTA4LTMwVDE4OjU0OjI5Ljg4N1oiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTA3VDA2OjQ2OjU1LjcxNVoiLCJfX3YiOjB9LCJpYXQiOjE2NzEwOTQ0NTMsImV4cCI6MTY3MTEzNzY1M30.AFtJT7m9UzvMysimWfY8O7mthNmvMdyTHVbOCWY7vTs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://test.vaccineledger.com/lastmilemanagement/api/vaccination/getVaccinationsList",
+          "protocol": "https",
+          "host": ["test", "vaccineledger", "com"],
+          "path": [
+            "lastmilemanagement",
+            "api",
+            "vaccination",
+            "getVaccinationsList"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Dose",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVNUDEwMDAwMSIsImZpcnN0TmFtZSI6IkRldiIsImVtYWlsSWQiOiJkZXZAc3RhdHdpZy5jb20iLCJyb2xlIjoiYWRtaW4iLCJ3YXJlaG91c2VJZCI6IldBUjEwMDAwMSIsIm9yZ2FuaXNhdGlvbklkIjoiT1JHMTAwMDAxIiwicGhvbmVOdW1iZXIiOm51bGwsIm9yZyI6Im9yZzFNU1AiLCJ1c2VyTmFtZSI6ImRldkBzdGF0d2lnLmNvbSIsInByZWZlcnJlZExhbmd1YWdlIjoiRU4iLCJpc0N1c3RvbSI6ZmFsc2UsInR5cGUiOiJDRU5UUkFMX0FVVEhPUklUWSIsInBlcm1pc3Npb25zIjp7Im92ZXJ2aWV3Ijp7Im92ZXJ2aWV3Ijp0cnVlfSwic2VhcmNoIjp7InNlYXJjaEJ5T3JkZXJJZCI6dHJ1ZSwic2VhcmNoQnlTaGlwbWVudElkIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSI6dHJ1ZSwic2VhcmNoQnlUcmFuc2l0Tm8iOnRydWUsInNlYXJjaEJ5UHJvZHVjdE5hbWUiOnRydWUsInNlYXJjaEJ5UHJvZHVjdElkIjp0cnVlfSwiaW52ZW50b3J5Ijp7InZpZXdJbnZlbnRvcnkiOnRydWUsImFkZEludmVudG9yeSI6dHJ1ZSwiaW1wb3J0SW52ZW50b3J5Ijp0cnVlLCJpbnZlbnRvcnlBbmFseXRpY3MiOnRydWUsInZpZXdQcm9kdWN0TGlzdCI6dHJ1ZSwidmlld1Byb2R1Y3RJbmZvIjp0cnVlLCJhZGROZXdQcm9kdWN0Ijp0cnVlLCJpbnZlbnRvcnlGaWx0ZXJzIjp0cnVlLCJpbnZlbnRvcnlFeHBvcnRSZXBvcnQiOnRydWV9LCJzaGlwbWVudCI6eyJjcmVhdGVTaGlwbWVudCI6dHJ1ZSwic2hpcG1lbnRBbmFseXRpY3MiOnRydWUsInVwZGF0ZVNoaXBtZW50Ijp0cnVlLCJyZWNlaXZlU2hpcG1lbnQiOnRydWUsInJlY2VpdmVTaGlwbWVudFNjYW4iOnRydWUsImluYm91bmRTaGlwbWVudHMiOnRydWUsIm91dGJvdW5kU2hpcG1lbnRzIjp0cnVlLCJ2aWV3U2hpcG1lbnQiOnRydWUsInNoaXBtZW50RmlsdGVycyI6dHJ1ZSwic2hpcG1lbnRFeHBvcnRSZXBvcnQiOnRydWV9LCJvcmRlciI6eyJjcmVhdGVPcmRlciI6dHJ1ZSwiaW1wb3J0T3JkZXIiOnRydWUsIm9yZGVyQW5hbHl0aWNzIjp0cnVlLCJyZWNlaXZlT3JkZXIiOnRydWUsImFjY2VwdFJlamVjdE9yZGVyIjp0cnVlLCJ2aWV3SW5ib3VuZE9yZGVycyI6dHJ1ZSwidmlld091dGJvdW5kT3JkZXJzIjp0cnVlLCJvcmRlckZpbHRlcnMiOnRydWUsIm9yZGVyRXhwb3J0UmVwb3J0Ijp0cnVlLCJ2aWV3UE8iOnRydWV9LCJuZXR3b3JrIjp7Im5ldHdvcmsiOnRydWV9LCJ0cmFjayI6eyJ0cmFja0FuZFRyYWNlIjp0cnVlfSwiYWRtaW4iOnsiZ2V0VXNlclJlcXVlc3QiOnRydWUsImFjY2VwdFVzZXIiOnRydWUsImFkZFVzZXIiOnRydWUsInJlbW92ZVVzZXIiOnRydWUsImRlYWN0aXZhdGVVc2VyIjp0cnVlLCJhZGRSb2xlIjp0cnVlLCJkZWxldGVSb2xlIjp0cnVlLCJhZmZsaWF0ZVVzZXIiOnRydWUsInVuYWZmbGlhdGVVc2VyIjp0cnVlLCJ2aWV3QWZmbGlhdGlvbiI6dHJ1ZSwiYWNjZXB0QWZmaWxpYXRpb24iOnRydWUsInJlbW92ZUFmZmlsaWF0aW9uIjp0cnVlfSwiX2lkIjoiNjM4ZGEyZjkyYjJhY2U5M2I5OGQwZjdmIiwicGVybWlzc2lvbnMiOlsib3ZlcnZpZXciLCJzZWFyY2hCeU9yZGVySWQiLCJzZWFyY2hCeVNoaXBtZW50SWQiLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSIsInNlYXJjaEJ5VHJhbnNpdE5vIiwic2VhcmNoQnlQcm9kdWN0TmFtZSIsInNlYXJjaEJ5UHJvZHVjdElkIiwidmlld0ludmVudG9yeSIsImFkZEludmVudG9yeSIsImltcG9ydEludmVudG9yeSIsImludmVudG9yeUFuYWx5dGljcyIsInZpZXdQcm9kdWN0TGlzdCIsInZpZXdQcm9kdWN0SW5mbyIsImFkZE5ld1Byb2R1Y3QiLCJpbnZlbnRvcnlGaWx0ZXJzIiwiaW52ZW50b3J5RXhwb3J0UmVwb3J0IiwiY3JlYXRlU2hpcG1lbnQiLCJzaGlwbWVudEFuYWx5dGljcyIsInVwZGF0ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50U2NhbiIsImluYm91bmRTaGlwbWVudHMiLCJvdXRib3VuZFNoaXBtZW50cyIsInZpZXdTaGlwbWVudCIsInNoaXBtZW50RmlsdGVycyIsInNoaXBtZW50RXhwb3J0UmVwb3J0IiwiY3JlYXRlT3JkZXIiLCJpbXBvcnRPcmRlciIsIm9yZGVyQW5hbHl0aWNzIiwicmVjZWl2ZU9yZGVyIiwiYWNjZXB0UmVqZWN0T3JkZXIiLCJ2aWV3SW5ib3VuZE9yZGVycyIsInZpZXdPdXRib3VuZE9yZGVycyIsIm9yZGVyRmlsdGVycyIsIm9yZGVyRXhwb3J0UmVwb3J0Iiwidmlld1BPIiwibmV0d29yayIsInRyYWNrQW5kVHJhY2UiLCJnZXRVc2VyUmVxdWVzdCIsImFjY2VwdFVzZXIiLCJhZGRVc2VyIiwicmVtb3ZlVXNlciIsImRlYWN0aXZhdGVVc2VyIiwiYWRkUm9sZSIsImRlbGV0ZVJvbGUiLCJhZmZsaWF0ZVVzZXIiLCJ1bmFmZmxpYXRlVXNlciIsInZpZXdBZmZsaWF0aW9uIiwiYWNjZXB0QWZmaWxpYXRpb24iLCJyZW1vdmVBZmZpbGlhdGlvbiJdLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDIwLTA4LTMwVDE4OjU0OjI5Ljg4N1oiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTA3VDA2OjQ2OjU1LjcxNVoiLCJfX3YiOjB9LCJpYXQiOjE2NzEwOTQ0NTMsImV4cCI6MTY3MTEzNzY1M30.AFtJT7m9UzvMysimWfY8O7mthNmvMdyTHVbOCWY7vTs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"doseId\": \"DOSE100255\",\n    \"update\": {\n        \"ageMonths\": 4\n    }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://test.vaccineledger.com/lastmilemanagement/api/vaccination/updateDose",
+          "protocol": "https",
+          "host": ["test", "vaccineledger", "com"],
+          "path": ["lastmilemanagement", "api", "vaccination", "updateDose"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Complete Vial",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVNUDEwMDAwMSIsImZpcnN0TmFtZSI6IkRldiIsImVtYWlsSWQiOiJkZXZAc3RhdHdpZy5jb20iLCJyb2xlIjoiYWRtaW4iLCJ3YXJlaG91c2VJZCI6IldBUjEwMDAwMSIsIm9yZ2FuaXNhdGlvbklkIjoiT1JHMTAwMDAxIiwicGhvbmVOdW1iZXIiOm51bGwsIm9yZyI6Im9yZzFNU1AiLCJ1c2VyTmFtZSI6ImRldkBzdGF0d2lnLmNvbSIsInByZWZlcnJlZExhbmd1YWdlIjoiRU4iLCJpc0N1c3RvbSI6ZmFsc2UsInR5cGUiOiJDRU5UUkFMX0FVVEhPUklUWSIsInBlcm1pc3Npb25zIjp7Im92ZXJ2aWV3Ijp7Im92ZXJ2aWV3Ijp0cnVlfSwic2VhcmNoIjp7InNlYXJjaEJ5T3JkZXJJZCI6dHJ1ZSwic2VhcmNoQnlTaGlwbWVudElkIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSI6dHJ1ZSwic2VhcmNoQnlUcmFuc2l0Tm8iOnRydWUsInNlYXJjaEJ5UHJvZHVjdE5hbWUiOnRydWUsInNlYXJjaEJ5UHJvZHVjdElkIjp0cnVlfSwiaW52ZW50b3J5Ijp7InZpZXdJbnZlbnRvcnkiOnRydWUsImFkZEludmVudG9yeSI6dHJ1ZSwiaW1wb3J0SW52ZW50b3J5Ijp0cnVlLCJpbnZlbnRvcnlBbmFseXRpY3MiOnRydWUsInZpZXdQcm9kdWN0TGlzdCI6dHJ1ZSwidmlld1Byb2R1Y3RJbmZvIjp0cnVlLCJhZGROZXdQcm9kdWN0Ijp0cnVlLCJpbnZlbnRvcnlGaWx0ZXJzIjp0cnVlLCJpbnZlbnRvcnlFeHBvcnRSZXBvcnQiOnRydWV9LCJzaGlwbWVudCI6eyJjcmVhdGVTaGlwbWVudCI6dHJ1ZSwic2hpcG1lbnRBbmFseXRpY3MiOnRydWUsInVwZGF0ZVNoaXBtZW50Ijp0cnVlLCJyZWNlaXZlU2hpcG1lbnQiOnRydWUsInJlY2VpdmVTaGlwbWVudFNjYW4iOnRydWUsImluYm91bmRTaGlwbWVudHMiOnRydWUsIm91dGJvdW5kU2hpcG1lbnRzIjp0cnVlLCJ2aWV3U2hpcG1lbnQiOnRydWUsInNoaXBtZW50RmlsdGVycyI6dHJ1ZSwic2hpcG1lbnRFeHBvcnRSZXBvcnQiOnRydWV9LCJvcmRlciI6eyJjcmVhdGVPcmRlciI6dHJ1ZSwiaW1wb3J0T3JkZXIiOnRydWUsIm9yZGVyQW5hbHl0aWNzIjp0cnVlLCJyZWNlaXZlT3JkZXIiOnRydWUsImFjY2VwdFJlamVjdE9yZGVyIjp0cnVlLCJ2aWV3SW5ib3VuZE9yZGVycyI6dHJ1ZSwidmlld091dGJvdW5kT3JkZXJzIjp0cnVlLCJvcmRlckZpbHRlcnMiOnRydWUsIm9yZGVyRXhwb3J0UmVwb3J0Ijp0cnVlLCJ2aWV3UE8iOnRydWV9LCJuZXR3b3JrIjp7Im5ldHdvcmsiOnRydWV9LCJ0cmFjayI6eyJ0cmFja0FuZFRyYWNlIjp0cnVlfSwiYWRtaW4iOnsiZ2V0VXNlclJlcXVlc3QiOnRydWUsImFjY2VwdFVzZXIiOnRydWUsImFkZFVzZXIiOnRydWUsInJlbW92ZVVzZXIiOnRydWUsImRlYWN0aXZhdGVVc2VyIjp0cnVlLCJhZGRSb2xlIjp0cnVlLCJkZWxldGVSb2xlIjp0cnVlLCJhZmZsaWF0ZVVzZXIiOnRydWUsInVuYWZmbGlhdGVVc2VyIjp0cnVlLCJ2aWV3QWZmbGlhdGlvbiI6dHJ1ZSwiYWNjZXB0QWZmaWxpYXRpb24iOnRydWUsInJlbW92ZUFmZmlsaWF0aW9uIjp0cnVlfSwiX2lkIjoiNjM4ZGEyZjkyYjJhY2U5M2I5OGQwZjdmIiwicGVybWlzc2lvbnMiOlsib3ZlcnZpZXciLCJzZWFyY2hCeU9yZGVySWQiLCJzZWFyY2hCeVNoaXBtZW50SWQiLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSIsInNlYXJjaEJ5VHJhbnNpdE5vIiwic2VhcmNoQnlQcm9kdWN0TmFtZSIsInNlYXJjaEJ5UHJvZHVjdElkIiwidmlld0ludmVudG9yeSIsImFkZEludmVudG9yeSIsImltcG9ydEludmVudG9yeSIsImludmVudG9yeUFuYWx5dGljcyIsInZpZXdQcm9kdWN0TGlzdCIsInZpZXdQcm9kdWN0SW5mbyIsImFkZE5ld1Byb2R1Y3QiLCJpbnZlbnRvcnlGaWx0ZXJzIiwiaW52ZW50b3J5RXhwb3J0UmVwb3J0IiwiY3JlYXRlU2hpcG1lbnQiLCJzaGlwbWVudEFuYWx5dGljcyIsInVwZGF0ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50U2NhbiIsImluYm91bmRTaGlwbWVudHMiLCJvdXRib3VuZFNoaXBtZW50cyIsInZpZXdTaGlwbWVudCIsInNoaXBtZW50RmlsdGVycyIsInNoaXBtZW50RXhwb3J0UmVwb3J0IiwiY3JlYXRlT3JkZXIiLCJpbXBvcnRPcmRlciIsIm9yZGVyQW5hbHl0aWNzIiwicmVjZWl2ZU9yZGVyIiwiYWNjZXB0UmVqZWN0T3JkZXIiLCJ2aWV3SW5ib3VuZE9yZGVycyIsInZpZXdPdXRib3VuZE9yZGVycyIsIm9yZGVyRmlsdGVycyIsIm9yZGVyRXhwb3J0UmVwb3J0Iiwidmlld1BPIiwibmV0d29yayIsInRyYWNrQW5kVHJhY2UiLCJnZXRVc2VyUmVxdWVzdCIsImFjY2VwdFVzZXIiLCJhZGRVc2VyIiwicmVtb3ZlVXNlciIsImRlYWN0aXZhdGVVc2VyIiwiYWRkUm9sZSIsImRlbGV0ZVJvbGUiLCJhZmZsaWF0ZVVzZXIiLCJ1bmFmZmxpYXRlVXNlciIsInZpZXdBZmZsaWF0aW9uIiwiYWNjZXB0QWZmaWxpYXRpb24iLCJyZW1vdmVBZmZpbGlhdGlvbiJdLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDIwLTA4LTMwVDE4OjU0OjI5Ljg4N1oiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTA3VDA2OjQ2OjU1LjcxNVoiLCJfX3YiOjB9LCJpYXQiOjE2NzEwOTQ0NTMsImV4cCI6MTY3MTEzNzY1M30.AFtJT7m9UzvMysimWfY8O7mthNmvMdyTHVbOCWY7vTs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"vaccineVialId\": \"VIAL100096\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://test.vaccineledger.com/lastmilemanagement/api/vaccination/completeVial",
+          "protocol": "https",
+          "host": ["test", "vaccineledger", "com"],
+          "path": ["lastmilemanagement", "api", "vaccination", "completeVial"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getCitiesAndOrgsForFilters",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVNUDEwMDAwMSIsImZpcnN0TmFtZSI6IkRldiIsImVtYWlsSWQiOiJkZXZAc3RhdHdpZy5jb20iLCJyb2xlIjoiYWRtaW4iLCJ3YXJlaG91c2VJZCI6IldBUjEwMDAwMSIsIm9yZ2FuaXNhdGlvbklkIjoiT1JHMTAwMDAxIiwicGhvbmVOdW1iZXIiOiIrMTY2OTIwNDIyOTgiLCJvcmciOiJvcmcxTVNQIiwidXNlck5hbWUiOiJkZXZAc3RhdHdpZy5jb20iLCJwaG90b0lkIjoiY2xnZG9mbnNiMDAwMDRhNnpiN2RlNXZ3NDE2ODEzMDMwNjUxMzEuanBnIiwicHJlZmVycmVkTGFuZ3VhZ2UiOiJFTiIsImlzQ3VzdG9tIjpmYWxzZSwidHlwZSI6IkNFTlRSQUxfQVVUSE9SSVRZIiwicGVybWlzc2lvbnMiOnsib3ZlcnZpZXciOnsib3ZlcnZpZXciOnRydWV9LCJzZWFyY2giOnsic2VhcmNoQnlPcmRlcklkIjp0cnVlLCJzZWFyY2hCeVNoaXBtZW50SWQiOnRydWUsInNlYXJjaEJ5UHJvZHVjdENhdGVnb3J5Ijp0cnVlLCJzZWFyY2hCeVRyYW5zaXRObyI6dHJ1ZSwic2VhcmNoQnlQcm9kdWN0TmFtZSI6dHJ1ZSwic2VhcmNoQnlQcm9kdWN0SWQiOnRydWV9LCJpbnZlbnRvcnkiOnsidmlld0ludmVudG9yeSI6dHJ1ZSwiYWRkSW52ZW50b3J5Ijp0cnVlLCJpbXBvcnRJbnZlbnRvcnkiOnRydWUsImludmVudG9yeUFuYWx5dGljcyI6dHJ1ZSwidmlld1Byb2R1Y3RMaXN0Ijp0cnVlLCJ2aWV3UHJvZHVjdEluZm8iOnRydWUsImFkZE5ld1Byb2R1Y3QiOnRydWUsImludmVudG9yeUZpbHRlcnMiOnRydWUsImludmVudG9yeUV4cG9ydFJlcG9ydCI6dHJ1ZX0sInNoaXBtZW50Ijp7ImNyZWF0ZVNoaXBtZW50Ijp0cnVlLCJzaGlwbWVudEFuYWx5dGljcyI6dHJ1ZSwidXBkYXRlU2hpcG1lbnQiOnRydWUsInJlY2VpdmVTaGlwbWVudCI6dHJ1ZSwicmVjZWl2ZVNoaXBtZW50U2NhbiI6dHJ1ZSwiaW5ib3VuZFNoaXBtZW50cyI6dHJ1ZSwib3V0Ym91bmRTaGlwbWVudHMiOnRydWUsInZpZXdTaGlwbWVudCI6dHJ1ZSwic2hpcG1lbnRGaWx0ZXJzIjp0cnVlLCJzaGlwbWVudEV4cG9ydFJlcG9ydCI6dHJ1ZX0sIm9yZGVyIjp7ImNyZWF0ZU9yZGVyIjp0cnVlLCJpbXBvcnRPcmRlciI6dHJ1ZSwib3JkZXJBbmFseXRpY3MiOnRydWUsInJlY2VpdmVPcmRlciI6dHJ1ZSwiYWNjZXB0UmVqZWN0T3JkZXIiOnRydWUsInZpZXdJbmJvdW5kT3JkZXJzIjp0cnVlLCJ2aWV3T3V0Ym91bmRPcmRlcnMiOnRydWUsIm9yZGVyRmlsdGVycyI6dHJ1ZSwib3JkZXJFeHBvcnRSZXBvcnQiOnRydWUsInZpZXdQTyI6dHJ1ZX0sIm5ldHdvcmsiOnsibmV0d29yayI6dHJ1ZX0sInRyYWNrIjp7InRyYWNrQW5kVHJhY2UiOnRydWV9LCJhZG1pbiI6eyJnZXRVc2VyUmVxdWVzdCI6dHJ1ZSwiYWNjZXB0VXNlciI6dHJ1ZSwiYWRkVXNlciI6dHJ1ZSwicmVtb3ZlVXNlciI6dHJ1ZSwiZGVhY3RpdmF0ZVVzZXIiOnRydWUsImFkZFJvbGUiOnRydWUsImRlbGV0ZVJvbGUiOnRydWUsImFmZmxpYXRlVXNlciI6dHJ1ZSwidW5hZmZsaWF0ZVVzZXIiOnRydWUsInZpZXdBZmZsaWF0aW9uIjp0cnVlLCJhY2NlcHRBZmZpbGlhdGlvbiI6dHJ1ZSwicmVtb3ZlQWZmaWxpYXRpb24iOnRydWV9LCJfaWQiOiI2MzhkYTJmOTJiMmFjZTkzYjk4ZDBmN2YiLCJwZXJtaXNzaW9ucyI6WyJvdmVydmlldyIsInNlYXJjaEJ5T3JkZXJJZCIsInNlYXJjaEJ5U2hpcG1lbnRJZCIsInNlYXJjaEJ5UHJvZHVjdENhdGVnb3J5Iiwic2VhcmNoQnlUcmFuc2l0Tm8iLCJzZWFyY2hCeVByb2R1Y3ROYW1lIiwic2VhcmNoQnlQcm9kdWN0SWQiLCJ2aWV3SW52ZW50b3J5IiwiYWRkSW52ZW50b3J5IiwiaW1wb3J0SW52ZW50b3J5IiwiaW52ZW50b3J5QW5hbHl0aWNzIiwidmlld1Byb2R1Y3RMaXN0Iiwidmlld1Byb2R1Y3RJbmZvIiwiYWRkTmV3UHJvZHVjdCIsImludmVudG9yeUZpbHRlcnMiLCJpbnZlbnRvcnlFeHBvcnRSZXBvcnQiLCJjcmVhdGVTaGlwbWVudCIsInNoaXBtZW50QW5hbHl0aWNzIiwidXBkYXRlU2hpcG1lbnQiLCJyZWNlaXZlU2hpcG1lbnQiLCJyZWNlaXZlU2hpcG1lbnRTY2FuIiwiaW5ib3VuZFNoaXBtZW50cyIsIm91dGJvdW5kU2hpcG1lbnRzIiwidmlld1NoaXBtZW50Iiwic2hpcG1lbnRGaWx0ZXJzIiwic2hpcG1lbnRFeHBvcnRSZXBvcnQiLCJjcmVhdGVPcmRlciIsImltcG9ydE9yZGVyIiwib3JkZXJBbmFseXRpY3MiLCJyZWNlaXZlT3JkZXIiLCJhY2NlcHRSZWplY3RPcmRlciIsInZpZXdJbmJvdW5kT3JkZXJzIiwidmlld091dGJvdW5kT3JkZXJzIiwib3JkZXJGaWx0ZXJzIiwib3JkZXJFeHBvcnRSZXBvcnQiLCJ2aWV3UE8iLCJuZXR3b3JrIiwidHJhY2tBbmRUcmFjZSIsImdldFVzZXJSZXF1ZXN0IiwiYWNjZXB0VXNlciIsImFkZFVzZXIiLCJyZW1vdmVVc2VyIiwiZGVhY3RpdmF0ZVVzZXIiLCJhZGRSb2xlIiwiZGVsZXRlUm9sZSIsImFmZmxpYXRlVXNlciIsInVuYWZmbGlhdGVVc2VyIiwidmlld0FmZmxpYXRpb24iLCJhY2NlcHRBZmZpbGlhdGlvbiIsInJlbW92ZUFmZmlsaWF0aW9uIl0sInJvbGUiOiJhZG1pbiIsImNyZWF0ZWRBdCI6IjIwMjAtMDgtMzBUMTg6NTQ6MjkuODg3WiIsInVwZGF0ZWRBdCI6IjIwMjMtMDUtMDJUMDY6Mjg6MTkuNjc5WiIsIl9fdiI6MH0sImlhdCI6MTY4NTMyMjYyNywiZXhwIjoxNjg1MzY1ODI3fQ.rtESSotKLX6deK54t-rzj87IVapc6UTR6H9EJ2zSCy0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3016/lastmilemanagement/api/vaccination/getCitiesAndOrgsForFilters",
+          "host": ["localhost"],
+          "port": "3016",
+          "path": [
+            "lastmilemanagement",
+            "api",
+            "vaccination",
+            "getCitiesAndOrgsForFilters"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Dose",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVNUDEwMDAwMSIsImZpcnN0TmFtZSI6IkRldiIsImVtYWlsSWQiOiJkZXZAc3RhdHdpZy5jb20iLCJyb2xlIjoiYWRtaW4iLCJ3YXJlaG91c2VJZCI6IldBUjEwMDAwMSIsIm9yZ2FuaXNhdGlvbklkIjoiT1JHMTAwMDAxIiwicGhvbmVOdW1iZXIiOm51bGwsIm9yZyI6Im9yZzFNU1AiLCJ1c2VyTmFtZSI6ImRldkBzdGF0d2lnLmNvbSIsInByZWZlcnJlZExhbmd1YWdlIjoiRU4iLCJpc0N1c3RvbSI6ZmFsc2UsInR5cGUiOiJDRU5UUkFMX0FVVEhPUklUWSIsInBlcm1pc3Npb25zIjp7Im92ZXJ2aWV3Ijp7Im92ZXJ2aWV3Ijp0cnVlfSwic2VhcmNoIjp7InNlYXJjaEJ5T3JkZXJJZCI6dHJ1ZSwic2VhcmNoQnlTaGlwbWVudElkIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSI6dHJ1ZSwic2VhcmNoQnlUcmFuc2l0Tm8iOnRydWUsInNlYXJjaEJ5UHJvZHVjdE5hbWUiOnRydWUsInNlYXJjaEJ5UHJvZHVjdElkIjp0cnVlfSwiaW52ZW50b3J5Ijp7InZpZXdJbnZlbnRvcnkiOnRydWUsImFkZEludmVudG9yeSI6dHJ1ZSwiaW1wb3J0SW52ZW50b3J5Ijp0cnVlLCJpbnZlbnRvcnlBbmFseXRpY3MiOnRydWUsInZpZXdQcm9kdWN0TGlzdCI6dHJ1ZSwidmlld1Byb2R1Y3RJbmZvIjp0cnVlLCJhZGROZXdQcm9kdWN0Ijp0cnVlLCJpbnZlbnRvcnlGaWx0ZXJzIjp0cnVlLCJpbnZlbnRvcnlFeHBvcnRSZXBvcnQiOnRydWV9LCJzaGlwbWVudCI6eyJjcmVhdGVTaGlwbWVudCI6dHJ1ZSwic2hpcG1lbnRBbmFseXRpY3MiOnRydWUsInVwZGF0ZVNoaXBtZW50Ijp0cnVlLCJyZWNlaXZlU2hpcG1lbnQiOnRydWUsInJlY2VpdmVTaGlwbWVudFNjYW4iOnRydWUsImluYm91bmRTaGlwbWVudHMiOnRydWUsIm91dGJvdW5kU2hpcG1lbnRzIjp0cnVlLCJ2aWV3U2hpcG1lbnQiOnRydWUsInNoaXBtZW50RmlsdGVycyI6dHJ1ZSwic2hpcG1lbnRFeHBvcnRSZXBvcnQiOnRydWV9LCJvcmRlciI6eyJjcmVhdGVPcmRlciI6dHJ1ZSwiaW1wb3J0T3JkZXIiOnRydWUsIm9yZGVyQW5hbHl0aWNzIjp0cnVlLCJyZWNlaXZlT3JkZXIiOnRydWUsImFjY2VwdFJlamVjdE9yZGVyIjp0cnVlLCJ2aWV3SW5ib3VuZE9yZGVycyI6dHJ1ZSwidmlld091dGJvdW5kT3JkZXJzIjp0cnVlLCJvcmRlckZpbHRlcnMiOnRydWUsIm9yZGVyRXhwb3J0UmVwb3J0Ijp0cnVlLCJ2aWV3UE8iOnRydWV9LCJuZXR3b3JrIjp7Im5ldHdvcmsiOnRydWV9LCJ0cmFjayI6eyJ0cmFja0FuZFRyYWNlIjp0cnVlfSwiYWRtaW4iOnsiZ2V0VXNlclJlcXVlc3QiOnRydWUsImFjY2VwdFVzZXIiOnRydWUsImFkZFVzZXIiOnRydWUsInJlbW92ZVVzZXIiOnRydWUsImRlYWN0aXZhdGVVc2VyIjp0cnVlLCJhZGRSb2xlIjp0cnVlLCJkZWxldGVSb2xlIjp0cnVlLCJhZmZsaWF0ZVVzZXIiOnRydWUsInVuYWZmbGlhdGVVc2VyIjp0cnVlLCJ2aWV3QWZmbGlhdGlvbiI6dHJ1ZSwiYWNjZXB0QWZmaWxpYXRpb24iOnRydWUsInJlbW92ZUFmZmlsaWF0aW9uIjp0cnVlfSwiX2lkIjoiNjM4ZGEyZjkyYjJhY2U5M2I5OGQwZjdmIiwicGVybWlzc2lvbnMiOlsib3ZlcnZpZXciLCJzZWFyY2hCeU9yZGVySWQiLCJzZWFyY2hCeVNoaXBtZW50SWQiLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSIsInNlYXJjaEJ5VHJhbnNpdE5vIiwic2VhcmNoQnlQcm9kdWN0TmFtZSIsInNlYXJjaEJ5UHJvZHVjdElkIiwidmlld0ludmVudG9yeSIsImFkZEludmVudG9yeSIsImltcG9ydEludmVudG9yeSIsImludmVudG9yeUFuYWx5dGljcyIsInZpZXdQcm9kdWN0TGlzdCIsInZpZXdQcm9kdWN0SW5mbyIsImFkZE5ld1Byb2R1Y3QiLCJpbnZlbnRvcnlGaWx0ZXJzIiwiaW52ZW50b3J5RXhwb3J0UmVwb3J0IiwiY3JlYXRlU2hpcG1lbnQiLCJzaGlwbWVudEFuYWx5dGljcyIsInVwZGF0ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50U2NhbiIsImluYm91bmRTaGlwbWVudHMiLCJvdXRib3VuZFNoaXBtZW50cyIsInZpZXdTaGlwbWVudCIsInNoaXBtZW50RmlsdGVycyIsInNoaXBtZW50RXhwb3J0UmVwb3J0IiwiY3JlYXRlT3JkZXIiLCJpbXBvcnRPcmRlciIsIm9yZGVyQW5hbHl0aWNzIiwicmVjZWl2ZU9yZGVyIiwiYWNjZXB0UmVqZWN0T3JkZXIiLCJ2aWV3SW5ib3VuZE9yZGVycyIsInZpZXdPdXRib3VuZE9yZGVycyIsIm9yZGVyRmlsdGVycyIsIm9yZGVyRXhwb3J0UmVwb3J0Iiwidmlld1BPIiwibmV0d29yayIsInRyYWNrQW5kVHJhY2UiLCJnZXRVc2VyUmVxdWVzdCIsImFjY2VwdFVzZXIiLCJhZGRVc2VyIiwicmVtb3ZlVXNlciIsImRlYWN0aXZhdGVVc2VyIiwiYWRkUm9sZSIsImRlbGV0ZVJvbGUiLCJhZmZsaWF0ZVVzZXIiLCJ1bmFmZmxpYXRlVXNlciIsInZpZXdBZmZsaWF0aW9uIiwiYWNjZXB0QWZmaWxpYXRpb24iLCJyZW1vdmVBZmZpbGlhdGlvbiJdLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDIwLTA4LTMwVDE4OjU0OjI5Ljg4N1oiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTA3VDA2OjQ2OjU1LjcxNVoiLCJfX3YiOjB9LCJpYXQiOjE2NzEwOTQ0NTMsImV4cCI6MTY3MTEzNzY1M30.AFtJT7m9UzvMysimWfY8O7mthNmvMdyTHVbOCWY7vTs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://test.vaccineledger.com/lastmilemanagement/api/vaccination/deleteDose?doseId=DOSE100255",
+          "protocol": "https",
+          "host": ["test", "vaccineledger", "com"],
+          "path": ["lastmilemanagement", "api", "vaccination", "deleteDose"],
+          "query": [
+            {
+              "key": "doseId",
+              "value": "DOSE100255"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Vials utilised",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVNUDEwMDAwMSIsImZpcnN0TmFtZSI6IkRldiIsImVtYWlsSWQiOiJkZXZAc3RhdHdpZy5jb20iLCJyb2xlIjoiYWRtaW4iLCJ3YXJlaG91c2VJZCI6IldBUjEwMDAwMSIsIm9yZ2FuaXNhdGlvbklkIjoiT1JHMTAwMDAxIiwicGhvbmVOdW1iZXIiOm51bGwsIm9yZyI6Im9yZzFNU1AiLCJ1c2VyTmFtZSI6ImRldkBzdGF0d2lnLmNvbSIsInByZWZlcnJlZExhbmd1YWdlIjoiRU4iLCJpc0N1c3RvbSI6ZmFsc2UsInR5cGUiOiJDRU5UUkFMX0FVVEhPUklUWSIsInBlcm1pc3Npb25zIjp7Im92ZXJ2aWV3Ijp7Im92ZXJ2aWV3Ijp0cnVlfSwic2VhcmNoIjp7InNlYXJjaEJ5T3JkZXJJZCI6dHJ1ZSwic2VhcmNoQnlTaGlwbWVudElkIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSI6dHJ1ZSwic2VhcmNoQnlUcmFuc2l0Tm8iOnRydWUsInNlYXJjaEJ5UHJvZHVjdE5hbWUiOnRydWUsInNlYXJjaEJ5UHJvZHVjdElkIjp0cnVlfSwiaW52ZW50b3J5Ijp7InZpZXdJbnZlbnRvcnkiOnRydWUsImFkZEludmVudG9yeSI6dHJ1ZSwiaW1wb3J0SW52ZW50b3J5Ijp0cnVlLCJpbnZlbnRvcnlBbmFseXRpY3MiOnRydWUsInZpZXdQcm9kdWN0TGlzdCI6dHJ1ZSwidmlld1Byb2R1Y3RJbmZvIjp0cnVlLCJhZGROZXdQcm9kdWN0Ijp0cnVlLCJpbnZlbnRvcnlGaWx0ZXJzIjp0cnVlLCJpbnZlbnRvcnlFeHBvcnRSZXBvcnQiOnRydWV9LCJzaGlwbWVudCI6eyJjcmVhdGVTaGlwbWVudCI6dHJ1ZSwic2hpcG1lbnRBbmFseXRpY3MiOnRydWUsInVwZGF0ZVNoaXBtZW50Ijp0cnVlLCJyZWNlaXZlU2hpcG1lbnQiOnRydWUsInJlY2VpdmVTaGlwbWVudFNjYW4iOnRydWUsImluYm91bmRTaGlwbWVudHMiOnRydWUsIm91dGJvdW5kU2hpcG1lbnRzIjp0cnVlLCJ2aWV3U2hpcG1lbnQiOnRydWUsInNoaXBtZW50RmlsdGVycyI6dHJ1ZSwic2hpcG1lbnRFeHBvcnRSZXBvcnQiOnRydWV9LCJvcmRlciI6eyJjcmVhdGVPcmRlciI6dHJ1ZSwiaW1wb3J0T3JkZXIiOnRydWUsIm9yZGVyQW5hbHl0aWNzIjp0cnVlLCJyZWNlaXZlT3JkZXIiOnRydWUsImFjY2VwdFJlamVjdE9yZGVyIjp0cnVlLCJ2aWV3SW5ib3VuZE9yZGVycyI6dHJ1ZSwidmlld091dGJvdW5kT3JkZXJzIjp0cnVlLCJvcmRlckZpbHRlcnMiOnRydWUsIm9yZGVyRXhwb3J0UmVwb3J0Ijp0cnVlLCJ2aWV3UE8iOnRydWV9LCJuZXR3b3JrIjp7Im5ldHdvcmsiOnRydWV9LCJ0cmFjayI6eyJ0cmFja0FuZFRyYWNlIjp0cnVlfSwiYWRtaW4iOnsiZ2V0VXNlclJlcXVlc3QiOnRydWUsImFjY2VwdFVzZXIiOnRydWUsImFkZFVzZXIiOnRydWUsInJlbW92ZVVzZXIiOnRydWUsImRlYWN0aXZhdGVVc2VyIjp0cnVlLCJhZGRSb2xlIjp0cnVlLCJkZWxldGVSb2xlIjp0cnVlLCJhZmZsaWF0ZVVzZXIiOnRydWUsInVuYWZmbGlhdGVVc2VyIjp0cnVlLCJ2aWV3QWZmbGlhdGlvbiI6dHJ1ZSwiYWNjZXB0QWZmaWxpYXRpb24iOnRydWUsInJlbW92ZUFmZmlsaWF0aW9uIjp0cnVlfSwiX2lkIjoiNjM4ZGEyZjkyYjJhY2U5M2I5OGQwZjdmIiwicGVybWlzc2lvbnMiOlsib3ZlcnZpZXciLCJzZWFyY2hCeU9yZGVySWQiLCJzZWFyY2hCeVNoaXBtZW50SWQiLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSIsInNlYXJjaEJ5VHJhbnNpdE5vIiwic2VhcmNoQnlQcm9kdWN0TmFtZSIsInNlYXJjaEJ5UHJvZHVjdElkIiwidmlld0ludmVudG9yeSIsImFkZEludmVudG9yeSIsImltcG9ydEludmVudG9yeSIsImludmVudG9yeUFuYWx5dGljcyIsInZpZXdQcm9kdWN0TGlzdCIsInZpZXdQcm9kdWN0SW5mbyIsImFkZE5ld1Byb2R1Y3QiLCJpbnZlbnRvcnlGaWx0ZXJzIiwiaW52ZW50b3J5RXhwb3J0UmVwb3J0IiwiY3JlYXRlU2hpcG1lbnQiLCJzaGlwbWVudEFuYWx5dGljcyIsInVwZGF0ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50U2NhbiIsImluYm91bmRTaGlwbWVudHMiLCJvdXRib3VuZFNoaXBtZW50cyIsInZpZXdTaGlwbWVudCIsInNoaXBtZW50RmlsdGVycyIsInNoaXBtZW50RXhwb3J0UmVwb3J0IiwiY3JlYXRlT3JkZXIiLCJpbXBvcnRPcmRlciIsIm9yZGVyQW5hbHl0aWNzIiwicmVjZWl2ZU9yZGVyIiwiYWNjZXB0UmVqZWN0T3JkZXIiLCJ2aWV3SW5ib3VuZE9yZGVycyIsInZpZXdPdXRib3VuZE9yZGVycyIsIm9yZGVyRmlsdGVycyIsIm9yZGVyRXhwb3J0UmVwb3J0Iiwidmlld1BPIiwibmV0d29yayIsInRyYWNrQW5kVHJhY2UiLCJnZXRVc2VyUmVxdWVzdCIsImFjY2VwdFVzZXIiLCJhZGRVc2VyIiwicmVtb3ZlVXNlciIsImRlYWN0aXZhdGVVc2VyIiwiYWRkUm9sZSIsImRlbGV0ZVJvbGUiLCJhZmZsaWF0ZVVzZXIiLCJ1bmFmZmxpYXRlVXNlciIsInZpZXdBZmZsaWF0aW9uIiwiYWNjZXB0QWZmaWxpYXRpb24iLCJyZW1vdmVBZmZpbGlhdGlvbiJdLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDIwLTA4LTMwVDE4OjU0OjI5Ljg4N1oiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTA3VDA2OjQ2OjU1LjcxNVoiLCJfX3YiOjB9LCJpYXQiOjE2NzEwOTQ0NTMsImV4cCI6MTY3MTEzNzY1M30.AFtJT7m9UzvMysimWfY8O7mthNmvMdyTHVbOCWY7vTs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "https://test.vaccineledger.com/lastmilemanagement/api/vaccination/getVialsUtilised",
+          "protocol": "https",
+          "host": ["test", "vaccineledger", "com"],
+          "path": [
+            "lastmilemanagement",
+            "api",
+            "vaccination",
+            "getVialsUtilised"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get vaccinations list",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVNUDEwMDAwMSIsImZpcnN0TmFtZSI6IkRldiIsImVtYWlsSWQiOiJkZXZAc3RhdHdpZy5jb20iLCJyb2xlIjoiYWRtaW4iLCJ3YXJlaG91c2VJZCI6IldBUjEwMDAwMSIsIm9yZ2FuaXNhdGlvbklkIjoiT1JHMTAwMDAxIiwicGhvbmVOdW1iZXIiOm51bGwsIm9yZyI6Im9yZzFNU1AiLCJ1c2VyTmFtZSI6ImRldkBzdGF0d2lnLmNvbSIsInByZWZlcnJlZExhbmd1YWdlIjoiRU4iLCJpc0N1c3RvbSI6ZmFsc2UsInR5cGUiOiJDRU5UUkFMX0FVVEhPUklUWSIsInBlcm1pc3Npb25zIjp7Im92ZXJ2aWV3Ijp7Im92ZXJ2aWV3Ijp0cnVlfSwic2VhcmNoIjp7InNlYXJjaEJ5T3JkZXJJZCI6dHJ1ZSwic2VhcmNoQnlTaGlwbWVudElkIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSI6dHJ1ZSwic2VhcmNoQnlUcmFuc2l0Tm8iOnRydWUsInNlYXJjaEJ5UHJvZHVjdE5hbWUiOnRydWUsInNlYXJjaEJ5UHJvZHVjdElkIjp0cnVlfSwiaW52ZW50b3J5Ijp7InZpZXdJbnZlbnRvcnkiOnRydWUsImFkZEludmVudG9yeSI6dHJ1ZSwiaW1wb3J0SW52ZW50b3J5Ijp0cnVlLCJpbnZlbnRvcnlBbmFseXRpY3MiOnRydWUsInZpZXdQcm9kdWN0TGlzdCI6dHJ1ZSwidmlld1Byb2R1Y3RJbmZvIjp0cnVlLCJhZGROZXdQcm9kdWN0Ijp0cnVlLCJpbnZlbnRvcnlGaWx0ZXJzIjp0cnVlLCJpbnZlbnRvcnlFeHBvcnRSZXBvcnQiOnRydWV9LCJzaGlwbWVudCI6eyJjcmVhdGVTaGlwbWVudCI6dHJ1ZSwic2hpcG1lbnRBbmFseXRpY3MiOnRydWUsInVwZGF0ZVNoaXBtZW50Ijp0cnVlLCJyZWNlaXZlU2hpcG1lbnQiOnRydWUsInJlY2VpdmVTaGlwbWVudFNjYW4iOnRydWUsImluYm91bmRTaGlwbWVudHMiOnRydWUsIm91dGJvdW5kU2hpcG1lbnRzIjp0cnVlLCJ2aWV3U2hpcG1lbnQiOnRydWUsInNoaXBtZW50RmlsdGVycyI6dHJ1ZSwic2hpcG1lbnRFeHBvcnRSZXBvcnQiOnRydWV9LCJvcmRlciI6eyJjcmVhdGVPcmRlciI6dHJ1ZSwiaW1wb3J0T3JkZXIiOnRydWUsIm9yZGVyQW5hbHl0aWNzIjp0cnVlLCJyZWNlaXZlT3JkZXIiOnRydWUsImFjY2VwdFJlamVjdE9yZGVyIjp0cnVlLCJ2aWV3SW5ib3VuZE9yZGVycyI6dHJ1ZSwidmlld091dGJvdW5kT3JkZXJzIjp0cnVlLCJvcmRlckZpbHRlcnMiOnRydWUsIm9yZGVyRXhwb3J0UmVwb3J0Ijp0cnVlLCJ2aWV3UE8iOnRydWV9LCJuZXR3b3JrIjp7Im5ldHdvcmsiOnRydWV9LCJ0cmFjayI6eyJ0cmFja0FuZFRyYWNlIjp0cnVlfSwiYWRtaW4iOnsiZ2V0VXNlclJlcXVlc3QiOnRydWUsImFjY2VwdFVzZXIiOnRydWUsImFkZFVzZXIiOnRydWUsInJlbW92ZVVzZXIiOnRydWUsImRlYWN0aXZhdGVVc2VyIjp0cnVlLCJhZGRSb2xlIjp0cnVlLCJkZWxldGVSb2xlIjp0cnVlLCJhZmZsaWF0ZVVzZXIiOnRydWUsInVuYWZmbGlhdGVVc2VyIjp0cnVlLCJ2aWV3QWZmbGlhdGlvbiI6dHJ1ZSwiYWNjZXB0QWZmaWxpYXRpb24iOnRydWUsInJlbW92ZUFmZmlsaWF0aW9uIjp0cnVlfSwiX2lkIjoiNjM4ZGEyZjkyYjJhY2U5M2I5OGQwZjdmIiwicGVybWlzc2lvbnMiOlsib3ZlcnZpZXciLCJzZWFyY2hCeU9yZGVySWQiLCJzZWFyY2hCeVNoaXBtZW50SWQiLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSIsInNlYXJjaEJ5VHJhbnNpdE5vIiwic2VhcmNoQnlQcm9kdWN0TmFtZSIsInNlYXJjaEJ5UHJvZHVjdElkIiwidmlld0ludmVudG9yeSIsImFkZEludmVudG9yeSIsImltcG9ydEludmVudG9yeSIsImludmVudG9yeUFuYWx5dGljcyIsInZpZXdQcm9kdWN0TGlzdCIsInZpZXdQcm9kdWN0SW5mbyIsImFkZE5ld1Byb2R1Y3QiLCJpbnZlbnRvcnlGaWx0ZXJzIiwiaW52ZW50b3J5RXhwb3J0UmVwb3J0IiwiY3JlYXRlU2hpcG1lbnQiLCJzaGlwbWVudEFuYWx5dGljcyIsInVwZGF0ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50U2NhbiIsImluYm91bmRTaGlwbWVudHMiLCJvdXRib3VuZFNoaXBtZW50cyIsInZpZXdTaGlwbWVudCIsInNoaXBtZW50RmlsdGVycyIsInNoaXBtZW50RXhwb3J0UmVwb3J0IiwiY3JlYXRlT3JkZXIiLCJpbXBvcnRPcmRlciIsIm9yZGVyQW5hbHl0aWNzIiwicmVjZWl2ZU9yZGVyIiwiYWNjZXB0UmVqZWN0T3JkZXIiLCJ2aWV3SW5ib3VuZE9yZGVycyIsInZpZXdPdXRib3VuZE9yZGVycyIsIm9yZGVyRmlsdGVycyIsIm9yZGVyRXhwb3J0UmVwb3J0Iiwidmlld1BPIiwibmV0d29yayIsInRyYWNrQW5kVHJhY2UiLCJnZXRVc2VyUmVxdWVzdCIsImFjY2VwdFVzZXIiLCJhZGRVc2VyIiwicmVtb3ZlVXNlciIsImRlYWN0aXZhdGVVc2VyIiwiYWRkUm9sZSIsImRlbGV0ZVJvbGUiLCJhZmZsaWF0ZVVzZXIiLCJ1bmFmZmxpYXRlVXNlciIsInZpZXdBZmZsaWF0aW9uIiwiYWNjZXB0QWZmaWxpYXRpb24iLCJyZW1vdmVBZmZpbGlhdGlvbiJdLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDIwLTA4LTMwVDE4OjU0OjI5Ljg4N1oiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTA3VDA2OjQ2OjU1LjcxNVoiLCJfX3YiOjB9LCJpYXQiOjE2NzEwOTQ0NTMsImV4cCI6MTY3MTEzNzY1M30.AFtJT7m9UzvMysimWfY8O7mthNmvMdyTHVbOCWY7vTs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://test.vaccineledger.com/lastmilemanagement/api/vaccination/getVaccinationsList",
+          "protocol": "https",
+          "host": ["test", "vaccineledger", "com"],
+          "path": [
+            "lastmilemanagement",
+            "api",
+            "vaccination",
+            "getVaccinationsList"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Dose",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVNUDEwMDAwMSIsImZpcnN0TmFtZSI6IkRldiIsImVtYWlsSWQiOiJkZXZAc3RhdHdpZy5jb20iLCJyb2xlIjoiYWRtaW4iLCJ3YXJlaG91c2VJZCI6IldBUjEwMDAwMSIsIm9yZ2FuaXNhdGlvbklkIjoiT1JHMTAwMDAxIiwicGhvbmVOdW1iZXIiOm51bGwsIm9yZyI6Im9yZzFNU1AiLCJ1c2VyTmFtZSI6ImRldkBzdGF0d2lnLmNvbSIsInByZWZlcnJlZExhbmd1YWdlIjoiRU4iLCJpc0N1c3RvbSI6ZmFsc2UsInR5cGUiOiJDRU5UUkFMX0FVVEhPUklUWSIsInBlcm1pc3Npb25zIjp7Im92ZXJ2aWV3Ijp7Im92ZXJ2aWV3Ijp0cnVlfSwic2VhcmNoIjp7InNlYXJjaEJ5T3JkZXJJZCI6dHJ1ZSwic2VhcmNoQnlTaGlwbWVudElkIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSI6dHJ1ZSwic2VhcmNoQnlUcmFuc2l0Tm8iOnRydWUsInNlYXJjaEJ5UHJvZHVjdE5hbWUiOnRydWUsInNlYXJjaEJ5UHJvZHVjdElkIjp0cnVlfSwiaW52ZW50b3J5Ijp7InZpZXdJbnZlbnRvcnkiOnRydWUsImFkZEludmVudG9yeSI6dHJ1ZSwiaW1wb3J0SW52ZW50b3J5Ijp0cnVlLCJpbnZlbnRvcnlBbmFseXRpY3MiOnRydWUsInZpZXdQcm9kdWN0TGlzdCI6dHJ1ZSwidmlld1Byb2R1Y3RJbmZvIjp0cnVlLCJhZGROZXdQcm9kdWN0Ijp0cnVlLCJpbnZlbnRvcnlGaWx0ZXJzIjp0cnVlLCJpbnZlbnRvcnlFeHBvcnRSZXBvcnQiOnRydWV9LCJzaGlwbWVudCI6eyJjcmVhdGVTaGlwbWVudCI6dHJ1ZSwic2hpcG1lbnRBbmFseXRpY3MiOnRydWUsInVwZGF0ZVNoaXBtZW50Ijp0cnVlLCJyZWNlaXZlU2hpcG1lbnQiOnRydWUsInJlY2VpdmVTaGlwbWVudFNjYW4iOnRydWUsImluYm91bmRTaGlwbWVudHMiOnRydWUsIm91dGJvdW5kU2hpcG1lbnRzIjp0cnVlLCJ2aWV3U2hpcG1lbnQiOnRydWUsInNoaXBtZW50RmlsdGVycyI6dHJ1ZSwic2hpcG1lbnRFeHBvcnRSZXBvcnQiOnRydWV9LCJvcmRlciI6eyJjcmVhdGVPcmRlciI6dHJ1ZSwiaW1wb3J0T3JkZXIiOnRydWUsIm9yZGVyQW5hbHl0aWNzIjp0cnVlLCJyZWNlaXZlT3JkZXIiOnRydWUsImFjY2VwdFJlamVjdE9yZGVyIjp0cnVlLCJ2aWV3SW5ib3VuZE9yZGVycyI6dHJ1ZSwidmlld091dGJvdW5kT3JkZXJzIjp0cnVlLCJvcmRlckZpbHRlcnMiOnRydWUsIm9yZGVyRXhwb3J0UmVwb3J0Ijp0cnVlLCJ2aWV3UE8iOnRydWV9LCJuZXR3b3JrIjp7Im5ldHdvcmsiOnRydWV9LCJ0cmFjayI6eyJ0cmFja0FuZFRyYWNlIjp0cnVlfSwiYWRtaW4iOnsiZ2V0VXNlclJlcXVlc3QiOnRydWUsImFjY2VwdFVzZXIiOnRydWUsImFkZFVzZXIiOnRydWUsInJlbW92ZVVzZXIiOnRydWUsImRlYWN0aXZhdGVVc2VyIjp0cnVlLCJhZGRSb2xlIjp0cnVlLCJkZWxldGVSb2xlIjp0cnVlLCJhZmZsaWF0ZVVzZXIiOnRydWUsInVuYWZmbGlhdGVVc2VyIjp0cnVlLCJ2aWV3QWZmbGlhdGlvbiI6dHJ1ZSwiYWNjZXB0QWZmaWxpYXRpb24iOnRydWUsInJlbW92ZUFmZmlsaWF0aW9uIjp0cnVlfSwiX2lkIjoiNjM4ZGEyZjkyYjJhY2U5M2I5OGQwZjdmIiwicGVybWlzc2lvbnMiOlsib3ZlcnZpZXciLCJzZWFyY2hCeU9yZGVySWQiLCJzZWFyY2hCeVNoaXBtZW50SWQiLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSIsInNlYXJjaEJ5VHJhbnNpdE5vIiwic2VhcmNoQnlQcm9kdWN0TmFtZSIsInNlYXJjaEJ5UHJvZHVjdElkIiwidmlld0ludmVudG9yeSIsImFkZEludmVudG9yeSIsImltcG9ydEludmVudG9yeSIsImludmVudG9yeUFuYWx5dGljcyIsInZpZXdQcm9kdWN0TGlzdCIsInZpZXdQcm9kdWN0SW5mbyIsImFkZE5ld1Byb2R1Y3QiLCJpbnZlbnRvcnlGaWx0ZXJzIiwiaW52ZW50b3J5RXhwb3J0UmVwb3J0IiwiY3JlYXRlU2hpcG1lbnQiLCJzaGlwbWVudEFuYWx5dGljcyIsInVwZGF0ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50U2NhbiIsImluYm91bmRTaGlwbWVudHMiLCJvdXRib3VuZFNoaXBtZW50cyIsInZpZXdTaGlwbWVudCIsInNoaXBtZW50RmlsdGVycyIsInNoaXBtZW50RXhwb3J0UmVwb3J0IiwiY3JlYXRlT3JkZXIiLCJpbXBvcnRPcmRlciIsIm9yZGVyQW5hbHl0aWNzIiwicmVjZWl2ZU9yZGVyIiwiYWNjZXB0UmVqZWN0T3JkZXIiLCJ2aWV3SW5ib3VuZE9yZGVycyIsInZpZXdPdXRib3VuZE9yZGVycyIsIm9yZGVyRmlsdGVycyIsIm9yZGVyRXhwb3J0UmVwb3J0Iiwidmlld1BPIiwibmV0d29yayIsInRyYWNrQW5kVHJhY2UiLCJnZXRVc2VyUmVxdWVzdCIsImFjY2VwdFVzZXIiLCJhZGRVc2VyIiwicmVtb3ZlVXNlciIsImRlYWN0aXZhdGVVc2VyIiwiYWRkUm9sZSIsImRlbGV0ZVJvbGUiLCJhZmZsaWF0ZVVzZXIiLCJ1bmFmZmxpYXRlVXNlciIsInZpZXdBZmZsaWF0aW9uIiwiYWNjZXB0QWZmaWxpYXRpb24iLCJyZW1vdmVBZmZpbGlhdGlvbiJdLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDIwLTA4LTMwVDE4OjU0OjI5Ljg4N1oiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTA3VDA2OjQ2OjU1LjcxNVoiLCJfX3YiOjB9LCJpYXQiOjE2NzEwOTQ0NTMsImV4cCI6MTY3MTEzNzY1M30.AFtJT7m9UzvMysimWfY8O7mthNmvMdyTHVbOCWY7vTs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"doseId\": \"DOSE100255\",\n    \"update\": {\n        \"ageMonths\": 4\n    }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://test.vaccineledger.com/lastmilemanagement/api/vaccination/updateDose",
+          "protocol": "https",
+          "host": ["test", "vaccineledger", "com"],
+          "path": ["lastmilemanagement", "api", "vaccination", "updateDose"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Complete Vial",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVNUDEwMDAwMSIsImZpcnN0TmFtZSI6IkRldiIsImVtYWlsSWQiOiJkZXZAc3RhdHdpZy5jb20iLCJyb2xlIjoiYWRtaW4iLCJ3YXJlaG91c2VJZCI6IldBUjEwMDAwMSIsIm9yZ2FuaXNhdGlvbklkIjoiT1JHMTAwMDAxIiwicGhvbmVOdW1iZXIiOm51bGwsIm9yZyI6Im9yZzFNU1AiLCJ1c2VyTmFtZSI6ImRldkBzdGF0d2lnLmNvbSIsInByZWZlcnJlZExhbmd1YWdlIjoiRU4iLCJpc0N1c3RvbSI6ZmFsc2UsInR5cGUiOiJDRU5UUkFMX0FVVEhPUklUWSIsInBlcm1pc3Npb25zIjp7Im92ZXJ2aWV3Ijp7Im92ZXJ2aWV3Ijp0cnVlfSwic2VhcmNoIjp7InNlYXJjaEJ5T3JkZXJJZCI6dHJ1ZSwic2VhcmNoQnlTaGlwbWVudElkIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSI6dHJ1ZSwic2VhcmNoQnlUcmFuc2l0Tm8iOnRydWUsInNlYXJjaEJ5UHJvZHVjdE5hbWUiOnRydWUsInNlYXJjaEJ5UHJvZHVjdElkIjp0cnVlfSwiaW52ZW50b3J5Ijp7InZpZXdJbnZlbnRvcnkiOnRydWUsImFkZEludmVudG9yeSI6dHJ1ZSwiaW1wb3J0SW52ZW50b3J5Ijp0cnVlLCJpbnZlbnRvcnlBbmFseXRpY3MiOnRydWUsInZpZXdQcm9kdWN0TGlzdCI6dHJ1ZSwidmlld1Byb2R1Y3RJbmZvIjp0cnVlLCJhZGROZXdQcm9kdWN0Ijp0cnVlLCJpbnZlbnRvcnlGaWx0ZXJzIjp0cnVlLCJpbnZlbnRvcnlFeHBvcnRSZXBvcnQiOnRydWV9LCJzaGlwbWVudCI6eyJjcmVhdGVTaGlwbWVudCI6dHJ1ZSwic2hpcG1lbnRBbmFseXRpY3MiOnRydWUsInVwZGF0ZVNoaXBtZW50Ijp0cnVlLCJyZWNlaXZlU2hpcG1lbnQiOnRydWUsInJlY2VpdmVTaGlwbWVudFNjYW4iOnRydWUsImluYm91bmRTaGlwbWVudHMiOnRydWUsIm91dGJvdW5kU2hpcG1lbnRzIjp0cnVlLCJ2aWV3U2hpcG1lbnQiOnRydWUsInNoaXBtZW50RmlsdGVycyI6dHJ1ZSwic2hpcG1lbnRFeHBvcnRSZXBvcnQiOnRydWV9LCJvcmRlciI6eyJjcmVhdGVPcmRlciI6dHJ1ZSwiaW1wb3J0T3JkZXIiOnRydWUsIm9yZGVyQW5hbHl0aWNzIjp0cnVlLCJyZWNlaXZlT3JkZXIiOnRydWUsImFjY2VwdFJlamVjdE9yZGVyIjp0cnVlLCJ2aWV3SW5ib3VuZE9yZGVycyI6dHJ1ZSwidmlld091dGJvdW5kT3JkZXJzIjp0cnVlLCJvcmRlckZpbHRlcnMiOnRydWUsIm9yZGVyRXhwb3J0UmVwb3J0Ijp0cnVlLCJ2aWV3UE8iOnRydWV9LCJuZXR3b3JrIjp7Im5ldHdvcmsiOnRydWV9LCJ0cmFjayI6eyJ0cmFja0FuZFRyYWNlIjp0cnVlfSwiYWRtaW4iOnsiZ2V0VXNlclJlcXVlc3QiOnRydWUsImFjY2VwdFVzZXIiOnRydWUsImFkZFVzZXIiOnRydWUsInJlbW92ZVVzZXIiOnRydWUsImRlYWN0aXZhdGVVc2VyIjp0cnVlLCJhZGRSb2xlIjp0cnVlLCJkZWxldGVSb2xlIjp0cnVlLCJhZmZsaWF0ZVVzZXIiOnRydWUsInVuYWZmbGlhdGVVc2VyIjp0cnVlLCJ2aWV3QWZmbGlhdGlvbiI6dHJ1ZSwiYWNjZXB0QWZmaWxpYXRpb24iOnRydWUsInJlbW92ZUFmZmlsaWF0aW9uIjp0cnVlfSwiX2lkIjoiNjM4ZGEyZjkyYjJhY2U5M2I5OGQwZjdmIiwicGVybWlzc2lvbnMiOlsib3ZlcnZpZXciLCJzZWFyY2hCeU9yZGVySWQiLCJzZWFyY2hCeVNoaXBtZW50SWQiLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSIsInNlYXJjaEJ5VHJhbnNpdE5vIiwic2VhcmNoQnlQcm9kdWN0TmFtZSIsInNlYXJjaEJ5UHJvZHVjdElkIiwidmlld0ludmVudG9yeSIsImFkZEludmVudG9yeSIsImltcG9ydEludmVudG9yeSIsImludmVudG9yeUFuYWx5dGljcyIsInZpZXdQcm9kdWN0TGlzdCIsInZpZXdQcm9kdWN0SW5mbyIsImFkZE5ld1Byb2R1Y3QiLCJpbnZlbnRvcnlGaWx0ZXJzIiwiaW52ZW50b3J5RXhwb3J0UmVwb3J0IiwiY3JlYXRlU2hpcG1lbnQiLCJzaGlwbWVudEFuYWx5dGljcyIsInVwZGF0ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50U2NhbiIsImluYm91bmRTaGlwbWVudHMiLCJvdXRib3VuZFNoaXBtZW50cyIsInZpZXdTaGlwbWVudCIsInNoaXBtZW50RmlsdGVycyIsInNoaXBtZW50RXhwb3J0UmVwb3J0IiwiY3JlYXRlT3JkZXIiLCJpbXBvcnRPcmRlciIsIm9yZGVyQW5hbHl0aWNzIiwicmVjZWl2ZU9yZGVyIiwiYWNjZXB0UmVqZWN0T3JkZXIiLCJ2aWV3SW5ib3VuZE9yZGVycyIsInZpZXdPdXRib3VuZE9yZGVycyIsIm9yZGVyRmlsdGVycyIsIm9yZGVyRXhwb3J0UmVwb3J0Iiwidmlld1BPIiwibmV0d29yayIsInRyYWNrQW5kVHJhY2UiLCJnZXRVc2VyUmVxdWVzdCIsImFjY2VwdFVzZXIiLCJhZGRVc2VyIiwicmVtb3ZlVXNlciIsImRlYWN0aXZhdGVVc2VyIiwiYWRkUm9sZSIsImRlbGV0ZVJvbGUiLCJhZmZsaWF0ZVVzZXIiLCJ1bmFmZmxpYXRlVXNlciIsInZpZXdBZmZsaWF0aW9uIiwiYWNjZXB0QWZmaWxpYXRpb24iLCJyZW1vdmVBZmZpbGlhdGlvbiJdLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDIwLTA4LTMwVDE4OjU0OjI5Ljg4N1oiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTA3VDA2OjQ2OjU1LjcxNVoiLCJfX3YiOjB9LCJpYXQiOjE2NzEwOTQ0NTMsImV4cCI6MTY3MTEzNzY1M30.AFtJT7m9UzvMysimWfY8O7mthNmvMdyTHVbOCWY7vTs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"vaccineVialId\": \"VIAL100096\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://test.vaccineledger.com/lastmilemanagement/api/vaccination/completeVial",
+          "protocol": "https",
+          "host": ["test", "vaccineledger", "com"],
+          "path": ["lastmilemanagement", "api", "vaccination", "completeVial"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Dose",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVNUDEwMDAwMSIsImZpcnN0TmFtZSI6IkRldiIsImVtYWlsSWQiOiJkZXZAc3RhdHdpZy5jb20iLCJyb2xlIjoiYWRtaW4iLCJ3YXJlaG91c2VJZCI6IldBUjEwMDAwMSIsIm9yZ2FuaXNhdGlvbklkIjoiT1JHMTAwMDAxIiwicGhvbmVOdW1iZXIiOm51bGwsIm9yZyI6Im9yZzFNU1AiLCJ1c2VyTmFtZSI6ImRldkBzdGF0d2lnLmNvbSIsInByZWZlcnJlZExhbmd1YWdlIjoiRU4iLCJpc0N1c3RvbSI6ZmFsc2UsInR5cGUiOiJDRU5UUkFMX0FVVEhPUklUWSIsInBlcm1pc3Npb25zIjp7Im92ZXJ2aWV3Ijp7Im92ZXJ2aWV3Ijp0cnVlfSwic2VhcmNoIjp7InNlYXJjaEJ5T3JkZXJJZCI6dHJ1ZSwic2VhcmNoQnlTaGlwbWVudElkIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSI6dHJ1ZSwic2VhcmNoQnlUcmFuc2l0Tm8iOnRydWUsInNlYXJjaEJ5UHJvZHVjdE5hbWUiOnRydWUsInNlYXJjaEJ5UHJvZHVjdElkIjp0cnVlfSwiaW52ZW50b3J5Ijp7InZpZXdJbnZlbnRvcnkiOnRydWUsImFkZEludmVudG9yeSI6dHJ1ZSwiaW1wb3J0SW52ZW50b3J5Ijp0cnVlLCJpbnZlbnRvcnlBbmFseXRpY3MiOnRydWUsInZpZXdQcm9kdWN0TGlzdCI6dHJ1ZSwidmlld1Byb2R1Y3RJbmZvIjp0cnVlLCJhZGROZXdQcm9kdWN0Ijp0cnVlLCJpbnZlbnRvcnlGaWx0ZXJzIjp0cnVlLCJpbnZlbnRvcnlFeHBvcnRSZXBvcnQiOnRydWV9LCJzaGlwbWVudCI6eyJjcmVhdGVTaGlwbWVudCI6dHJ1ZSwic2hpcG1lbnRBbmFseXRpY3MiOnRydWUsInVwZGF0ZVNoaXBtZW50Ijp0cnVlLCJyZWNlaXZlU2hpcG1lbnQiOnRydWUsInJlY2VpdmVTaGlwbWVudFNjYW4iOnRydWUsImluYm91bmRTaGlwbWVudHMiOnRydWUsIm91dGJvdW5kU2hpcG1lbnRzIjp0cnVlLCJ2aWV3U2hpcG1lbnQiOnRydWUsInNoaXBtZW50RmlsdGVycyI6dHJ1ZSwic2hpcG1lbnRFeHBvcnRSZXBvcnQiOnRydWV9LCJvcmRlciI6eyJjcmVhdGVPcmRlciI6dHJ1ZSwiaW1wb3J0T3JkZXIiOnRydWUsIm9yZGVyQW5hbHl0aWNzIjp0cnVlLCJyZWNlaXZlT3JkZXIiOnRydWUsImFjY2VwdFJlamVjdE9yZGVyIjp0cnVlLCJ2aWV3SW5ib3VuZE9yZGVycyI6dHJ1ZSwidmlld091dGJvdW5kT3JkZXJzIjp0cnVlLCJvcmRlckZpbHRlcnMiOnRydWUsIm9yZGVyRXhwb3J0UmVwb3J0Ijp0cnVlLCJ2aWV3UE8iOnRydWV9LCJuZXR3b3JrIjp7Im5ldHdvcmsiOnRydWV9LCJ0cmFjayI6eyJ0cmFja0FuZFRyYWNlIjp0cnVlfSwiYWRtaW4iOnsiZ2V0VXNlclJlcXVlc3QiOnRydWUsImFjY2VwdFVzZXIiOnRydWUsImFkZFVzZXIiOnRydWUsInJlbW92ZVVzZXIiOnRydWUsImRlYWN0aXZhdGVVc2VyIjp0cnVlLCJhZGRSb2xlIjp0cnVlLCJkZWxldGVSb2xlIjp0cnVlLCJhZmZsaWF0ZVVzZXIiOnRydWUsInVuYWZmbGlhdGVVc2VyIjp0cnVlLCJ2aWV3QWZmbGlhdGlvbiI6dHJ1ZSwiYWNjZXB0QWZmaWxpYXRpb24iOnRydWUsInJlbW92ZUFmZmlsaWF0aW9uIjp0cnVlfSwiX2lkIjoiNjM4ZGEyZjkyYjJhY2U5M2I5OGQwZjdmIiwicGVybWlzc2lvbnMiOlsib3ZlcnZpZXciLCJzZWFyY2hCeU9yZGVySWQiLCJzZWFyY2hCeVNoaXBtZW50SWQiLCJzZWFyY2hCeVByb2R1Y3RDYXRlZ29yeSIsInNlYXJjaEJ5VHJhbnNpdE5vIiwic2VhcmNoQnlQcm9kdWN0TmFtZSIsInNlYXJjaEJ5UHJvZHVjdElkIiwidmlld0ludmVudG9yeSIsImFkZEludmVudG9yeSIsImltcG9ydEludmVudG9yeSIsImludmVudG9yeUFuYWx5dGljcyIsInZpZXdQcm9kdWN0TGlzdCIsInZpZXdQcm9kdWN0SW5mbyIsImFkZE5ld1Byb2R1Y3QiLCJpbnZlbnRvcnlGaWx0ZXJzIiwiaW52ZW50b3J5RXhwb3J0UmVwb3J0IiwiY3JlYXRlU2hpcG1lbnQiLCJzaGlwbWVudEFuYWx5dGljcyIsInVwZGF0ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50IiwicmVjZWl2ZVNoaXBtZW50U2NhbiIsImluYm91bmRTaGlwbWVudHMiLCJvdXRib3VuZFNoaXBtZW50cyIsInZpZXdTaGlwbWVudCIsInNoaXBtZW50RmlsdGVycyIsInNoaXBtZW50RXhwb3J0UmVwb3J0IiwiY3JlYXRlT3JkZXIiLCJpbXBvcnRPcmRlciIsIm9yZGVyQW5hbHl0aWNzIiwicmVjZWl2ZU9yZGVyIiwiYWNjZXB0UmVqZWN0T3JkZXIiLCJ2aWV3SW5ib3VuZE9yZGVycyIsInZpZXdPdXRib3VuZE9yZGVycyIsIm9yZGVyRmlsdGVycyIsIm9yZGVyRXhwb3J0UmVwb3J0Iiwidmlld1BPIiwibmV0d29yayIsInRyYWNrQW5kVHJhY2UiLCJnZXRVc2VyUmVxdWVzdCIsImFjY2VwdFVzZXIiLCJhZGRVc2VyIiwicmVtb3ZlVXNlciIsImRlYWN0aXZhdGVVc2VyIiwiYWRkUm9sZSIsImRlbGV0ZVJvbGUiLCJhZmZsaWF0ZVVzZXIiLCJ1bmFmZmxpYXRlVXNlciIsInZpZXdBZmZsaWF0aW9uIiwiYWNjZXB0QWZmaWxpYXRpb24iLCJyZW1vdmVBZmZpbGlhdGlvbiJdLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDIwLTA4LTMwVDE4OjU0OjI5Ljg4N1oiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTA3VDA2OjQ2OjU1LjcxNVoiLCJfX3YiOjB9LCJpYXQiOjE2NzEwOTQ0NTMsImV4cCI6MTY3MTEzNzY1M30.AFtJT7m9UzvMysimWfY8O7mthNmvMdyTHVbOCWY7vTs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://test.vaccineledger.com/lastmilemanagement/api/vaccination/deleteDose?doseId=DOSE100255",
+          "protocol": "https",
+          "host": ["test", "vaccineledger", "com"],
+          "path": ["lastmilemanagement", "api", "vaccination", "deleteDose"],
+          "query": [
+            {
+              "key": "doseId",
+              "value": "DOSE100255"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

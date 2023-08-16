@@ -1,237 +1,421 @@
-import React, { useState, useEffect } from 'react';
-import {
-  Link
-} from "react-router-dom";
-
-import { expired, expiringIn, Count } from '../../utils/dateHelper';
-import './style.scss';
-import Table from '../../shared/table';
-import TableFilter from '../../shared/advanceTableFilter';
-import TotalInventoryAdded from "../../assets/icons/TotalInventoryAddedcopy.svg";
-import currentinventory from "../../assets/icons/CurrentInventory.svg";
-import Expiration from "../../assets/icons/TotalVaccinenearExpiration.svg";
-import TotalVaccineExpired from "../../assets/icons/TotalVaccineExpired.svg";
-import Add from '../../assets/icons/add.svg';
-import user from '../../assets/icons/brand.svg';
-import Package from '../../assets/icons/package.svg';
-import calender from '../../assets/icons/calendar.svg';
-import Status from '../../assets/icons/Status.svg';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "./style.scss";
+import Table from "../../shared/table";
+import TableFilter from "../../shared/advanceTableFilter";
+import { getInventoryAnalytics } from "../../actions/analyticsAction";
+import { getProductList } from "../../actions/productActions";
+import Add from "../../assets/icons/add.svg";
+import calender from "../../assets/icons/calendar.svg";
+import Status from "../../assets/icons/Status.svg";
+import Quantity from "../../assets/icons/Quantity.png";
+import Product from "../../assets/icons/Producttype.png";
+import { useDispatch } from "react-redux";
+import { getInventories } from "../../actions/inventoryActions";
+import { isAuthenticated } from "../../utils/commonHelper";
+import Cards from "./cards/cards";
 
 const Inventory = (props) => {
+  const { t, ProdDetails } = props;
   const headers = {
-    coloumn1 : "Product Type",
-    coloumn2:  "Manufacturer",
-    coloumn3: "Expiry Date",
-    coloumn4:  "Date Added",
+    coloumn1: "Product Name",
+    coloumn2: "Product Category",
+    coloumn3: "Date",
+    coloumn4: "Quantity",
+    coloumn5: "Status",
 
-    img1: <img src={Package} width="16" height="16" />,
-    img2: <img src={user} width="16" height="16" />,
-    img3: <img src={calender} width="16" height="16" />,
-    img4:  <img src={Status} width="16" height="16" />
-  }
+    displayColoumn1: t("product_name"),
+    displayColoumn2: t("product_category"),
+    displayColoumn3: t("date"),
+    displayColoumn4: t("quantity"),
+    displayColoumn5: t("status"),
 
+    img1: <img src={Product} width='16' height='16' alt='Product' />,
+    img2: <img src={Quantity} width='24' height='16' alt='Quantity' />,
+    img3: <img src={calender} width='16' height='16' alt='Calender' />,
+    img4: <img src={Quantity} width='24' height='16' alt='Quantity' />,
+    img5: <img src={Status} width='16' height='16' alt='Status' />,
+  };
+
+  if (!isAuthenticated("viewInventory")) props.history.push(`/profile`);
   const tableHeaders = {
-    coloumn1 : "Product Name",
-    coloumn2:  "Manufacturer",
-    coloumn3:  "Batch Number",
-    coloumn4:  "Quantity",
-            coloumn5:  "Serial Number",
-    coloumn6:  "Mfg Date",
-    coloumn7:  "Exp Date",
-  }
+    coloumn1: t("product_name"),
+    coloumn2: t("product_category"),
+    coloumn3: t("quantity"),
+  };
+  const MAX_LENGTH = 20;
+  const [inventoryNearExpiration, setInventoryNearExpiration] = useState("");
+  const [inventoryExpired, setInventoryExpired] = useState("");
+  const [inventoriesCount, setInventoriesCount] = useState("");
+  const [currentInventoriesCount, setCurrentInventoriesCount] = useState("");
+  const [productsList, setProductsList] = useState([]);
+  const [fromFilterDate, setFromFilterDate] = useState();
+  const [toFilterDate, setToFilterDate] = useState();
+  const dispatch = useDispatch();
+  const colors = [
+    "#D8E5FB",
+    "#FFEF83",
+    "#DFF1F2",
+    "#EBDDED",
+    "#D9E5EF",
+    "#FFC18C",
+    "#F1DDC6",
+    "#BCFFF2",
+    "#FFD0CA",
+    "#63B7AF",
+    "#FFCB91",
+    "#FFEFA1",
+    "#94EBCD",
+    "#6DDCCF",
+    "#FFE194",
+    "#E8F6EF",
+    "#B8DFD8",
+    "#D8E5FB",
+    "#FFEF83",
+    "#DFF1F2",
+    "#EBDDED",
+    "#D9E5EF",
+    "#FFC18C",
+    "#F1DDC6",
+    "#BCFFF2",
+    "#FFD0CA",
+    "#63B7AF",
+    "#FFCB91",
+    "#FFEFA1",
+    "#94EBCD",
+    "#6DDCCF",
+    "#FFE194",
+    "#E8F6EF",
+    "#B8DFD8",
+    "#D8E5FB",
+    "#FFEF83",
+    "#DFF1F2",
+    "#EBDDED",
+    "#D9E5EF",
+    "#FFC18C",
+    "#F1DDC6",
+    "#BCFFF2",
+    "#FFD0CA",
+    "#63B7AF",
+    "#FFCB91",
+    "#FFEFA1",
+    "#94EBCD",
+    "#6DDCCF",
+    "#FFE194",
+    "#E8F6EF",
+    "#B8DFD8",
+  ];
 
-  const [inventoryExpiring, setInventoryExpiring] = useState('');
-  const [inventoryExpired, setInventoryExpired] = useState('');
-  const [inventoryTotal, setInventoryTotal] = useState('');
-  const [inventoryCurrent, setInventoryCurrent] = useState('');
-  var key;
+  const [inventoryAnalytics, setInventoryAnalytics] = useState({});
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     const result = await getInventoryAnalytics();
+  //     setInventoryAnalytics(result.data.inventory);
+  //   }
+  //   fetchData();
+  // }, []);
+
+  const [limit] = useState(10);
+  const [dateFilter, setDateFilter] = useState("");
+  const [productNameFilter, setProductNameFilter] = useState("");
+  const [productCategoryFilter, setProductCategoryFilter] = useState("");
+  const [statusFilter, setStatusFilter] = useState("");
+
   useEffect(() => {
+    async function fetchData() {
+      const result = await getProductList();
+      setProductsList(result.message);
+      const resultAnalytics = await getInventoryAnalytics();
 
-   
-    const inventoryDates = props.inventories.map((data, index) => {
-         key=index+1
-      return data;
-    })
-    const expiring = expiringIn(inventoryDates, 2190);
-    const expired_data = expired(inventoryDates, 0);
-    const expiredCount = Count(expired_data);
-    const expiringCount = Count(expiring)
-    const inventoryCount = Count(inventoryDates);
-    
+      setInventoryAnalytics(resultAnalytics.data.inventory);
+      setInventoriesCount(
+        resultAnalytics.data.inventory.totalProductsAddedToInventory
+      );
+      setCurrentInventoriesCount(
+        resultAnalytics.data.inventory.totalProductsInInventory
+      );
+      // setInventoryNearExpiration(
+      //   resultAnalytics.data.inventory.batchExpiringInSixMonths
+      // );
+      setInventoryNearExpiration(
+        resultAnalytics.data.inventory.batchNearExpiration
+      );
+      // setInventoryExpired(
+      //   resultAnalytics.data.inventory.batchExpiredLastYear
+      // );
+      setInventoryExpired(resultAnalytics.data.inventory.batchExpired);
+      // setProductCategory(
+      //   resultAnalytics.data.inventory.totalProductCategory
+      // )
+      // setStockOut(
+      //   resultAnalytics.data.inventory.stockOut
+      // )
+    }
+    if (props.demoLogin) return;
+    fetchData();
+  }, []);
 
-    console.log(expiredCount);
-    setInventoryExpired(expiredCount);
-    setInventoryExpiring(expiringCount - expiredCount);
-    setInventoryTotal(key);
-    setInventoryCurrent(key);
+  const onPageChange = async (pageNum) => {
+    const recordSkip = (pageNum - 1) * limit;
+    // setSkip(recordSkip);
+    dispatch(
+      getInventories(
+        recordSkip,
+        limit,
+        dateFilter,
+        productNameFilter,
+        productCategoryFilter,
+        statusFilter,
+        fromFilterDate ? fromFilterDate?.toISOString() : null,
+        toFilterDate ? toFilterDate?.toISOString() : null
+      )
+    ); //(skip, limit, dateFilter, productName, productCategoryFilter, status)
+  };
 
-  })
+  const onSelectionDateFilter = async (value) => {
+    const fromDate =
+      value[0] === "" ? "" : new Date(new Date(value[0]).toDateString());
+    setFromFilterDate(fromDate);
+    if (value.length > 1) {
+      const toDate =
+        value[0] === "" ? "" : new Date(new Date(value[1]).toDateString());
+      setToFilterDate(toDate);
+      dispatch(
+        getInventories(
+          0,
+          limit,
+          dateFilter,
+          productNameFilter,
+          productCategoryFilter,
+          statusFilter,
+          fromDate ? fromDate?.toISOString() : null,
+          toDate ? toDate?.toISOString() : null
+        )
+      );
+    }
+  };
+
+  const setDateFilterOnSelect = async (dateFilterSelected) => {
+    setDateFilter(dateFilterSelected);
+    // setSkip(0);
+    dispatch(
+      getInventories(
+        0,
+        limit,
+        dateFilterSelected,
+        productNameFilter,
+        productCategoryFilter,
+        statusFilter,
+        fromFilterDate ? fromFilterDate?.toISOString() : null,
+        toFilterDate ? toFilterDate?.toISOString() : null
+      )
+    ); //(skip, limit, dateFilter, productName, productCategoryFilter, status)
+  };
+
+  const setInventoryStatusFilterOnSelect = async (statusFilterSelected) => {
+    setStatusFilter(statusFilterSelected);
+    // setSkip(0);
+    dispatch(
+      getInventories(
+        0,
+        limit,
+        dateFilter,
+        productNameFilter,
+        productCategoryFilter,
+        statusFilterSelected,
+        fromFilterDate ? fromFilterDate?.toISOString() : null,
+        toFilterDate ? toFilterDate?.toISOString() : null
+      )
+    ); //(skip, limit, dateFilter, productName, productCategoryFilter, status)
+  };
+
+  const setInventoryProductNameFilterOnSelect = async (
+    productNameFilterSelected
+  ) => {
+    setProductNameFilter(productNameFilterSelected);
+    // setSkip(0);
+    dispatch(
+      getInventories(
+        0,
+        limit,
+        dateFilter,
+        productNameFilterSelected,
+        productCategoryFilter,
+        statusFilter,
+        fromFilterDate ? fromFilterDate?.toISOString() : null,
+        toFilterDate ? toFilterDate?.toISOString() : null
+      )
+    ); //(skip, limit, dateFilter, productName, productCategoryFilter, status)
+  };
+
+  const setInventoryManufacturerFilterOnSelect = async (
+    manufacturerFilterSelected
+  ) => {
+    // setManufacturerFilter(manufacturerFilterSelected);
+    // setSkip(0);
+    dispatch(
+      getInventories(
+        0,
+        limit,
+        dateFilter,
+        productNameFilter,
+        manufacturerFilterSelected,
+        statusFilter,
+        fromFilterDate ? fromFilterDate?.toISOString() : null,
+        toFilterDate ? toFilterDate?.toISOString() : null
+      )
+    ); //(skip, limit, dateFilter, productName, productManufacturer, status)
+  };
+
+  const setInventoryProductCategoryFilterOnSelect = async (
+    categoryFilterSelected
+  ) => {
+    setProductCategoryFilter(categoryFilterSelected);
+    // setSkip(0);
+    dispatch(
+      getInventories(
+        0,
+        limit,
+        dateFilter,
+        productNameFilter,
+        categoryFilterSelected,
+        statusFilter,
+        fromFilterDate ? fromFilterDate?.toISOString() : null,
+        toFilterDate ? toFilterDate?.toISOString() : null
+      )
+    ); //(skip, limit, dateFilter, productName, productCategory, status)
+  };
   return (
-    <div className="inventory">
-      <div className="d-flex justify-content-between">
-        <h1 className="breadcrumb">INVENTORY </h1>
-        <div className="d-flex">
-          <Link to="/newinventory">
-            <button className="btn btn-yellow font-weight-bold">
-              <img src={Add} width='13' height='13' className="mr-2" />
-              <span>Add Inventory</span>
-            </button>
-          </Link>
+    <div className='inventory' style={{ pointerEvents: props.demoLogin ? "none" : "auto" }}>
+      <div className='d-flex justify-content-between'>
+        <h1 className="vl-heading-bdr black f-700">{t("inventory")}</h1>
+        <div className='d-flex'>
+          {isAuthenticated("addInventory") && (
+            <Link to='/newinventory'>
+              <button className='mi-btn mi-btn-md mi-btn-yellow'>
+                <img src={Add} width='13' height='13' className='mr-2' alt='' />
+                <span>
+                  <b>{t("add_inventory")}</b>
+                </span>
+              </button>
+            </Link>
+          )}
         </div>
       </div>
-      <div className="row mb-4">
-        <div className="col">
-          <div className="panel">
-            <div className="picture truck-bg">
-              <img src={TotalInventoryAdded} alt="truck" />
-            </div>
-            <div className="d-flex flex-column">
-              <div className="title truck-text">Inventory Added</div>
-              <div className="tab-container">
-                <div className="tab-item active">This Year</div>
-                <div className="tab-item">This Month</div>
-                <div className="tab-item">This Week</div>
-                <div className="tab-item">Today</div>
-              </div>
-              <div className="truck-text count">{inventoryTotal}</div>
-            </div>
-          </div>
+      {isAuthenticated("inventoryAnalytics") && (
+        <div className='mb-4'>
+          <Cards
+            inventoriesCount={inventoriesCount}
+            inventoryAnalytics={inventoryAnalytics}
+            currentInventoriesCount={currentInventoriesCount}
+            inventoryNearExpiration={inventoryNearExpiration}
+            inventoryExpired={inventoryExpired}
+            // setData={props.setData}
+            t={t}
+          />
         </div>
-        <div className="col">
-          <div className="panel">
-            <div className="picture sent-bg">
-              <img src={currentinventory} alt="truck" />
-            </div>
-            <div className="d-flex flex-column">
-              <div className="title sent-text">Current Inventory</div>
-              <div className="tab-container">
-                <div className="tab-item active">This Year</div>
-                <div className="tab-item">This Month</div>
-                <div className="tab-item">This Week</div>
-                <div className="tab-item">Today</div>
-              </div>
-              <div className="sent-text count">{inventoryCurrent}</div>
-            </div>
-          </div>
-        </div>
-        <div className="col">
-          <div className="panel">
-            <div className="picture recived-bg">
-              <img src={Expiration} alt="truck" />
-            </div>
-            <div className="d-flex flex-column">
-              <div className="title recived-text">Total Vaccines near Expiration</div>
-              <div className="tab-container">
-                <div className="tab-item active">This Year</div>
-                <div className="tab-item">This Month</div>
-                <div className="tab-item">This Week</div>
-                <div className="tab-item mr-3">Today</div>
-              </div>
-              <div className="recived-text count">{inventoryExpiring}</div>
-            </div>
-          </div>
-        </div>
-        <div className="col">
-          <div className="panel">
-            <div className="picture transit-bg">
-              <img src={TotalVaccineExpired} alt="truck" />
-            </div>
-            <div className="d-flex flex-column">
-              <div className="title transit-text">Vaccine Expired</div>
-              <div className="tab-container">
-                <div className="tab-item active">This Year</div>
-                <div className="tab-item">This Month</div>
-                <div className="tab-item">This Week</div>
-                <div className="tab-item">Today</div>
-              </div>
-              <div className="transit-text count">{inventoryExpired}</div>
-            </div>
-          </div>
-        </div>
+      )}
+      <div className='full-width-ribben'>
+        <TableFilter
+          // isReportDisabled={!isAuthenticated("inventoryExportReport")}
+          isReportDisabled={true}
+          data={headers}
+          inventoryFilterData={props.inventoryFilterData}
+          productCategories={props.productCategories}
+          setInventoryProductNameFilterOnSelect={
+            setInventoryProductNameFilterOnSelect
+          }
+          onSelectionDateFilter={onSelectionDateFilter}
+          setInventoryManufacturerFilterOnSelect={
+            setInventoryManufacturerFilterOnSelect
+          }
+          setInventoryStatusFilterOnSelect={setInventoryStatusFilterOnSelect}
+          setDateFilterOnSelect={setDateFilterOnSelect}
+          setInventoryProductCategoryFilterOnSelect={
+            setInventoryProductCategoryFilterOnSelect
+          }
+          fb='80%'
+          t={t}
+          filterPage='inventory'
+        />
       </div>
-      <div className="full-width-ribben">
-        <TableFilter data={headers} />
-      </div>
-      <div className="ribben-space">
-        <div className="row no-gutter">
-          <div className="col-sm-12 col-xl-9">
-            <Table data={tableHeaders}{...props} />
+      <div className='ribben-space'>
+        <div className='row no-gutter'>
+          <div className='col-sm-12 col-xl-9 rTableHeader'>
+            <Table
+              data={tableHeaders}
+              {...props}
+              colors={colors}
+              inventoryCount={props.inventoriesCount}
+              onPageChange={onPageChange}
+            />
           </div>
-          <div className="col-sm-12 col-xl-3">
-            <div className="list-container">
-              <div className="d-flex justify-content-between align-items-center">
-                <h4>Product List</h4>
-                <button className="btn btn-link">View all</button>
-              </div>
-              <div className="row overflow">
-                <div className="col-sm-6">
-                  <div className="d-flex card flex-column align-items-center">
-                    <div className="round-sign ellipseOne">OPV</div>
-                    <p>Oral Polio Vaccine</p>
-                    <h3>Qty: 1,64,250</h3>
-                  </div>
+          <div className='col-sm-12 col-xl-3'>
+            {isAuthenticated("viewProductList") && (
+              <div className='list-container'>
+                <div className='d-flex justify-content-between align-items-center ml-3'>
+                  <h4>
+                    <b>{t("product_list")}</b>
+                  </h4>
+                  <Link to='/productcategory'>
+                    <button className='btn btn-link mr-1'>
+                      <b>{t("view_all")}</b>
+                    </button>
+                  </Link>
                 </div>
-                <div className="col-sm-6">
-                  <div className="d-flex card flex-column align-items-center">
-                    <div className="round-sign ellipseFour">HepB</div>
-                    <p>Hepatitis B Vaccine</p>
-                    <h3>Qty: 68,480</h3>
-                  </div>
-                </div>
-                <div className="col-sm-6">
-                  <div className="d-flex card flex-column align-items-center">
-                    <div className="round-sign ellipseTwo">MMR</div>
-                    <p>Mumps, Measles & Rubella Vaccine</p>
-                    <h3>Qty: 60,000</h3>
-                  </div>
-                </div>
-                <div className="col-sm-6">
-                  <div className="d-flex card flex-column align-items-center">
-                    <div className="round-sign ellipseThree">PVC</div>
-                    <p>Pneumococcal conjugate Vaccine</p>
-                    <h3>Qty: 40,050</h3>
-                  </div>
-                </div>
-                <div className="col-sm-6">
-                  <div className="d-flex card flex-column align-items-center">
-                    <div className="round-sign ellipseFive">RV</div>
-                    <p>Rotavirus Vaccine</p>
-                    <h3>Qty: 69,500</h3>
-                  </div>
-                </div>
-                <div className="col-sm-6">
-                  <div className="d-flex card flex-column align-items-center">
-                    <div className="round-sign ellipseSix">IPV</div>
-                    <p>Inactivated Polio Vaccine</p>
-                    <h3>Qty: 74,000</h3>
-                  </div>
-                </div>
-                <div className="col-sm-6">
-                  <div className="d-flex card flex-column align-items-center">
-                    <div className="round-sign ellipseFour">HepB</div>
-                    <p>Hepatitis B Vaccine</p>
-                    <h3>Qty: 74,000</h3>
-                  </div>
-                </div>
-                <div className="col-sm-6">
-                  <div className="d-flex card flex-column align-items-center">
-                    <div className="round-sign ellipseOne">OPV</div>
-                    <p>Oral Polio Vaccine</p>
-                    <h3>Qty: 74,000</h3>
-                  </div>
-                </div>
+                <div
+                  className='overflow ml-3'
+                  style={{ height: "720px", overflowX: "hidden" }}
+                >
+                  <div className='row'>
+                    {productsList?.map((product, index) => (
 
+                      <div className='col-sm-6 mi-link' key={index} onClick={() => {
+                        const inv = ProdDetails.filter(prod => {
+                          return prod.inventoryDetails.productId === product.productId;
+                        });
+                        props.history.push(`/viewproduct`, { data: [inv[0]] })
+                      }
+                      }>
+                        <div
+                          className='d-flex card flex-column align-items-center'
+                          style={{ backgroundColor: colors[index] }}
+                        >
+                          <div className='round-sign'>
+                            {product.productName.length <= MAX_LENGTH ? (
+                              <div>{product.productName}</div>
+                            ) : (
+                              <div>{`${product.productName.substring(
+                                0,
+                                MAX_LENGTH
+                              )}...`}</div>
+                            )}
+                          </div>
+
+                          {/* <p className="product">{product.productName}</p> */}
+                          <h3 className='qty'>
+                            {t("quantity")} : {product.quantity}
+                            <span>{"  ("}</span>
+                            {product.unitofMeasure &&
+                              product.unitofMeasure.name ? (
+                              <span>{product.unitofMeasure.name}</span>
+                            ) : (
+                              ""
+                            )}
+                            <span>{")"}</span>
+                          </h3>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
-
       </div>
     </div>
   );
 };
 
-
-
 export default Inventory;
-

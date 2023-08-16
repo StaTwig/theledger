@@ -1,0 +1,25 @@
+{
+  "name": "advanced_analytics_service",
+  "version": "1.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./analytics_server.js",
+    "dev": "nodemon ./analytics_server.js",
+    "lint": "eslint --fix --config .eslintrc.json \"**/*.js\""
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-jwt": "^8.4.1",
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.43",
+    "mongoose": "^7.0.4",
+    "morgan": "^1.10.0",
+    "redis": "^4.6.5"
+  },
+  "devDependencies": {
+    "eslint": "^8.38.0",
+    "nodemon": "^2.0.22"
+  }
+}

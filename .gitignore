@@ -1,4 +1,3 @@
-
 # Created by https://www.gitignore.io/api/node,react
 # Edit at https://www.gitignore.io/?templates=node,react
 
@@ -10,6 +9,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
+*/package-lock.json
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
@@ -40,7 +40,7 @@ bower_components
 .lock-wscript
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
-build/Release
+# build/Release
 
 # Dependency directories
 node_modules/
@@ -122,4 +122,22 @@ thumb
 sketch
 
 # End of https://www.gitignore.io/api/node,react
+#Custom ignores
+./backend/blockchain_service/.env
+./backend/track_trace/.env
+./backend/notification_service/.env
+./backend/shipping_service/.env
+./backend/alert_service/.env
+./backend/inventory_service/.env
+./backend/user_service/.env
+./backend/log_service/.env
+./backend/transaction_service/.env
+pre-deploy*.sh
+**/package-lock.json
+**/yarn.lock
+/env
 
+acme.json
+cache-data/
+
+.vscode/

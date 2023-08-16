@@ -1,0 +1,126 @@
+.NetworkReports_container {
+  padding-bottom: 2rem;
+}
+.NetworkReports_Analytics_container {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.NetworkReports_Table_Wrapper {
+  background-color: #fff;
+  padding: 0 2rem;
+}
+
+.bg_color_added {
+  background-color: #f8f8f8;
+}
+
+.Tablist_container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+.Tab_Link {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.Tab_Link > p {
+  font-weight: 500;
+  color: #77787d;
+  transition: all 0.3s ease-in-out;
+}
+.Tab_Link.active > p {
+  font-weight: 500;
+  color: #00a3ff;
+}
+.Tab_Link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 5px 5px 0 0;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.Tab_Link.active::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 5px 5px 0 0;
+  background-color: #00a3ff;
+}
+
+.NetworkReports_Breadcrumps_links {
+  padding: 0rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mi_report_table_head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+}
+.mi_report_table_head > i {
+  font-size: 0.75rem;
+}
+
+.filter_header_area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ui_filter_clear_btn {
+  font-size: 0.8rem;
+  border: 1px solid rgb(238, 44, 96);
+  background-color: var(--white);
+  color: rgb(238, 44, 96);
+  outline: none;
+  padding: 0.2rem 1rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.ui_filter_clear_btn:hover {
+  border: 1px solid rgb(238, 44, 96);
+  background-color: rgb(238, 44, 96);
+  color: var(--white);
+}
+
+.network_page_inner_header {
+  width: calc(100% - 130px);
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background-color: #fff;
+  position: fixed;
+  top: 85px;
+  left: 130px;
+  z-index: 1000;
+  border-bottom: 1px solid #eee;
+}
+
+.header_null_space {
+  height: 4.5rem;
+}

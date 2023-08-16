@@ -1,27 +1,38 @@
-import React from 'react';
-import { LineChart } from 'react-chartkick';
-import 'chart.js';
-
-
+import React, { useState, useEffect } from "react";
+import { LineChart } from "react-chartkick";
+import "chart.js";
+import { getTemperature } from "../../actions/shipmentActions";
+//import './style.scss'
 
 const Chart = () => {
+  const [temp, setTemp] = useState({});
 
-    return (
-        <div>
-          <LineChart ymin="-10" ymax="10" min={-5} max={10}  colors={["#FA7923", "#666"]} 
-          data={{"1:00": 2, "2:00": 5,  "3:00": 3 , "4:00": 4, "5:00": 3, "6:00": 5, "7:00": 3, "8:00": 4, "9:00": 3}} />
-    
-        </div>
-    
-    
-      );
+  useEffect(() => {
+    const interval = setInterval(() => {
+      async function fetchData() {
+        const result = await getTemperature();
+        setTemp(result.data);
+      }
+      fetchData();
+    }, 5000);
+    return () => {
+      window.clearInterval(interval); // clear the interval in the cleanup function
+    };
+  }, []);
 
-
-
-    
+  return (
+    <div>
+      <LineChart
+        ymin='-5'
+        ymax='10'
+        min={-5}
+        max={10}
+        colors={["#FA7923", "#666"]}
+        id='users-chart'
+        height='220px'
+        data={temp}
+      />
+    </div>
+  );
 };
-
-
- 
-
 export default Chart;

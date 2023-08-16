@@ -1,0 +1,148 @@
+.reward_main_layout {
+  padding: 1rem 2rem;
+}
+
+.reward_header {
+  padding: 0 0.875rem;
+}
+.reward_header > h1 {
+  font-size: 28px !important;
+}
+
+.reward_content_area {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.reward_body {
+  border-radius: 10px;
+  box-shadow: 0 3px 10px #e4e4e4;
+  background-color: #fff;
+  padding: 2rem;
+}
+
+/* .rewards_card {
+  width: 26rem;
+  height: 20rem;
+  background-color: #86dec3;
+  border-radius: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+} */
+
+.reward_heading_ts {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #707070;
+}
+.reward_points_ts {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: rgb(0, 128, 79);
+}
+
+.reward_points {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+.reward_points.border_added {
+  border-bottom: 1px solid #eee;
+}
+.points_wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.points_wrap > i {
+  font-size: 1rem;
+  color: rgb(0, 128, 79);
+}
+
+.rewards_wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  padding: 1.5rem 0;
+}
+.rewards_classification {
+  padding-right: 6rem;
+}
+.reward_title_ts {
+  font-size: 1rem;
+}
+.reward_main_points {
+  padding: 0.35rem 1.5rem;
+  border-radius: 0.45rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: rgb(39, 154, 248);
+}
+.reward_main_points_ts {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+}
+.reward_main_points > i {
+  font-size: 1.5rem;
+  color: #fff;
+}
+.rewards_card {
+  padding-left: 2rem;
+  position: relative;
+}
+.rewards_card > img {
+  width: 26rem;
+  border-radius: 1rem;
+}
+
+.claim_headline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.claim_actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.claim_rewards {
+  padding-top: 2.25rem;
+}
+.claim_title_ts {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #2d394b;
+}
+.claim_subtitle_ts {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #82868d;
+}
+
+.reward_point_counter {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #fff;
+  position: absolute;
+  top: 51.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.reward_message_ts {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #fff;
+  position: absolute;
+  top: 62.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

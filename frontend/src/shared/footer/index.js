@@ -1,18 +1,19 @@
-import React from 'react'
+import React from "react";
 
-import statwigLogo from '../../assets/brands/Statwig-Logo.png';
-import './style.scss'
+import statwigLogo from "../../assets/brands/StatwigLogo B&W.png";
+import "./style.scss";
 
-const Footer = () => {
+const Footer = (props) => {
+  const { t } = props;
   return (
     <footer>
-      <p>Version 1.2</p>
-      <p>Made with care</p>
-      <div className="footer-branding">
-        <img src={statwigLogo} alt="statwig logo" width="80px"/>
+      <p> {t("version")} 2.0</p>
+      {t("made_with_care")}
+      <div className='footer-branding'>
+        <img src={statwigLogo} className='' alt='statwig logo' width='80px' />
       </div>
     </footer>
-  )
-}
+  );
+};
 
 export default Footer;

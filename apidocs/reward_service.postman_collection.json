@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "a14c53db-42be-459f-9afb-a33053d5eba4",
+		"name": "reward_service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10266034"
+	},
+	"item": [
+		{
+			"name": "User Rewards",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVNUDEwMDAwMSIsImZpcnN0TmFtZSI6IkRFViIsImVtYWlsSWQiOiJkZXZAc3RhdHdpZy5jb20iLCJyb2xlIjoicG93ZXJVc2VyIiwid2FyZWhvdXNlSWQiOiJXQVIxMDAwMDEiLCJvcmdhbmlzYXRpb25JZCI6Ik9SRzEwMDAwMSIsInBob25lTnVtYmVyIjoiKzkxOTczMTExNzA0NyIsIm9yZyI6Im9yZzFNU1AiLCJ1c2VyTmFtZSI6ImRldkBzdGF0d2lnLmNvbSIsInBob3RvSWQiOiJjbGFnZXNvNGswMDA0MHRucWFiZHExNjR4MTY2ODQwNzU4MDQ1Mi5qcGciLCJwcmVmZXJyZWRMYW5ndWFnZSI6IkVOIiwiaXNDdXN0b20iOmZhbHNlLCJ0eXBlIjoiQ0VOVFJBTF9BVVRIT1JJVFkiLCJwZXJtaXNzaW9ucyI6eyJvdmVydmlldyI6eyJvdmVydmlldyI6dHJ1ZX0sInNlYXJjaCI6eyJzZWFyY2hCeU9yZGVySWQiOnRydWUsInNlYXJjaEJ5U2hpcG1lbnRJZCI6dHJ1ZSwic2VhcmNoQnlQcm9kdWN0Q2F0ZWdvcnkiOnRydWUsInNlYXJjaEJ5VHJhbnNpdE5vIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3ROYW1lIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3RJZCI6dHJ1ZX0sImludmVudG9yeSI6eyJ2aWV3SW52ZW50b3J5Ijp0cnVlLCJhZGRJbnZlbnRvcnkiOnRydWUsImltcG9ydEludmVudG9yeSI6dHJ1ZSwiaW52ZW50b3J5QW5hbHl0aWNzIjp0cnVlLCJ2aWV3UHJvZHVjdExpc3QiOnRydWUsInZpZXdQcm9kdWN0SW5mbyI6dHJ1ZSwiYWRkTmV3UHJvZHVjdCI6dHJ1ZSwiaW52ZW50b3J5RmlsdGVycyI6dHJ1ZSwiaW52ZW50b3J5RXhwb3J0UmVwb3J0Ijp0cnVlfSwic2hpcG1lbnQiOnsiY3JlYXRlU2hpcG1lbnQiOnRydWUsInNoaXBtZW50QW5hbHl0aWNzIjp0cnVlLCJ1cGRhdGVTaGlwbWVudCI6dHJ1ZSwicmVjZWl2ZVNoaXBtZW50Ijp0cnVlLCJyZWNlaXZlU2hpcG1lbnRTY2FuIjp0cnVlLCJpbmJvdW5kU2hpcG1lbnRzIjp0cnVlLCJvdXRib3VuZFNoaXBtZW50cyI6dHJ1ZSwidmlld1NoaXBtZW50Ijp0cnVlLCJzaGlwbWVudEZpbHRlcnMiOnRydWUsInNoaXBtZW50RXhwb3J0UmVwb3J0Ijp0cnVlfSwib3JkZXIiOnsiY3JlYXRlT3JkZXIiOnRydWUsImltcG9ydE9yZGVyIjp0cnVlLCJvcmRlckFuYWx5dGljcyI6dHJ1ZSwicmVjZWl2ZU9yZGVyIjp0cnVlLCJhY2NlcHRSZWplY3RPcmRlciI6dHJ1ZSwidmlld0luYm91bmRPcmRlcnMiOnRydWUsInZpZXdPdXRib3VuZE9yZGVycyI6dHJ1ZSwib3JkZXJGaWx0ZXJzIjp0cnVlLCJvcmRlckV4cG9ydFJlcG9ydCI6dHJ1ZSwidmlld1BPIjp0cnVlfSwibmV0d29yayI6eyJuZXR3b3JrIjp0cnVlfSwidHJhY2siOnsidHJhY2tBbmRUcmFjZSI6dHJ1ZX0sImFkbWluIjp7ImdldFVzZXJSZXF1ZXN0Ijp0cnVlLCJhY2NlcHRVc2VyIjp0cnVlLCJhZGRVc2VyIjp0cnVlLCJyZW1vdmVVc2VyIjp0cnVlLCJkZWFjdGl2YXRlVXNlciI6dHJ1ZSwiYWRkUm9sZSI6dHJ1ZSwiZGVsZXRlUm9sZSI6dHJ1ZSwiYWZmbGlhdGVVc2VyIjp0cnVlLCJ1bmFmZmxpYXRlVXNlciI6dHJ1ZSwidmlld0FmZmxpYXRpb24iOnRydWUsImFjY2VwdEFmZmlsaWF0aW9uIjp0cnVlLCJyZW1vdmVBZmZpbGlhdGlvbiI6dHJ1ZX0sIl9pZCI6IjVmNGJmMjdmMGNjNmZiMTdmZWMxODUxZCIsInBlcm1pc3Npb25zIjpbIm92ZXJ2aWV3Iiwic2VhcmNoQnlPcmRlcklkIiwic2VhcmNoQnlTaGlwbWVudElkIiwic2VhcmNoQnlQcm9kdWN0Q2F0ZWdvcnkiLCJzZWFyY2hCeVRyYW5zaXRObyIsInNlYXJjaEJ5UHJvZHVjdE5hbWUiLCJzZWFyY2hCeVByb2R1Y3RJZCIsInZpZXdJbnZlbnRvcnkiLCJhZGRJbnZlbnRvcnkiLCJpbXBvcnRJbnZlbnRvcnkiLCJpbnZlbnRvcnlBbmFseXRpY3MiLCJ2aWV3UHJvZHVjdExpc3QiLCJ2aWV3UHJvZHVjdEluZm8iLCJhZGROZXdQcm9kdWN0IiwiaW52ZW50b3J5RmlsdGVycyIsImludmVudG9yeUV4cG9ydFJlcG9ydCIsImNyZWF0ZVNoaXBtZW50Iiwic2hpcG1lbnRBbmFseXRpY3MiLCJ1cGRhdGVTaGlwbWVudCIsInJlY2VpdmVTaGlwbWVudCIsInJlY2VpdmVTaGlwbWVudFNjYW4iLCJpbmJvdW5kU2hpcG1lbnRzIiwib3V0Ym91bmRTaGlwbWVudHMiLCJ2aWV3U2hpcG1lbnQiLCJzaGlwbWVudEZpbHRlcnMiLCJzaGlwbWVudEV4cG9ydFJlcG9ydCIsImNyZWF0ZU9yZGVyIiwiaW1wb3J0T3JkZXIiLCJvcmRlckFuYWx5dGljcyIsInJlY2VpdmVPcmRlciIsImFjY2VwdFJlamVjdE9yZGVyIiwidmlld0luYm91bmRPcmRlcnMiLCJ2aWV3T3V0Ym91bmRPcmRlcnMiLCJvcmRlckZpbHRlcnMiLCJvcmRlckV4cG9ydFJlcG9ydCIsInZpZXdQTyIsIm5ldHdvcmsiLCJ0cmFja0FuZFRyYWNlIiwiZ2V0VXNlclJlcXVlc3QiLCJhY2NlcHRVc2VyIiwiYWRkVXNlciIsInJlbW92ZVVzZXIiLCJkZWFjdGl2YXRlVXNlciIsImFkZFJvbGUiLCJkZWxldGVSb2xlIiwiYWZmbGlhdGVVc2VyIiwidW5hZmZsaWF0ZVVzZXIiLCJ2aWV3QWZmbGlhdGlvbiIsImFjY2VwdEFmZmlsaWF0aW9uIiwicmVtb3ZlQWZmaWxpYXRpb24iLCIiXSwicm9sZSI6InBvd2VyVXNlciIsImNyZWF0ZWRBdCI6IjIwMjAtMDgtMzBUMTg6Mzk6NTkuMzkwWiIsInVwZGF0ZWRBdCI6IjIwMjEtMDktMzBUMTE6NTA6MDguMTQ2WiIsIl9fdiI6MH0sImlhdCI6MTY4NTA2MTUyOCwiZXhwIjoxNjg1MTA0NzI4fQ.qP1nEVIeuJVFRsx5xEi3UQFMkXKAjDcTz5a-IDUjJWk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "apiKeyTest",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3017/rewardmanagement/api/rewards",
+					"host": [
+						"localhost"
+					],
+					"port": "3017",
+					"path": [
+						"rewardmanagement",
+						"api",
+						"rewards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Rewards",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVNUDEwMDAwMSIsImZpcnN0TmFtZSI6IkRFViIsImVtYWlsSWQiOiJkZXZAc3RhdHdpZy5jb20iLCJyb2xlIjoicG93ZXJVc2VyIiwid2FyZWhvdXNlSWQiOiJXQVIxMDAwMDEiLCJvcmdhbmlzYXRpb25JZCI6Ik9SRzEwMDAwMSIsInBob25lTnVtYmVyIjoiKzkxOTczMTExNzA0NyIsIm9yZyI6Im9yZzFNU1AiLCJ1c2VyTmFtZSI6ImRldkBzdGF0d2lnLmNvbSIsInBob3RvSWQiOiJjbGFnZXNvNGswMDA0MHRucWFiZHExNjR4MTY2ODQwNzU4MDQ1Mi5qcGciLCJwcmVmZXJyZWRMYW5ndWFnZSI6IkVOIiwiaXNDdXN0b20iOmZhbHNlLCJ0eXBlIjoiQ0VOVFJBTF9BVVRIT1JJVFkiLCJwZXJtaXNzaW9ucyI6eyJvdmVydmlldyI6eyJvdmVydmlldyI6dHJ1ZX0sInNlYXJjaCI6eyJzZWFyY2hCeU9yZGVySWQiOnRydWUsInNlYXJjaEJ5U2hpcG1lbnRJZCI6dHJ1ZSwic2VhcmNoQnlQcm9kdWN0Q2F0ZWdvcnkiOnRydWUsInNlYXJjaEJ5VHJhbnNpdE5vIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3ROYW1lIjp0cnVlLCJzZWFyY2hCeVByb2R1Y3RJZCI6dHJ1ZX0sImludmVudG9yeSI6eyJ2aWV3SW52ZW50b3J5Ijp0cnVlLCJhZGRJbnZlbnRvcnkiOnRydWUsImltcG9ydEludmVudG9yeSI6dHJ1ZSwiaW52ZW50b3J5QW5hbHl0aWNzIjp0cnVlLCJ2aWV3UHJvZHVjdExpc3QiOnRydWUsInZpZXdQcm9kdWN0SW5mbyI6dHJ1ZSwiYWRkTmV3UHJvZHVjdCI6dHJ1ZSwiaW52ZW50b3J5RmlsdGVycyI6dHJ1ZSwiaW52ZW50b3J5RXhwb3J0UmVwb3J0Ijp0cnVlfSwic2hpcG1lbnQiOnsiY3JlYXRlU2hpcG1lbnQiOnRydWUsInNoaXBtZW50QW5hbHl0aWNzIjp0cnVlLCJ1cGRhdGVTaGlwbWVudCI6dHJ1ZSwicmVjZWl2ZVNoaXBtZW50Ijp0cnVlLCJyZWNlaXZlU2hpcG1lbnRTY2FuIjp0cnVlLCJpbmJvdW5kU2hpcG1lbnRzIjp0cnVlLCJvdXRib3VuZFNoaXBtZW50cyI6dHJ1ZSwidmlld1NoaXBtZW50Ijp0cnVlLCJzaGlwbWVudEZpbHRlcnMiOnRydWUsInNoaXBtZW50RXhwb3J0UmVwb3J0Ijp0cnVlfSwib3JkZXIiOnsiY3JlYXRlT3JkZXIiOnRydWUsImltcG9ydE9yZGVyIjp0cnVlLCJvcmRlckFuYWx5dGljcyI6dHJ1ZSwicmVjZWl2ZU9yZGVyIjp0cnVlLCJhY2NlcHRSZWplY3RPcmRlciI6dHJ1ZSwidmlld0luYm91bmRPcmRlcnMiOnRydWUsInZpZXdPdXRib3VuZE9yZGVycyI6dHJ1ZSwib3JkZXJGaWx0ZXJzIjp0cnVlLCJvcmRlckV4cG9ydFJlcG9ydCI6dHJ1ZSwidmlld1BPIjp0cnVlfSwibmV0d29yayI6eyJuZXR3b3JrIjp0cnVlfSwidHJhY2siOnsidHJhY2tBbmRUcmFjZSI6dHJ1ZX0sImFkbWluIjp7ImdldFVzZXJSZXF1ZXN0Ijp0cnVlLCJhY2NlcHRVc2VyIjp0cnVlLCJhZGRVc2VyIjp0cnVlLCJyZW1vdmVVc2VyIjp0cnVlLCJkZWFjdGl2YXRlVXNlciI6dHJ1ZSwiYWRkUm9sZSI6dHJ1ZSwiZGVsZXRlUm9sZSI6dHJ1ZSwiYWZmbGlhdGVVc2VyIjp0cnVlLCJ1bmFmZmxpYXRlVXNlciI6dHJ1ZSwidmlld0FmZmxpYXRpb24iOnRydWUsImFjY2VwdEFmZmlsaWF0aW9uIjp0cnVlLCJyZW1vdmVBZmZpbGlhdGlvbiI6dHJ1ZX0sIl9pZCI6IjVmNGJmMjdmMGNjNmZiMTdmZWMxODUxZCIsInBlcm1pc3Npb25zIjpbIm92ZXJ2aWV3Iiwic2VhcmNoQnlPcmRlcklkIiwic2VhcmNoQnlTaGlwbWVudElkIiwic2VhcmNoQnlQcm9kdWN0Q2F0ZWdvcnkiLCJzZWFyY2hCeVRyYW5zaXRObyIsInNlYXJjaEJ5UHJvZHVjdE5hbWUiLCJzZWFyY2hCeVByb2R1Y3RJZCIsInZpZXdJbnZlbnRvcnkiLCJhZGRJbnZlbnRvcnkiLCJpbXBvcnRJbnZlbnRvcnkiLCJpbnZlbnRvcnlBbmFseXRpY3MiLCJ2aWV3UHJvZHVjdExpc3QiLCJ2aWV3UHJvZHVjdEluZm8iLCJhZGROZXdQcm9kdWN0IiwiaW52ZW50b3J5RmlsdGVycyIsImludmVudG9yeUV4cG9ydFJlcG9ydCIsImNyZWF0ZVNoaXBtZW50Iiwic2hpcG1lbnRBbmFseXRpY3MiLCJ1cGRhdGVTaGlwbWVudCIsInJlY2VpdmVTaGlwbWVudCIsInJlY2VpdmVTaGlwbWVudFNjYW4iLCJpbmJvdW5kU2hpcG1lbnRzIiwib3V0Ym91bmRTaGlwbWVudHMiLCJ2aWV3U2hpcG1lbnQiLCJzaGlwbWVudEZpbHRlcnMiLCJzaGlwbWVudEV4cG9ydFJlcG9ydCIsImNyZWF0ZU9yZGVyIiwiaW1wb3J0T3JkZXIiLCJvcmRlckFuYWx5dGljcyIsInJlY2VpdmVPcmRlciIsImFjY2VwdFJlamVjdE9yZGVyIiwidmlld0luYm91bmRPcmRlcnMiLCJ2aWV3T3V0Ym91bmRPcmRlcnMiLCJvcmRlckZpbHRlcnMiLCJvcmRlckV4cG9ydFJlcG9ydCIsInZpZXdQTyIsIm5ldHdvcmsiLCJ0cmFja0FuZFRyYWNlIiwiZ2V0VXNlclJlcXVlc3QiLCJhY2NlcHRVc2VyIiwiYWRkVXNlciIsInJlbW92ZVVzZXIiLCJkZWFjdGl2YXRlVXNlciIsImFkZFJvbGUiLCJkZWxldGVSb2xlIiwiYWZmbGlhdGVVc2VyIiwidW5hZmZsaWF0ZVVzZXIiLCJ2aWV3QWZmbGlhdGlvbiIsImFjY2VwdEFmZmlsaWF0aW9uIiwicmVtb3ZlQWZmaWxpYXRpb24iLCIiXSwicm9sZSI6InBvd2VyVXNlciIsImNyZWF0ZWRBdCI6IjIwMjAtMDgtMzBUMTg6Mzk6NTkuMzkwWiIsInVwZGF0ZWRBdCI6IjIwMjEtMDktMzBUMTE6NTA6MDguMTQ2WiIsIl9fdiI6MH0sImlhdCI6MTY4NTA2MTUyOCwiZXhwIjoxNjg1MTA0NzI4fQ.qP1nEVIeuJVFRsx5xEi3UQFMkXKAjDcTz5a-IDUjJWk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "role",
+						"value": "admin",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "apiKeyTest",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"event\": \"ADD\",\n        \"eventId\": \"INV1001\",\n        \"eventType\": \"INVENTORY\",\n        \"eventTime\": \"2023-05-26T03:48:48.494Z\",\n        \"userId\": \"EMP100001\",\n        \"userOrgId\": \"ORG100001\",\n        \"userWarehouseId\": \"WAR100001\",\n        \"points\": 100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3017/rewardmanagement/api/rewards",
+					"host": [
+						"localhost"
+					],
+					"port": "3017",
+					"path": [
+						"rewardmanagement",
+						"api",
+						"rewards"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

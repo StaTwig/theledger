@@ -3,8 +3,10 @@
 .Homecontainer {
   background-color: $white;
   section {
-    padding: 80px 0;
-    min-height: 70vh;
+    padding: 70px;
+    min-height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
 
     @media (max-width: 1024px) {
       min-height: unset;
@@ -41,12 +43,12 @@
       .nav-link {
         font-size: 12px;
         text-transform: uppercase;
-        font-weight: 400;
+        font-weight: 600;
       }
     }
   }
   .Herobanner {
-    background: url(../../assets/brands/banner-pattern.png);
+    background: url(../../assets/brands/banner-pattern.webp);
     background-size: cover;
     .hero {
       height: 70vh;
@@ -60,12 +62,16 @@
         height: 200px;
       }
       .hero-image {
-        background: url(../../assets/brands/laptop.png);
-        width: 65%;
-        height: 70vh;
+        background: url(../../assets/brands/web_mob.webp);
+        width: 100%;
+        height: 175%;
+        position: absolute;
+        left: 410px;
+        top: -200px;
+        //transform: rotate(-8.5deg);
         background-repeat: no-repeat;
         background-size: contain;
-        background-position: top right;
+        //background-position: top right;
         @media (max-width: 1024px) {
           height: 100%;
           background-position: center right;
@@ -80,15 +86,16 @@
         letter-spacing: 0;
         color: #000000;
         margin-top: 1rem;
+        text-align: justify;
+        text-justify: inter-word;
       }
     }
   }
   .OurSolution {
-    background: url(../../assets/brands/banner-white.png);
+    background: url(../../assets/brands/banner_white1.png);
     background-repeat: no-repeat;
     background-position: top;
-    background-size: 100%;
-    height: 95vh;
+    background-size: 110%;
 
     @media (max-width: 1024px) {
       background: #fafafa;
@@ -98,7 +105,10 @@
     }
 
     h2 {
-      margin-bottom: 80px;
+      margin-top: 0px;
+      margin-bottom: 50px;
+      position: relative;
+      top: -45px;
     }
 
     .rounded-images {
@@ -112,11 +122,16 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      position: relative;
+      top: -45px;
     }
 
     p {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 400;
+      position: relative;
+      top: -45px;
+      left: 5px;
     }
 
     @media (max-width: 768px) {
@@ -128,12 +143,15 @@
 
       h2 {
         margin-bottom: 30px;
-        font-size: 25px;
+        font-size: 12px;
         text-align: center;
       }
     }
   }
   .what_we_do {
+    //margin-top:0%;
+    margin-left: -3%;
+
     @media (max-width: 768px) {
       padding-top: 3rem !important;
     }
@@ -150,9 +168,15 @@
     }
     p {
       font-size: 20px;
+      text-align: justify;
+      text-justify: inter-word;
     }
   }
   .How_it_works {
+    margin-top: -10%;
+    margin-left: -3%;
+    margin-bottom: 12%;
+
     padding: 0;
     @media (max-width: 1024px) {
       padding-bottom: 3rem;
@@ -162,12 +186,12 @@
     }
 
     .bg-work-flow {
-      background: url(../../assets/brands/blockchain-flow-diagram.png);
       width: 100%;
       height: 100vh;
-      background-repeat: no-repeat;
-      background-size: 100%;
-      background-position: center;
+      background-repeat: no-repeat !important;
+      background-size: 100% !important;
+      background-position: center !important;
+      margin-bottom: 50px;
 
       @media (max-width: 1024px) {
         height: 400px;
@@ -178,17 +202,16 @@
         height: 230px;
         margin-top: 0;
       }
-
-      
     }
   }
   .contact_us {
-    background: url(../../assets/brands/banner-white-down.png);
+    background: url(../../assets/brands/banner-white-down1.png);
     background-size: cover;
     height: 90vh;
     background-position: top;
     display: flex;
     align-items: flex-end;
+    margin-top: -25%;
 
     @media (max-width: 1024px) {
       background: #fafafa;
@@ -245,6 +268,12 @@
     .poweredby {
       font-size: 13px;
       color: #a8a8a8;
+      .language {
+        padding: 5px;
+        color: #0497e6;
+        border-radius: 10px;
+        border-color: #0098e6;
+      }
     }
   }
 }

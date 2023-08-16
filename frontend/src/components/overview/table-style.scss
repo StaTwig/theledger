@@ -8,30 +8,58 @@
     justify-content: space-between;
     flex: 1;
     & > div {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       text-align: left;
-      margin-right: 5px;
-      font-size: 10px;
-      color: #000000;
+      margin-right: 0px;
+      font-size: 12px;
+      color: var(--dark-black);
       @media (min-width: $xl) {
-        font-size: 14px;
+        font-size: 10px;
       }
     }
 
     .headline {
+      text-align: center;
       font-weight: 400;
-      color: #707070;
+      height: 6vh;
+      background-color: #f5f1f1;
+      // margin: 0;
+      margin-right: 0;
+      font-size: 12px;
+      color: #4d4f5c !important;
     }
 
     .combine-data {
+      position: relative;
+      left: 30%;
       display: flex;
-      align-items: center;
+      text-align: center;
+      font-size: 12px;
+      //word-break:break-word;
       a {
         color: #0093e9;
         font-size: 9px;
         @media (min-width: $xl) {
-          font-size: 13px;
+          font-size: 11px;
         }
+      }
+
+      .status[target="RECEIVED"] {
+        background: #28a745 0% 0% no-repeat padding-box;
+        color: var(--white);
+        padding: 3px 8px;
+        border-radius: 10px;
+        font-size: 0.65rem !important;
+        margin-left: 1rem !important;
+      }
+
+      .status[target="CREATED"] {
+        background: var(--primary) 0% 0% no-repeat padding-box;
+        padding: 3px 10px;
+        border-radius: 10px;
+        color: var(--white);
+        font-size: 0.65rem !important;
+        margin-left: 1rem !important;
       }
 
       .round-sign {
@@ -41,89 +69,24 @@
     }
 
     @media screen and (min-width: 1300px) {
-        flex: 1;
+      flex: 1;
     }
   }
 
   @media screen and (max-width: 768px) {
     display: none;
   }
-
-  //   .rTable {
-  //     display: flex;
-  //     flex-direction: column;
-  //     width: 100%;
-
-  //     .rTableHeading {
-  //       display: flex;
-  //       justify-content: space-between;
-  //     }
-
-  //     .rTableBody {
-  //       display: flex;
-  //       justify-content: space-between;
-  //     }
-
-  //     .rTableRow {
-  //       display: flex;
-  //       justify-content: space-between;
-  //       margin-bottom: 15px;
-  //     }
-
-  //     .rTableFoot {
-  //       display: table-footer-group;
-  //       font-weight: bold;
-  //       background-color: #ddd;
-  //     }
-
-  //     .rTableHead {
-  //       color: #707070;
-  //       font-weight: 400;
-  //     }
-
-  //     .rTableCell,
-  //     .rTableHead {
-  //       flex: 1;
-  //       padding: 3px 5px;
-  //       align-self: center;
-  //       font-size: 14px;
-  //       text-align: center;
-  //     }
-
-  //     .rTableCell {
-  //       color: $black;
-  //       font-weight: 400;
-  //       a {
-  //         color: $black;
-  //         font-weight: 400;
-  //       }
-  //     }
-
-  //     .combine-record-td {
-  //         flex-basis: 5%;
-  //         font-size: 12px;
-  //     }
-
-  //     .combine-data {
-  //       display: flex;
-  //       align-items: center;
-  //       a {
-  //         color: #0093e9;
-  //         word-wrap: none;
-  //         word-break: normal;
-  //       }
-
-  //       .round-sign {
-  //         border-radius: 4px;
-  //         margin-right: 5px;
-  //       }
-  //     }
-  //   }
 }
 
 .sm-only {
   display: none !important;
   @media screen and (max-width: 768px) {
     display: flex !important;
+  }
+}
+.table-text {
+  width: 100%;
+  @media screen and (max-width: 1280px) {
+    width: 90%;
   }
 }

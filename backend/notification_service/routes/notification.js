@@ -1,8 +1,12 @@
-var express = require("express");
+const express = require("express");
 const NotificationController = require("../controllers/NotificationController");
+const router = express.Router();
 
-var router = express.Router();
-
-router.get("/getNotification", NotificationController.getNotification);
+router.post("/registerTwilio", NotificationController.createTwilioBinding);
+router.post("/sendOTP", NotificationController.sendOtp);
+router.post("/sendMessage", NotificationController.sendMessage);
+router.post("/pushNotification", NotificationController.pushNotifications);
+router.get("/getNotifications", NotificationController.getNotifications);
+router.get("/readNotification", NotificationController.readNotification);
 
 module.exports = router;

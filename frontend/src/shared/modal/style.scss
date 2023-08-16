@@ -1,11 +1,12 @@
-@import '../../assets/styles/global.scss';
+@import "../../assets/styles/global.scss";
 
 .modal-backdrop {
   background-color: #707070;
-  opacity: .5;
+  opacity: 0.5;
   border: 1px solid #707070;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
 }
 
 .modal {
@@ -22,17 +23,36 @@
         align-items: center;
 
         .modal-title {
-          font: Bold 35px/13px Roboto;
+          font: Bold 25px/13px Roboto;
           letter-spacing: 0;
           color: $primaryBlue;
         }
       }
 
+      .modal-body {
+        padding: 0rem;
+      }
+
       .modal-footer {
-       
         border: none;
       }
     }
-    
   }
+}
+.modal {
+  text-align: center;
+  padding: 0 !important;
+}
+.modal:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+  width: 100%;
 }

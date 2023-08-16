@@ -1,0 +1,41 @@
+.ReportAnalytics_card_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.65rem;
+  z-index: 2;
+  position: relative;
+  color: #fff;
+}
+.ReportAnalytics_card {
+  padding: 2rem;
+  border-radius: 0.6rem;
+  position: relative;
+  isolation: isolate;
+}
+.ReportAnalytics_card.variant_1 {
+  background: linear-gradient(90.08deg, #2d8bd6 -8.85%, #0f6bb3 86.92%);
+  box-shadow: 0px 2px 5px rgba(38, 51, 77, 0.03);
+}
+.ReportAnalytics_card.variant_2 {
+  background: linear-gradient(270deg, #865596 14.27%, #bd82d0 107.59%);
+  box-shadow: 0px 2px 5px rgba(38, 51, 77, 0.03);
+}
+.ReportAnalytics_card.variant_3 {
+  background: linear-gradient(270deg, #ff6633 24.55%, #ed9c81 104.47%);
+  box-shadow: 0px 2px 5px rgba(38, 51, 77, 0.03);
+}
+.ReportAnalytics_card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -6rem;
+  width: 100%;
+  height: 100%;
+  background: url("../../../assets/files/designs/curve.png") center no-repeat;
+  background-size: contain;
+  z-index: 1;
+  opacity: 0.4;
+}

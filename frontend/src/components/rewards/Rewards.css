@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Titan+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Patua+One&display=swap");
+
+.reward_main_layout {
+  display: grid;
+  grid-template-columns: 1fr 32.5rem;
+}
+.reward_claim_area {
+  background-color: #fff;
+  width: 32.5rem;
+  height: calc(100vh - 88px);
+  position: fixed;
+  top: 88px;
+  right: 0;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.reward_header {
+  padding: 0 0.875rem;
+}
+.reward_header > h1 {
+  font-size: 28px !important;
+}
+
+.reward_content_area {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+}
+
+.rewards_points_wrapper {
+  border-radius: 10px;
+  box-shadow: 0 3px 10px #e4e4e4;
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.points_banner {
+  width: 100%;
+  height: 40vh;
+  background: url("../../assets/files/designs/bg3.jpg") center no-repeat;
+  background-size: cover;
+  border-radius: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.6rem;
+}
+.points_message_ts {
+  font-family: "Patua One", cursive;
+  color: #fff;
+  font-size: 2rem;
+}
+.points_score_ts {
+  font-size: 6rem;
+  font-family: "Titan One", cursive;
+  color: #fff;
+}
+
+.points_title_ts {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d394b;
+}
+.points_subtitle_ts {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #6a6c70;
+  line-height: 1.5rem;
+}
+.points_heading_ts {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #2d394b;
+}
+.points_subheading_ts {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #6a6c70;
+  line-height: 1.5rem;
+}
+
+.point_icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.point_icon > img {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
+}
+
+.point_details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.reward_points_ts {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: "Patua One", cursive;
+  color: rgb(244, 209, 10);
+}
+.point_score {
+  display: flex;
+  justify-content: flex-end;
+}
+.points_wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+.points_wrap > img {
+  width: 2rem;
+  object-fit: contain;
+}
+
+.points_classification_card {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr 10rem;
+  gap: 2rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.points_classification {
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.points_classification_list {
+  display: flex;
+  flex-direction: column;
+}
+.reward_claim_area {
+  padding: 1.25rem 2rem;
+}
+.reward_heading_wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.reward_title_ts {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2d394b;
+}
+
+.reward_heading_wrap > img {
+  width: 2.5rem;
+  object-fit: contain;
+}
+
+.reward_claim_header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.redeem_option_list {
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.redeem_option_card {
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  gap: 2rem;
+}
+.redeem_icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1rem;
+  /* background-color: #ddd; */
+}
+.redeem_icon > img {
+  width: 4rem;
+  object-fit: contain;
+}
+.redeem_content_space {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.redeem_content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}

@@ -1,0 +1,109 @@
+/* Search Bar */
+
+.Report_page_title_ts {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: 0.02em;
+}
+
+.ReportSearch_container {
+  padding: 2rem 2rem 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.search_holder {
+  width: 100%;
+  max-width: 60rem;
+  background-color: #fff;
+  height: 5rem;
+  border-radius: 5rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.main_search_form {
+  width: 100%;
+  max-width: 80rem;
+}
+.main_searchbar_wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 4rem 1fr 1fr 1fr 1fr 2rem 8rem;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 4.5rem;
+  padding: 0.6rem;
+  position: relative;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.search_icon_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search_icon_wrap > i {
+  font-size: 1.5rem;
+  color: rgba(0, 6, 19, 0.5);
+}
+.button_hold {
+  display: flex;
+}
+.result_search_button {
+  width: 100%;
+  height: 3.6rem;
+  border-radius: 4.5rem;
+  background-color: #457eff;
+  font-size: 1.125rem;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Custom Mui */
+.mi_report_autocomplete {
+  cursor: pointer;
+}
+.mi_report_textfield .MuiInputBase-root fieldset {
+  border-color: #fff !important;
+}
+.mi_report_autocomplete > div > div > fieldset {
+  border-color: #fff !important;
+}
+
+.input_hold {
+  padding: 0 0.6rem;
+  position: relative;
+}
+.input_hold.bdr {
+  position: relative;
+}
+.input_hold.bdr::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 1.5px;
+  height: 80%;
+  border-radius: 5px;
+  background-color: #ddd;
+  transition: all 0.3s ease-in-out;
+}
+
+.Result_space {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.Result_space.show {
+  opacity: 1;
+  visibility: visible;
+}
